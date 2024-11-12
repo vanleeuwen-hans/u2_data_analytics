@@ -54,7 +54,11 @@ I used [Quarto](https://quarto.org/) to publish my Capstone Project report for t
 
 ## Quarto Report on GitHub Pages
 
+### Introduction
+
 To write my report for the Google Data Analytics Certification Capstone Project I first experimented with basic [R Markdown](https://rmarkdown.rstudio.com/) pages, but then switched to [Quarto](https://quarto.org/) which was easy having a report with multiple pages, and it is convenient to share and publish it on GitHub Pages. Basically, the Quarto Report that you are reading now was created as I advanced in my project, and includes all the analysis steps. The report pages are automatically rendered at which point the analysis code is executed and the resulting output, tables or plots are included in the report page. The structure of the report is created in the \_quarto.yml file in the R Studio project folder, and then the individual Quarto documents with the sections of the report are automatically linked into one web site.
+
+### Setting up the Quarto website
 
 The initial push of my rendered Quarto documents to my GitHub repository and GitHub Pages was a challenge as there were many files, including images, and the total size made the process fail. Here is how I set it up:
 
@@ -128,6 +132,42 @@ At some point I also discovered a way to increase the buffer size to allow bigge
 ```         
 git config --global http.postBuffer 524288000
 ```
+
+### Maintenance and Updates
+
+The setup is to have two branches in the u2_data_analytics repository: \* main: where project files arae manged - not needed for the published web site \* gh-pages:documents needed for the published web site - the result of Quarto render
+
+On my local system I will for example work in the R Studio project u2_data_analytics while in the main branch, i.e. before starting up R Studio I use this in the terminal while in the project folder:
+``` 
+git checkout main
+``` 
+I then update the qmd report files in R Studio, with new analyses or changes in the code chunks or text. Once I am happy with the changes I render the pages with quarto render:
+``` 
+quarto render
+``` 
+This creates the files in the docs folder (in the main branch).
+
+However, the docs folder is git managed in the other branch (gh-pages), so I then switch to the gh-pages branch:
+
+```         
+git checkout gh-pages
+```
+
+and then copy the newly created docs files from the main branch into the gh-pages branch with:
+
+```         
+git checkout main -- docs/
+```
+
+Afterwards I do the usual add and commit, followed by a push to the remote
+
+```         
+git add docs/*
+git commit -m "Update rendered documents from main"
+git push origin gh-pages
+```
+
+which will make the new versions of the rendered HTML pages available on my Quarto website on GitHub Pages.
 
 ## Shiny Apps
 
