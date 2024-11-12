@@ -8,7 +8,7 @@
 
 <meta name="author" content="Hans van Leeuwen">
 
-<title>Sharing – U2 Data Analytics</title>
+<title>Generative AI Support – U2 Data Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -138,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./conclusions.html">Conclusions and Sharing</a></li><li class="breadcrumb-item"><a href="./sharing.html">10. Sharing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./conclusions.html">Conclusions and Sharing</a></li><li class="breadcrumb-item"><a href="./generative-ai-support.html">11. Generative AI Support</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -245,13 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sharing.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sharing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">10. Sharing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./generative-ai-support.html" class="sidebar-item-text sidebar-link">
+  <a href="./generative-ai-support.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">11. Generative AI Support</span></a>
   </div>
 </li>
@@ -262,29 +228,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#github-code-sharing" id="toc-github-code-sharing" class="nav-link" data-scroll-target="#github-code-sharing">GitHub Code Sharing</a>
-  <ul class="collapse">
-  <li><a href="#concertdata-r-package" id="toc-concertdata-r-package" class="nav-link" data-scroll-target="#concertdata-r-package">concertData R-package</a></li>
-  <li><a href="#concertdata-documentation" id="toc-concertdata-documentation" class="nav-link" data-scroll-target="#concertdata-documentation">concertData Documentation</a></li>
-  <li><a href="#code-chunks-in-the-quarto-report" id="toc-code-chunks-in-the-quarto-report" class="nav-link" data-scroll-target="#code-chunks-in-the-quarto-report">Code Chunks in the Quarto Report</a></li>
-  </ul></li>
-  <li><a href="#quarto-report-on-github-pages" id="toc-quarto-report-on-github-pages" class="nav-link" data-scroll-target="#quarto-report-on-github-pages">Quarto Report on GitHub Pages</a></li>
-  <li><a href="#shiny-apps" id="toc-shiny-apps" class="nav-link" data-scroll-target="#shiny-apps">Shiny Apps</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./conclusions.html">Conclusions and Sharing</a></li><li class="breadcrumb-item"><a href="./sharing.html">10. Sharing</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./conclusions.html">Conclusions and Sharing</a></li><li class="breadcrumb-item"><a href="./generative-ai-support.html">11. Generative AI Support</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Sharing</h1>
+<h1 class="title">Generative AI Support</h1>
 </div>
 
 
@@ -307,121 +259,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-</section>
-<section id="github-code-sharing" class="level2">
-<h2 class="anchored" data-anchor-id="github-code-sharing">GitHub Code Sharing</h2>
-<p>All the code that I wrote, and in many cases co-wrote with Claude.AI and/or Perplexity.AI, is available in my GitHub repositories, in the following ways.</p>
-<section id="concertdata-r-package" class="level3">
-<h3 class="anchored" data-anchor-id="concertdata-r-package">concertData R-package</h3>
-<p><a href="https://github.com/vanleeuwen-hans/concertData" class="uri">https://github.com/vanleeuwen-hans/concertData</a></p>
-<p>This is my concertData R-package where I organized the functions I wrote to perform all the data processing, analytics and visualization as part of my Capstone Project for the Google Data analytics Certification.</p>
-</section>
-<section id="concertdata-documentation" class="level3">
-<h3 class="anchored" data-anchor-id="concertdata-documentation">concertData Documentation</h3>
-<p><a href="https://vanleeuwen-hans.github.io/concertData/index.html" class="uri">https://vanleeuwen-hans.github.io/concertData/index.html</a></p>
-<p>With <a href="https://pkgdown.r-lib.org/">pkgdown</a> I was able to easily create documentation web pages for my concertData R-package.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and load library</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pkgdown"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pkgdown)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># In the package directory, run:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_pkgdown</span>()</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This will create a _pkgdown.yml configuration file and add necessary entries to .gitignore</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># To build the site locally in R-Studio, use:</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pkgdown<span class="sc">::</span><span class="fu">build_site</span>()</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># This will create a docs/ directory with your website files</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Automate deployment with GitHub Pages</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_pkgdown_github_pages</span>()</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># This sets up GitHub Actions to automatically build and deploy your site whenever you push changes to your repository</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The resulting website includes:</p>
-<ul>
-<li><p>A homepage based on your README.md</p></li>
-<li><p>Reference pages for all exported functions</p></li>
-</ul>
-<p>The changes can then be committed and pushed to GitHub from R-Studio.</p>
-</section>
-<section id="code-chunks-in-the-quarto-report" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks-in-the-quarto-report">Code Chunks in the Quarto Report</h3>
-<p>I used <a href="https://quarto.org/">Quarto</a> to publish my Capstone Project report for the Google Data analytics Certification, containing my methods, analysis code chunks, results including plots, insights and lessons learned. More about the set-up in the next paragraph. Example R Code chunks with my analysis code and outputs can be seen at my <a href="https://vanleeuwen-hans.github.io/u2_data_analytics/">U2 Data Analytics</a> Quarto web site.</p>
-</section>
-</section>
-<section id="quarto-report-on-github-pages" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-report-on-github-pages">Quarto Report on GitHub Pages</h2>
-<p>To write my report for the Google Data Analytics Certification Capstone Project I first experimented with basic <a href="https://rmarkdown.rstudio.com/">R Markdown</a> pages, but then switched to <a href="https://quarto.org/">Quarto</a> which was easy having a report with multiple pages, and it is convenient to share and publish it on GitHub Pages. Basically, the Quarto Report that you are reading now was created as I advanced in my project, and includes all the analysis steps. The report pages are automatically rendered at which point the analysis code is executed and the resulting output, tables or plots are included in the report page. The structure of the report is created in the _quarto.yml file in the R Studio project folder, and then the individual Quarto documents with the sections of the report are automatically linked into one web site.</p>
-<p>The initial push of my rendered Quarto documents to my GitHub repository and GitHub Pages was a challenge as there were many files, including images, and the total size made the process fail. Here is how I set it up:</p>
-<p>In my GitHub account I created a new repository: <a href="https://github.com/vanleeuwen-hans/u2_data_analytics">u2_data_analytics</a>, with nothing in it. In the Settings &gt; Pages section I selected to deploy from the gh-pages branch (see below) and from the docs folder. That is the Folder where Quarto renders and creates the website files.</p>
-<p>Locally, in the folder of my R Studio project u2_data_analytics, I worked on the MacOS terminal:</p>
-<pre><code># initialise git repository locally
-% git init 
-Initialized empty Git repository in u2_data_analytics/.git/
-
-# link it to the online GitHuB repository
-% git remote add origin https://github.com/vanleeuwen-hans/u2_data_analytics.git
-
-# pull from remote main branch
-% git pull origin main 
-From https://github.com/vanleeuwen-hans/u2_data_analytics 
-* branch main -&gt; FETCH_HEAD
-
-# create gh-pages branch that will be used for publishing Quarto Report pages only
-% git checkout -b gh-pages 
-Switched to a new branch 'gh-pages'
-
-# Push the new branch to remote
-
-% git push origin gh-pages 
-Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 remote: 
-remote: Create a pull request for 'gh-pages' on GitHub by visiting: remote: https://github.com/vanleeuwen-hans/u2_data_analytics/pull/new/gh-pages remote: 
-To https://github.com/vanleeuwen-hans/u2_data_analytics.git \* \[new branch\] gh-pages -\&gt; gh-pages
-
-# Set upstream to track remote branch
-# Pushes your local gh-pages branch to the remote repository (origin) 
-# 2 Sets up tracking between your local and remote branch, which means: 
-# ◦ Future git pull commands will know to pull from origin/gh-pages 
-# ◦ Future git push commands will know to push to origin/gh-pages 
-# ◦ You can see the branch's status compared to remote with git status 
-# Without setting the upstream, you'd need to type git push origin gh-pages every time. 
-# After setting it, you can simply type git push or git pull. 
-% git push --set-upstream origin gh-pages 
-branch 'gh-pages' set up to track 'origin/gh-pages'. Everything up-to-date
-
-# check status
-% git status On branch gh-pages 
-Your branch is up to date with 'origin/gh-pages'. 
-Untracked files: (use "git add &lt;file&gt;..." to include in what will be committed) … 
-nothing added to commit but untracked files present (use "git add" to track)
-
-# add content from docs folder, but not all at once
-# as that will be too big and result in failure
-% git add docs/index.html 
-% git commit -m "Adding Quarto pages in batches" 
-[gh-pages e8e6ad6] Adding Quarto pages in batches 1 file changed, 
-8 insertions(+) create mode 100644 docs/index.html 
-
-% git push 
-Enumerating objects: 5, done. Counting objects: 100% (5/5), done. 
-Delta compression using up to 4 threads 
-Compressing objects: 100% (3/3), done. 
-Writing objects: 100% (4/4), 490 bytes \| 6.00 KiB/s, done. 
-Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 To https://github.com/vanleeuwen-hans/u2_data_analytics.git 
-e4ce103..e8e6ad6 gh-pages -&gt; gh-pages
-
-# continue adding, committing and pushing in small batches
-# until there are no untracked files left
-...</code></pre>
-<p>At some point I also discovered a way to increase the buffer size to allow bigger pushes to Github:</p>
-<pre><code>git config --global http.postBuffer 524288000</code></pre>
-</section>
-<section id="shiny-apps" class="level2">
-<h2 class="anchored" data-anchor-id="shiny-apps">Shiny Apps</h2>
-<p>The Shiny Apps with interactive visualizations of U2 data that I developed in my project are hosted at: <a href="https://www.shinyapps.io/" class="uri">https://www.shinyapps.io/</a>. These tools cannot be simply embedded in a static website like my <a href="https://vanleeuwen-hans.github.io/u2_data_analytics/">U2 Data Analytics</a> Quarto web site. The code for these Shiny Apps are managed in R Studio on my Mac, with connections to GitHub and shinyapps.io to facilitate code version management and easy deployment. See more info at: <a href="https://vanleeuwen-hans.github.io/u2_data_analytics/interactive-visual-apps.html">Interactive Visualizations</a>.</p>
+<p>Text</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
