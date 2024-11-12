@@ -1,0 +1,317 @@
+---
+title: "Initial Data Exploration"
+author: "Hans van Leeuwen"
+---
+
+## Comparing my data and numbers with u2gigs.com
+
+I performed an initial data exploration, comparing some numbers with the tour statistics listed on the u2gigs.com site page: <https://www.u2gigs.com/tourdb-stats.html>. Remember, that is the source of my data.
+
+```{r initial data exploration, message = FALSE, warning = FALSE}
+
+# load required libraries
+library(dplyr)
+library(readr)
+
+# read file
+u2data <- read_csv("u2data/archive/u2data_all_shows_clean.csv")
+```
+
+```{r number countries, message = FALSE, warning = FALSE}
+# number of countries where U2 played shows
+cat("Number of countries: ", nrow(unique(u2data[,c('country')])), "\n")
+```
+
+The number at u2gigs.com (October 2024) is 49 (<https://www.u2gigs.com/all-countries.html>). We see here that in my data there is 1 country less compared to what is listed at u2gigs.com. Now let's check the number of different songs played over all shows.
+
+```{r number songs, message = FALSE, warning = FALSE}
+# number of different songs played by U2 at the shows
+cat("Number of songs played at the shows: ", nrow(unique(u2data[,c('song_title')])), "\n")
+```
+
+The number at u2gigs.com (October 2024) is 994 (<https://www.u2gigs.com/most-played-songs.html>). We see here that in my data there is 1 song less compared to what is listed at u2gigs.com. Now let's check number of shows played in some cities.
+
+```{r number shows per city, message = FALSE, warning = FALSE}
+# cities with most shows played (only top 5 plus Amsterdam)
+aggregate(data=u2data,  showID ~ city, subset = city %in% c('Dublin', 'New York', 'London', 'Las Vegas', 'Los Angeles', 'Amsterdam'),  function(x) length(unique(x))) %>%
+  arrange(.,desc(showID))
+```
+
+When we compare that with u2gigs.com (Oct 2024 screen shot below) we see that the numbers are not the same.
+
+![Number of shows per city - source U2gigs.com - October 2024.](u2gigs/u2_top_played_cities-u2gigscom.png)
+
+Let's dive into the Amsterdam shows where my data contains 19 and u2gigs.com lists 23.
+
+```{r shows in Amsterdam, message = FALSE, warning = FALSE}
+# shows done in Amsterdam venues
+amsterdam_data <- subset(u2data, city == 'Amsterdam', select = c("showID","city","venue", "tour"))
+aggregate(data=amsterdam_data, showID ~ tour + venue, function(x) length(unique(x))) %>%
+  arrange(.,desc(tour))
+```
+
+The u2gigs.com info:
+
+![Shows in Amsterdam - source U2gigs.com - October 2024.](u2gigs/U2_shows_Amsterdam-u2gigscom.png)
+
+The 4 shows that are missing in my data are:
+
+-   1981-02-11: Unknown Bar - Amsterdam, Netherlands
+-   1981-02-11: Paradiso - Amsterdam, Netherlands
+-   1989-12-19: Rai Europa Hal - Amsterdam, Netherlands
+-   1989-12-20: Rai Europa Hal - Amsterdam, Netherlands
+
+Checking these on u2gigs.com, we see that these are all shows that do not have a set list (no played songs listed), while all the other 19 Amsterdam shows do have a set list. Confirming that these are missing from my data:
+
+```{r missing shows in Amsterdam, message = FALSE, warning = FALSE}
+# check Amsterdam shows that were missing before
+missing_Amsterdam_shows <- subset(u2data, date == '1981-02-11' | date == '1989-12-19' | date == '1989-12-20', select = c("date","venue"))
+print(missing_Amsterdam_shows)
+```
+
+I concluded that the shows without set lists had not been stored by my scraping code. Indeed, when I went back to check my scraping code I saw where the issue was. Thus, I adapted the code to retrieve those 297 shows without set list, and then added them to the final data file:
+
+First create new file with header:
+
+``` bash
+head -n 1 u2data_all_shows_clean.csv > u2data_all_shows_clean_final.csv
+```
+
+Then concatenate content from 3 data files into the new file (skipping headers):
+
+``` bash
+tail -n +2 -q u2data_all_shows_clean.csv >> u2data_all_shows_clean_final.csv 
+tail -n +2 -q u2analytics_data_nosetlistshows-dates.csv >> u2data_all_shows_clean_final.csv
+```
+
+## Confirm data after adding the shows without setlist
+
+After adding the shows without set list I loaded and explored the data again.
+
+```{r read data after adding shows without setlist, message = FALSE, warning = FALSE}
+
+# load required libraries
+library(dplyr)
+library(readr)
+
+# read data
+# note: file name was changed after an issue with city names was detected
+u2data <- read_csv('u2data/archive/u2data_all_shows_clean_final_incorrect_cities.csv')
+```
+
+```{r number countries after adding shows without setlist, message = FALSE, warning = FALSE}
+
+# number of countries where U2 played shows
+cat("Number of countries: ", nrow(unique(u2data[,c('country')])), "\n")
+```
+
+Remember, from earlier, that the number of countries listed at u2gigs.com is 49. So, this is now correct in my data. Now let's look at the number of different songs played again.
+
+```{r number songs after adding shows without setlist, message = FALSE, warning = FALSE}
+
+# number of different songs played by U2 at the shows
+cat("Number of songs played at the shows: ", nrow(unique(u2data[,c('song_title')])), "\n")
+```
+
+The number at u2gigs.com (October 2024) is 994 (<https://www.u2gigs.com/most-played-songs.html>), which is the same as in my data.
+
+```{r number shows per city after adding shows without setlist, message = FALSE, warning = FALSE}
+
+# cities with most shows played (only top 5 plus Amsterdam)
+aggregate(data=u2data,  showID ~ city, subset = city %in% c('Dublin', 'New York', 'London', 'Las Vegas', 'Los Angeles', 'Amsterdam'),  function(x) length(unique(x))) %>%
+  arrange(.,desc(showID))
+```
+
+This still does not fully coincide with the u2gigs.com statistics:
+
+![Number of shows per city - source U2gigs.com - October 2024.](u2gigs/u2_top_played_cities-u2gigscom.png)
+
+I'll look at that in a bit but first let's check the Amsterdam shows again.
+
+```{r shows in Amsterdam after adding shows without setlist, message = FALSE, warning = FALSE}
+
+# shows done in Amsterdam venues
+amsterdam_data <- subset(u2data, city == 'Amsterdam', select = c("showID","city","venue", "tour"))
+aggregate(data=amsterdam_data, showID ~ tour + venue, function(x) length(unique(x))) %>%
+  arrange(.,desc(tour))
+```
+
+The 4 shows that were missing earlier now do appear in my data.
+
+```{r missing shows in Amsterdam after adding shows without setlist, message = FALSE, warning = FALSE}
+
+# check Amsterdam shows that were missing before
+missing_Amsterdam_shows <- subset(u2data, date == '1981-02-11' | date == '1989-12-19' | date == '1989-12-20', select = c("date", "venue"))
+print(missing_Amsterdam_shows)
+```
+
+## Fixing incorrect city and venue names
+
+As mentioned, the number of shows in some cities did not match the number listed at u2gigs.com. I explored this by obtaining a list of all cities listed at u2gigs.com (<https://www.u2gigs.com/all-locations-city.html>), and by getting a list of unique city names in my data:
+
+```{r checking cities, message = FALSE, warning = FALSE}
+
+# get and print unique cities
+print(unique(u2data[,c('city')]))
+```
+
+I took the list of cities from both sources in Excel and identified the different city entries. I observed 5 strange city entries in my data:
+
+-   arne
+-   elin
+-   enis
+-   losters
+-   rent
+
+I then retrieved more info about these entries in my data, including the showID so that I could manually check these shows at u2gigs.com.
+
+```{r checking cities continued, message = FALSE, warning = FALSE}
+# check cities not listed at u2gigs.com
+
+extra_cities <- subset(u2data, city == 'arne' | city == 'elin' | city == 'enis' | city == 'losters' | city == 'rent', select = c("showID", "country", "city", "date","venue"))
+print(extra_cities)
+```
+
+I concluded that the following correct city names corresponded to these entries:
+
+-   arne -\> Nogent-sur-Marne
+-   elin -\> Vaulx-en-Velin
+-   enis -\> Saint-Denis
+-   losters -\> Davos-Klosters
+-   rent -\> Stoke-on-Trent
+
+All these issues were caused by a flaw in the scraping code when using a regular expression to separate the venue from the city. The issue occurred either when dashes '-' were present in the city name or in the venue name.
+
+I corrected this with the following commands in the data file:
+
+``` bash
+# Step 1: change "Pavillon Baltard - Nogent-su","arne" to "Pavillon Baltard","Nogent-sur-Marne"
+# first check pattern
+grep '\"Pavillon Baltard - Nogent-su\",\"arne\"' u2data_all_shows_clean_final.csv | wc -l
+      12
+# now replace
+awk '{gsub(/\"Pavillon Baltard - Nogent-su\",\"arne\"/,"\"Pavillon Baltard\",\"Nogent-sur-Marne\"")}1' u2data_all_shows_clean_final.csv > u2data_all_shows_clean_final2.csv
+# check result
+grep '\"Pavillon Baltard - Nogent-su\",\"arne\"' u2data_all_shows_clean_final2.csv | wc -l
+       0
+grep '\"Pavillon Baltard\",\"Nogent-sur-Marne\"' u2data_all_shows_clean_final2.csv | wc -l
+      12
+
+
+# Step 2: change "Ecole Nationale des Travaux Publics - Vaulx-e","elin" to "Ecole Nationale des Travaux Public","Vaulx-en-Velin"
+# first check pattern
+grep '\"Ecole Nationale des Travaux Publics - Vaulx-e\",\"elin\"' u2data_all_shows_clean_final2.csv | wc -l
+      1
+# now replace
+awk '{gsub(/\"Ecole Nationale des Travaux Publics - Vaulx-e\",\"elin\"/,"\"Ecole Nationale des Travaux Publics\",\"Vaulx-en-Velin\"")}1' u2data_all_shows_clean_final2.csv > u2data_all_shows_clean_final3.csv
+# check result
+grep '\"Ecole Nationale des Travaux Publics - Vaulx-e\",\"elin\"' u2data_all_shows_clean_final3.csv | wc -l
+      0
+grep '\"Ecole Nationale des Travaux Publics\",\"Vaulx-en-Velin\"' u2data_all_shows_clean_final3.csv | wc -l
+      1
+
+# Step 3: change "Stade de France - Sain","enis" to "Stade de France","Saint-Denis"
+# first check pattern
+grep '\"Stade de France - Sain\",\"enis\"' u2data_all_shows_clean_final3.csv | wc -l
+      232
+# now replace
+awk '{gsub(/\"Stade de France - Sain\",\"enis\"/,"\"Stade de France\",\"Saint-Denis\"")}1' u2data_all_shows_clean_final3.csv > u2data_all_shows_clean_final4.csv
+# check result
+grep '\"Stade de France - Sain\",\"enis\"' u2data_all_shows_clean_final4.csv | wc -l
+      0
+grep '\"Stade de France","Saint-Denis\"' u2data_all_shows_clean_final4.csv | wc -l
+      1
+
+# Step 4: change "World Economic Forum - Davo","losters" to "World Economic Forum","Davos-Klosters"
+# first check pattern
+grep '\"World Economic Forum - Davo\",\"losters\"' u2data_all_shows_clean_final4.csv | wc -l
+      1
+# now replace
+awk '{gsub(/\"World Economic Forum - Davo\",\"losters\"/,"\"World Economic Forum\",\"Davos-Klosters\"")}1' u2data_all_shows_clean_final4.csv > u2data_all_shows_clean_final5.csv
+# check result
+grep '\"World Economic Forum - Davo\",\"losters\"' u2data_all_shows_clean_final5.csv | wc -l
+      0
+grep '\"World Economic Forum","Davos-Klosters\"' u2data_all_shows_clean_final5.csv | wc -l
+      1 
+
+
+# Step 5: change "King's Hall - Stoke-o","rent" to "King's Hall","Stoke-on-Trent"
+# first check pattern
+grep "\"King\'s Hall - Stoke-o\",\"rent\"" u2data_all_shows_clean_final5.csv | wc -l
+      1
+# now replace 
+# note that \047 is used to match the single quote
+awk '{gsub(/\"King\047s Hall - Stoke-o\",\"rent\"/,"\"King\047s Hal\",\"Stoke-on-Trent\"")}1' u2data_all_shows_clean_final5.csv > u2data_all_shows_clean_final6.csv
+# check result
+grep "\"King\'s Hall - Stoke-o\",\"rent\"" u2data_all_shows_clean_final6.csv | wc -l | wc -l
+      0
+grep "\"King's Hal\",\"Stoke-on-Trent\"" u2data_all_shows_clean_final6.csv | wc -l
+      1 
+
+# file house keeping
+mv u2data_all_shows_clean_final.csv archive/u2data_all_shows_clean_final_incorrect_cities.csv
+mv u2data_all_shows_clean_final2.csv archive/u2data_all_shows_clean_final2.csv
+mv u2data_all_shows_clean_final3.csv archive/u2data_all_shows_clean_final3.csv
+mv u2data_all_shows_clean_final4.csv archive/u2data_all_shows_clean_final4.csv
+mv u2data_all_shows_clean_final5.csv archive/u2data_all_shows_clean_final5.csv
+mv u2data_all_shows_clean_final6.csv u2data_all_shows_clean_final.csv
+```
+
+## Fixing additional issues in the song_lyrics field
+
+Loading the file with read_csv() still produced some error messages in the song_lyrics field. In the affected lines I observed three potential issues: ;", ";, ". This was fixed as follows:
+
+``` bash
+# Step 1: fix ";
+grep '";' u2data_all_shows_clean_final.csv | wc -l
+       8
+awk '{gsub(/\";/,"")}1' u2data_all_shows_clean_final.csv > u2data_all_shows_clean_final7.csv
+grep '";' u2data_all_shows_clean_final7.csv | wc -l
+       0
+
+# Step 2: fix ;"
+grep ';"' u2data_all_shows_clean_final.csv | wc -l
+       8
+awk '{gsub(/;\"/,"")}1' u2data_all_shows_clean_final7.csv > u2data_all_shows_clean_final8.csv
+grep ';"' u2data_all_shows_clean_final8.csv | wc -l
+       0
+
+
+# Step 3: fix \"
+grep '\\"' u2data_all_shows_clean_final.csv | wc -l
+      30
+awk '{gsub(/\\"/,"\"")}1' u2data_all_shows_clean_final8.csv > u2data_all_shows_clean_final9.csv
+grep '\\"' u2data_all_shows_clean_final9.csv | wc -l
+       0
+# file house keeping       
+mv u2data_all_shows_clean_final.csv archive/u2data_all_shows_clean_final_incorrect_cities_more_issues.csv
+mv u2data_all_shows_clean_final7.csv archive/u2data_all_shows_clean_final7.csv
+mv u2data_all_shows_clean_final8.csv archive/u2data_all_shows_clean_final8.csv
+mv u2data_all_shows_clean_final9.csv u2data_all_shows_clean_final.csv
+```
+
+## Final data loading of fixed data
+
+Now the fixed data file was loaded in R with read_CSV() successfully:
+
+```{r read data after fixing city/venue names}
+
+# load required libraries
+library(dplyr)
+library(readr)
+
+# read file
+# normally the following file would be read
+# however after this "final" file was loaded one more issue was detected
+# this issue is referred to as the 'Rosemont duplication issue'
+# this is explained on the 'Basic Statistics U2 Concerts' page of this report
+# u2data <- read_csv('u2data/u2data_all_shows_clean_final.csv')
+
+# for the sake of the rmarkdown report 
+# read the following file where the Rosemont duplication was not fixed yet
+u2data <- read_csv('u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv')
+# see the structure of the data frame
+str(u2data)
+```
+
+------------------------------------------------------------------------

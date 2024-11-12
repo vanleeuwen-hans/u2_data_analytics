@@ -1,0 +1,179 @@
+---
+title: "Data Processing & Cleaning"
+author: "Hans van Leeuwen"
+---
+
+## Concatenating the scraped data files
+
+As the scraping was not completed in one time (it took several hours!), I executed three runs of the code, resulting in 3 data files. These data files were concatenated on the command line on MacOS using the following code.
+
+-   Resulting files from scraping of u2gigs.com:
+    -   u2analytics_data_shows1-234.csv
+    -   u2analytics_data_shows235-298.csv
+    -   u2analytics_data_shows299-2307.csv
+-   Now combine everything into one data file:
+    -   First create new file with header:
+        -   `head -n 1 u2analytics_data_shows1-234.csv > u2data_all_shows.csv`
+    -   Then concatenate content from 3 data files into the new file (skipping headers):
+        -   `tail -n +2 -q u2analytics_data_shows*.csv >> u2data_all_shows.csv`
+-   Check number of lines in original 3 files and final data file:
+-   `wc -l u2analytics_data_shows*`
+    -   2980 u2analytics_data_shows1-234.csv
+    -   1176 u2analytics_data_shows235-298.csv
+    -   35222 u2analytics_data_shows299-2307.csv
+    -   39378 total
+-   `wc -l u2data_all_shows.csv`
+    -   39376 u2data_all_shows.csv
+-   Difference is the header lines -\> correct
+
+------------------------------------------------------------------------
+
+## Importing the data into R for further curation
+
+The data curation was an iterative process of checking the data, identifying issues, fixing the issues followed by another round of curation. The R code chunk below shows the multiple iterations that were done, followed by paragraphs explaining the issues that were observed and fixed in these iterations.
+
+```{r import the U2 data, eval=FALSE, include=FALSE}
+
+# load libraries
+library(readr)
+library(data.table)
+library(dplyr)
+
+# Read CSV file
+#u2data1 <- read_csv('u2data/archive/u2data_all_shows.csv')
+#u2data2 <- fread('u2data/archive/u2data_all_shows.csv')
+#u2data3 <- read_csv('u2data/archive/u2data_all_shows_fixquotes.csv')
+#u2data4 <- read_csv('u2data/archive/u2data_all_shows_fixquotes-semicolons.csv')
+#u2data5 <- read_csv('u2data/archive/u2data_all_shows_fixquotes-semicolons-dates.csv')
+#u2data6 <- read_csv('u2data/archive/u2data_all_shows_fixquotes-semicolons-dates-others.csv')
+#u2data7 <- read_csv('u2data/archive/u2data_all_shows_fixquotes-semicolons-dates-others-2.csv')
+#u2data8 <- read_csv('u2data/archive/u2data_all_shows_fixquotes-semicolons-dates-others-3.csv')
+#u2data <- read_csv('u2data/archive/u2data_all_shows_fixquotes-semicolons-dates-others-4.csv')
+#u2data_test <- read_csv('u2data/archive/u2analytics_data_nosetlistshows.csv')
+
+
+# check the problems that occurred when the data was read from csv
+#problems(u2data1)
+#problems(u2data3)
+#problems(u2data4)
+#problems(u2data5)
+#problems(u2data6)
+#problems(u2data7)
+#problems(u2data8)
+#problems(u2data)
+#problems(u2data_test)
+```
+
+## Fix problems in song_lyrics field
+
+When reading the data file with read_csv() a problems attribute was created with 979 rows. There were many rows from the file that have an unexpected number of columns. I manually inspected a sample of these lines in the original data file.
+
+Then I checked three lines that give a problem with read_csv, focusing on the song_lyrics field:
+
+``` bash
+sed '2981!d' u2data_all_shows.csv 
+sed '1150!d' u2data_all_shows.csv
+sed '115!d' u2data_all_shows.csv
+```
+
+I found different issues in the song_lyrics field:
+
+-   "";; at the end of the line instead of a single "
+-   " escaped quote characters in the song_lyrics field
+
+I used the following awk commands on MacOS to fix these two issues:
+
+``` bash
+awk '{gsub(/\\"/,"")}1' u2data_all_shows.csv > u2data_all_shows_fixquotes.csv
+awk '{gsub(/";;/,"")}1' u2data_all_shows_fixquotes.csv > u2data_all_shows_fixquotes-semicolons.csv
+```
+
+## Fix invalid date issue
+
+In the file 18 lines were found where an invalid date was present with 00 for the day. I used a MacOS command line to fix this on the data file:
+
+``` bash
+grep '\-00' u2data_all_shows_fixquotes-semicolons.csv |  wc -l
+      18
+awk '{gsub(/\-00/,"-01")}1' u2data_all_shows_fixquotes-semicolons.csv > u2data_all_shows_fixquotes-semicolons-dates.csv
+grep '\-00' u2data_all_shows_fixquotes-semicolons-dates.csv | wc -l                                     
+       0
+```
+
+## Fix additional issues in the song_lyrics field
+
+File was read again with read_csv() and problems() showed that there were still 30 lines with a problem. Here the most likely culprits are again in the song_lyrics field.
+
+-   an extra " at the end of the line
+
+Fix the extra " at the end of the line:
+
+``` bash
+grep '""\r' u2data_all_shows_fixquotes-semicolons-dates.csv | wc -l
+      8
+awk '{gsub(/""\r/,"\\\"\r")}1' u2data_all_shows_fixquotes-semicolons-dates.csv > u2data_all_shows_fixquotes-semicolons-dates-others.csv
+grep '""\r' u2data_all_shows_fixquotes-semicolons-dates-others.csv | wc -l
+       0
+```
+
+Loading the file with read_csv() shows that now the file still has 23 problem lines. Inspecting some problem lines, I observed the following potential issues in the song_lyrics field:
+
+-   ";"
+-   ""; at the end of the line Fixed this in the following manner:
+
+``` bash
+grep '";"' u2data_all_shows_fixquotes-semicolons-dates-others.csv | wc -l
+      22
+grep '"";\r' u2data_all_shows_fixquotes-semicolons-dates-others.csv | wc -l
+      22
+      
+awk '{gsub(/";"/,"")}1' u2data_all_shows_fixquotes-semicolons-dates-others.csv > u2data_all_shows_fixquotes-semicolons-dates-others-2.csv
+
+awk '{gsub(/"";\r/,"\\\"\r")}1' u2data_all_shows_fixquotes-semicolons-dates-others-2.csv > u2data_all_shows_fixquotes-semicolons-dates-others-3.csv
+
+grep '";"' u2data_all_shows_fixquotes-semicolons-dates-others-3.csv | wc -l
+      0
+grep '"";\r' u2data_all_shows_fixquotes-semicolons-dates-others-3.csv | wc -l
+      0
+```
+
+Loading the file with read_csv() shows that now the file still has 1 problem line. I observed that two lines were concatenated, meaning that the carriage return character was missing. Here is the part of the line that shows this:
+
+``` bash
+sed '4156!d' u2data_all_shows_fixquotes-semicolons-dates-others-3.csv
+w I will follow...  "299,"U2 Unforgettable Fire Tour","T
+```
+
+Fixed this in the following manner:
+
+``` bash
+grep '"299,' u2data_all_shows_fixquotes-semicolons-dates-others-3.csv | wc -l
+      1
+awk '{gsub(/"299,/,"\"\n299,")}1' u2data_all_shows_fixquotes-semicolons-dates-others-3.csv > u2data_all_shows_fixquotes-semicolons-dates-others-4.csv
+
+grep '"299,' u2data_all_shows_fixquotes-semicolons-dates-others-4.csv | wc -l
+      1
+      
+sed '4156!d' u2data_all_shows_fixquotes-semicolons-dates-others-4.csv  
+sed '4157!d' u2data_all_shows_fixquotes-semicolons-dates-others-4.csv  
+```
+
+## Data cleaning result
+
+Reading the last fixed file with read_csv() gave 0 errors and the following info:
+
+```         
+Rows: 39376 Columns: 15
+── Column specification ──────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (10): tour, leg, venue, city, state, country, song_title, show_url, song_url, song_lyrics
+dbl   (2): showID, song_position
+lgl   (2): snippet, encore
+date  (1): date
+```
+
+I stored this fixed data file with a better file name:
+
+``` bash
+cp u2data_all_shows_fixquotes-semicolons-dates-others-4.csv u2data_all_shows_clean.csv
+```

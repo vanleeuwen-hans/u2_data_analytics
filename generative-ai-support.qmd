@@ -1,0 +1,7 @@
+---
+title: "Generative AI Support"
+author: "Hans van Leeuwen"
+editor: visual
+---
+
+Text

@@ -1,0 +1,37 @@
+---
+title: "Asking the Right Questions"
+author: "Hans van Leeuwen"
+---
+
+There is a U2 song from the early days that has a good point about asking the right questions:
+
+> *"We thought that we had the answers\
+> It was the questions we had wrong"*
+>
+> ~∼ 11 O'Clock Tick Tock, U2, 1980, <https://www.u2.com/lyrics/207>~
+
+My questions that led to choosing this topic for the Capstone Project of the Google Data Analytics certification were coming from the often heard comments during U2 tours about the variety of songs played at different shows in the same tour. For a casual concert goer this is actually not a topic at all. But for the community of happily 'crazy' U2 fans who go to multiple (and with that I mean many) concerts in the same tour it becomes a bit of a recurring discussion topic each tour:
+
+-   *'The set-list is so fixed'*
+
+-   *'They really mixed it up last night!'*
+
+-   *'Wow! They played Bad tonight, they had not played that in years!'*
+
+-   *'Aren't they getting bored playing the same songs again and again?'*
+
+-   *'I love that they closed with 40, I had tears in my eyes'*
+
+-   *'Why don't they play Acrobat for once? That song would be amazing live!'*
+
+These memories led me to **the following questions or objectives for this data analytics project**:
+
+1.  How do the tours over the last decades compare with regards to set-list variability?
+
+2.  How do the shows within the same tour compare with regard to the songs performed?
+
+3.  How can I visualize where certain songs were played world-wide?
+
+4.  Are there any other trends or patterns visible in the data?
+
+![**Everything You Know is Wrong -** **U2 Innocence + Experience Tour, The O2, London, United Kingdom**](u2hvl/EverythingYouKnowIsWrong.JPG){fig-alt="Everything You Know is Wrong" width="796"}
