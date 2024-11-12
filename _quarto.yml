@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "U2 Data Analytics"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Getting the Data"
+        contents:
+          - href: ask-the-right-questions.qmd
+            text: "1. Asking the Right Questions"
+          - href: prepare-the-data.qmd
+            text: "2. Data Preparation"
+          - href: process-clean-and-fix-the-data.qmd
+            text: "3. Data Processing & Cleaning"
+          - href: check-and-initial-exploration-of-the-data.qmd
+            text: "4. Initial Data Exploration"
+      - section: "Analysis & Visualization"
+        contents:
+          - href: basic-stats-u2-concerts.qmd
+            text: "5. Basic Statistics U2 Concerts"
+          - href: visual-exploration-of-the-data.qmd
+            text: "6. Visual Exploration"
+          - href: multiple-setlist-alignment.qmd
+            text: "7. Multiple Setlist Alignment"
+          - href: interactive-visual-apps.qmd
+            text: "8. Interactive Visualizations"
+      - section: "Conclusions and Sharing"
+        contents:
+          - href: conclusions.qmd
+            text: "9. Conclusions"
+          - href: sharing.qmd
+            text: "10. Sharing"
+          - href: generative-ai-support.qmd
+            text: "11. Generative AI Support"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    
+    
+
+
