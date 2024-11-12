@@ -434,15 +434,14 @@ e4ce103..e8e6ad6 gh-pages -&gt; gh-pages
 <p>I then update the qmd report files in R Studio, with new analyses or changes in the code chunks or text. Once I am happy with the changes I render the pages with quarto render:</p>
 <pre><code>quarto render</code></pre>
 <p>This creates the files in the docs folder (in the main branch).</p>
-<p>However, the docs folder is git managed in the other branch (gh-pages), so I then switch to the gh-pages branch:</p>
+<p>However, the docs folder is git managed in the other branch (gh-pages), so I manually copy the files to a temp folder, then switch to the gh-pages branch:</p>
 <pre><code>git checkout gh-pages</code></pre>
-<p>and then copy the newly created docs files from the main branch into the gh-pages branch with:</p>
-<pre><code>git checkout main -- docs/</code></pre>
-<p>Afterwards I do the usual add and commit, followed by a push to the remote</p>
-<pre><code>git add docs/*
-git commit -m "Update rendered documents from main"
+<p>and then copy the newly created docs files from the temp folder into the gh-pages docs folder:</p>
+<p>Afterwards I do the usual add and commit, followed by a push to the remote. Note: if I only rendered one particular qmd file I saw that the index.html file was overwritten with a template. So I had to make sure not to add that incorrect index.html file to the gh-pages docs folder.</p>
+<pre><code>git commit -m "Update rendered documents from main"
 git push origin gh-pages</code></pre>
 <p>which will make the new versions of the rendered HTML pages available on my Quarto website on GitHub Pages.</p>
+<p>I am still trying to figure out an easier way to maintain and update the Quarto web site documents, as currently it involves a lot of manual checking and work.</p>
 </section>
 </section>
 <section id="shiny-apps" class="level2">
