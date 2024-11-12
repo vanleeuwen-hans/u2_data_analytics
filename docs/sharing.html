@@ -274,7 +274,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#concertdata-documentation" id="toc-concertdata-documentation" class="nav-link" data-scroll-target="#concertdata-documentation">concertData Documentation</a></li>
   <li><a href="#code-chunks-in-the-quarto-report" id="toc-code-chunks-in-the-quarto-report" class="nav-link" data-scroll-target="#code-chunks-in-the-quarto-report">Code Chunks in the Quarto Report</a></li>
   </ul></li>
-  <li><a href="#quarto-report-on-github-pages" id="toc-quarto-report-on-github-pages" class="nav-link" data-scroll-target="#quarto-report-on-github-pages">Quarto Report on GitHub Pages</a></li>
+  <li><a href="#quarto-report-on-github-pages" id="toc-quarto-report-on-github-pages" class="nav-link" data-scroll-target="#quarto-report-on-github-pages">Quarto Report on GitHub Pages</a>
+  <ul class="collapse">
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
+  <li><a href="#setting-up-the-quarto-website" id="toc-setting-up-the-quarto-website" class="nav-link" data-scroll-target="#setting-up-the-quarto-website">Setting up the Quarto website</a></li>
+  <li><a href="#maintenance-and-updates" id="toc-maintenance-and-updates" class="nav-link" data-scroll-target="#maintenance-and-updates">Maintenance and Updates</a></li>
+  </ul></li>
   <li><a href="#shiny-apps" id="toc-shiny-apps" class="nav-link" data-scroll-target="#shiny-apps">Shiny Apps</a></li>
   </ul>
 </nav>
@@ -351,7 +356,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="quarto-report-on-github-pages" class="level2">
 <h2 class="anchored" data-anchor-id="quarto-report-on-github-pages">Quarto Report on GitHub Pages</h2>
+<section id="introduction-1" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-1">Introduction</h3>
 <p>To write my report for the Google Data Analytics Certification Capstone Project I first experimented with basic <a href="https://rmarkdown.rstudio.com/">R Markdown</a> pages, but then switched to <a href="https://quarto.org/">Quarto</a> which was easy having a report with multiple pages, and it is convenient to share and publish it on GitHub Pages. Basically, the Quarto Report that you are reading now was created as I advanced in my project, and includes all the analysis steps. The report pages are automatically rendered at which point the analysis code is executed and the resulting output, tables or plots are included in the report page. The structure of the report is created in the _quarto.yml file in the R Studio project folder, and then the individual Quarto documents with the sections of the report are automatically linked into one web site.</p>
+</section>
+<section id="setting-up-the-quarto-website" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-the-quarto-website">Setting up the Quarto website</h3>
 <p>The initial push of my rendered Quarto documents to my GitHub repository and GitHub Pages was a challenge as there were many files, including images, and the total size made the process fail. Here is how I set it up:</p>
 <p>In my GitHub account I created a new repository: <a href="https://github.com/vanleeuwen-hans/u2_data_analytics">u2_data_analytics</a>, with nothing in it. In the Settings &gt; Pages section I selected to deploy from the gh-pages branch (see below) and from the docs folder. That is the Folder where Quarto renders and creates the website files.</p>
 <p>Locally, in the folder of my R Studio project u2_data_analytics, I worked on the MacOS terminal:</p>
@@ -415,6 +425,25 @@ e4ce103..e8e6ad6 gh-pages -&gt; gh-pages
 ...</code></pre>
 <p>At some point I also discovered a way to increase the buffer size to allow bigger pushes to Github:</p>
 <pre><code>git config --global http.postBuffer 524288000</code></pre>
+</section>
+<section id="maintenance-and-updates" class="level3">
+<h3 class="anchored" data-anchor-id="maintenance-and-updates">Maintenance and Updates</h3>
+<p>The setup is to have two branches in the u2_data_analytics repository: * main: where project files arae manged - not needed for the published web site * gh-pages:documents needed for the published web site - the result of Quarto render</p>
+<p>On my local system I will for example work in the R Studio project u2_data_analytics while in the main branch, i.e.&nbsp;before starting up R Studio I use this in the terminal while in the project folder:</p>
+<pre><code>git checkout main</code></pre>
+<p>I then update the qmd report files in R Studio, with new analyses or changes in the code chunks or text. Once I am happy with the changes I render the pages with quarto render:</p>
+<pre><code>quarto render</code></pre>
+<p>This creates the files in the docs folder (in the main branch).</p>
+<p>However, the docs folder is git managed in the other branch (gh-pages), so I then switch to the gh-pages branch:</p>
+<pre><code>git checkout gh-pages</code></pre>
+<p>and then copy the newly created docs files from the main branch into the gh-pages branch with:</p>
+<pre><code>git checkout main -- docs/</code></pre>
+<p>Afterwards I do the usual add and commit, followed by a push to the remote</p>
+<pre><code>git add docs/*
+git commit -m "Update rendered documents from main"
+git push origin gh-pages</code></pre>
+<p>which will make the new versions of the rendered HTML pages available on my Quarto website on GitHub Pages.</p>
+</section>
 </section>
 <section id="shiny-apps" class="level2">
 <h2 class="anchored" data-anchor-id="shiny-apps">Shiny Apps</h2>
