@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hans van Leeuwen">
+
+<title>Initial Data Exploration – U2 Data Analytics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1c7b62f4d0d50372e742f1b5cfa807cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">U2 Data Analytics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ask-the-right-questions.html">Getting the Data</a></li><li class="breadcrumb-item"><a href="./check-and-initial-exploration-of-the-data.html">4. Initial Data Exploration</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting the Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ask-the-right-questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Asking the Right Questions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prepare-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Data Preparation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./process-clean-and-fix-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Data Processing &amp; Cleaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./check-and-initial-exploration-of-the-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">4. Initial Data Exploration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Analysis &amp; Visualization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basic-stats-u2-concerts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Basic Statistics U2 Concerts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visual-exploration-of-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Visual Exploration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interactive-visual-apps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Interactive Visualizations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multiple-setlist-alignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Multiple Setlist Alignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Conclusions and Sharing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Conclusions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sharing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Sharing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#comparing-my-data-and-numbers-with-u2gigs.com" id="toc-comparing-my-data-and-numbers-with-u2gigs.com" class="nav-link active" data-scroll-target="#comparing-my-data-and-numbers-with-u2gigs.com">Comparing my data and numbers with u2gigs.com</a></li>
+  <li><a href="#confirm-data-after-adding-the-shows-without-setlist" id="toc-confirm-data-after-adding-the-shows-without-setlist" class="nav-link" data-scroll-target="#confirm-data-after-adding-the-shows-without-setlist">Confirm data after adding the shows without setlist</a></li>
+  <li><a href="#fixing-incorrect-city-and-venue-names" id="toc-fixing-incorrect-city-and-venue-names" class="nav-link" data-scroll-target="#fixing-incorrect-city-and-venue-names">Fixing incorrect city and venue names</a></li>
+  <li><a href="#fixing-additional-issues-in-the-song_lyrics-field" id="toc-fixing-additional-issues-in-the-song_lyrics-field" class="nav-link" data-scroll-target="#fixing-additional-issues-in-the-song_lyrics-field">Fixing additional issues in the song_lyrics field</a></li>
+  <li><a href="#final-data-loading-of-fixed-data" id="toc-final-data-loading-of-fixed-data" class="nav-link" data-scroll-target="#final-data-loading-of-fixed-data">Final data loading of fixed data</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ask-the-right-questions.html">Getting the Data</a></li><li class="breadcrumb-item"><a href="./check-and-initial-exploration-of-the-data.html">4. Initial Data Exploration</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Initial Data Exploration</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hans van Leeuwen </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="comparing-my-data-and-numbers-with-u2gigs.com" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-my-data-and-numbers-with-u2gigs.com">Comparing my data and numbers with u2gigs.com</h2>
+<p>I performed an initial data exploration, comparing some numbers with the tour statistics listed on the u2gigs.com site page: <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>. Remember, that is the source of my data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load required libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># read file</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"u2data/archive/u2data_all_shows_clean.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of countries where U2 played shows</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Number of countries: "</span>, <span class="fu">nrow</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'country'</span>)])), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of countries:  48 </code></pre>
+</div>
+</div>
+<p>The number at u2gigs.com (October 2024) is 49 (<a href="https://www.u2gigs.com/all-countries.html" class="uri">https://www.u2gigs.com/all-countries.html</a>). We see here that in my data there is 1 country less compared to what is listed at u2gigs.com. Now let’s check the number of different songs played over all shows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of different songs played by U2 at the shows</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Number of songs played at the shows: "</span>, <span class="fu">nrow</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'song_title'</span>)])), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of songs played at the shows:  993 </code></pre>
+</div>
+</div>
+<p>The number at u2gigs.com (October 2024) is 994 (<a href="https://www.u2gigs.com/most-played-songs.html" class="uri">https://www.u2gigs.com/most-played-songs.html</a>). We see here that in my data there is 1 song less compared to what is listed at u2gigs.com. Now let’s check number of shows played in some cities.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cities with most shows played (only top 5 plus Amsterdam)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="at">data=</span>u2data,  showID <span class="sc">~</span> city, <span class="at">subset =</span> city <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Dublin'</span>, <span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Las Vegas'</span>, <span class="st">'Los Angeles'</span>, <span class="st">'Amsterdam'</span>),  <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x))) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(.,<span class="fu">desc</span>(showID))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         city showID
+1      Dublin    145
+2    New York    131
+3      London    100
+4   Las Vegas     53
+5 Los Angeles     50
+6   Amsterdam     19</code></pre>
+</div>
+</div>
+<p>When we compare that with u2gigs.com (Oct 2024 screen shot below) we see that the numbers are not the same.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="u2gigs/u2_top_played_cities-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Number of shows per city - source U2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>Let’s dive into the Amsterdam shows where my data contains 19 and u2gigs.com lists 23.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shows done in Amsterdam venues</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>amsterdam_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, city <span class="sc">==</span> <span class="st">'Amsterdam'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>,<span class="st">"city"</span>,<span class="st">"venue"</span>, <span class="st">"tour"</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="at">data=</span>amsterdam_data, showID <span class="sc">~</span> tour <span class="sc">+</span> venue, <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x))) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(.,<span class="fu">desc</span>(tour))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                             tour                  venue showID
+1                 U2 Vertigo Tour        Amsterdam ArenA      3
+2                U2 Various Dates Muziekgebouw aan 't IJ      1
+3                U2 Various Dates               Paradiso      1
+4                U2 Various Dates             Westerunie      1
+5                 U2 October Tour               Paradiso      1
+6                U2 Lovetown Tour         Rai Europa Hal      1
+7        U2 Joshua Tree Tour 2017        Amsterdam ArenA      2
+8  U2 Innocence + Experience Tour             Ziggo Dome      4
+9  U2 Experience + Innocence Tour             Ziggo Dome      2
+10                    U2 Boy Tour           The Milkyway      1
+11                   U2 360° Tour        Amsterdam ArenA      2</code></pre>
+</div>
+</div>
+<p>The u2gigs.com info:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="u2gigs/U2_shows_Amsterdam-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Shows in Amsterdam - source U2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>The 4 shows that are missing in my data are:</p>
+<ul>
+<li>1981-02-11: Unknown Bar - Amsterdam, Netherlands</li>
+<li>1981-02-11: Paradiso - Amsterdam, Netherlands</li>
+<li>1989-12-19: Rai Europa Hal - Amsterdam, Netherlands</li>
+<li>1989-12-20: Rai Europa Hal - Amsterdam, Netherlands</li>
+</ul>
+<p>Checking these on u2gigs.com, we see that these are all shows that do not have a set list (no played songs listed), while all the other 19 Amsterdam shows do have a set list. Confirming that these are missing from my data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check Amsterdam shows that were missing before</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>missing_Amsterdam_shows <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, date <span class="sc">==</span> <span class="st">'1981-02-11'</span> <span class="sc">|</span> date <span class="sc">==</span> <span class="st">'1989-12-19'</span> <span class="sc">|</span> date <span class="sc">==</span> <span class="st">'1989-12-20'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>,<span class="st">"venue"</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(missing_Amsterdam_shows)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 2
+# ℹ 2 variables: date &lt;date&gt;, venue &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>I concluded that the shows without set lists had not been stored by my scraping code. Indeed, when I went back to check my scraping code I saw where the issue was. Thus, I adapted the code to retrieve those 297 shows without set list, and then added them to the final data file:</p>
+<p>First create new file with header:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 1 u2data_all_shows_clean.csv <span class="op">&gt;</span> u2data_all_shows_clean_final.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then concatenate content from 3 data files into the new file (skipping headers):</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-n</span> +2 <span class="at">-q</span> u2data_all_shows_clean.csv <span class="op">&gt;&gt;</span> u2data_all_shows_clean_final.csv </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-n</span> +2 <span class="at">-q</span> u2analytics_data_nosetlistshows-dates.csv <span class="op">&gt;&gt;</span> u2data_all_shows_clean_final.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="confirm-data-after-adding-the-shows-without-setlist" class="level2">
+<h2 class="anchored" data-anchor-id="confirm-data-after-adding-the-shows-without-setlist">Confirm data after adding the shows without setlist</h2>
+<p>After adding the shows without set list I loaded and explored the data again.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load required libraries</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># read data</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># note: file name was changed after an issue with city names was detected</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'u2data/archive/u2data_all_shows_clean_final_incorrect_cities.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of countries where U2 played shows</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Number of countries: "</span>, <span class="fu">nrow</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'country'</span>)])), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of countries:  49 </code></pre>
+</div>
+</div>
+<p>Remember, from earlier, that the number of countries listed at u2gigs.com is 49. So, this is now correct in my data. Now let’s look at the number of different songs played again.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of different songs played by U2 at the shows</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Number of songs played at the shows: "</span>, <span class="fu">nrow</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'song_title'</span>)])), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of songs played at the shows:  994 </code></pre>
+</div>
+</div>
+<p>The number at u2gigs.com (October 2024) is 994 (<a href="https://www.u2gigs.com/most-played-songs.html" class="uri">https://www.u2gigs.com/most-played-songs.html</a>), which is the same as in my data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cities with most shows played (only top 5 plus Amsterdam)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="at">data=</span>u2data,  showID <span class="sc">~</span> city, <span class="at">subset =</span> city <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'Dublin'</span>, <span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Las Vegas'</span>, <span class="st">'Los Angeles'</span>, <span class="st">'Amsterdam'</span>),  <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x))) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(.,<span class="fu">desc</span>(showID))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         city showID
+1      Dublin    202
+2    New York    146
+3      London    125
+4   Las Vegas     54
+5 Los Angeles     53
+6   Amsterdam     23</code></pre>
+</div>
+</div>
+<p>This still does not fully coincide with the u2gigs.com statistics:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="u2gigs/u2_top_played_cities-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Number of shows per city - source U2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>I’ll look at that in a bit but first let’s check the Amsterdam shows again.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shows done in Amsterdam venues</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>amsterdam_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, city <span class="sc">==</span> <span class="st">'Amsterdam'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>,<span class="st">"city"</span>,<span class="st">"venue"</span>, <span class="st">"tour"</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="at">data=</span>amsterdam_data, showID <span class="sc">~</span> tour <span class="sc">+</span> venue, <span class="cf">function</span>(x) <span class="fu">length</span>(<span class="fu">unique</span>(x))) <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(.,<span class="fu">desc</span>(tour))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                             tour                  venue showID
+1                 U2 Vertigo Tour        Amsterdam ArenA      3
+2                U2 Various Dates Muziekgebouw aan 't IJ      1
+3                U2 Various Dates               Paradiso      1
+4                U2 Various Dates            Unknown Bar      1
+5                U2 Various Dates             Westerunie      1
+6                 U2 October Tour               Paradiso      1
+7                U2 Lovetown Tour         Rai Europa Hal      3
+8        U2 Joshua Tree Tour 2017        Amsterdam ArenA      2
+9  U2 Innocence + Experience Tour             Ziggo Dome      4
+10 U2 Experience + Innocence Tour             Ziggo Dome      2
+11                    U2 Boy Tour               Paradiso      1
+12                    U2 Boy Tour           The Milkyway      1
+13                   U2 360° Tour        Amsterdam ArenA      2</code></pre>
+</div>
+</div>
+<p>The 4 shows that were missing earlier now do appear in my data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check Amsterdam shows that were missing before</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>missing_Amsterdam_shows <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, date <span class="sc">==</span> <span class="st">'1981-02-11'</span> <span class="sc">|</span> date <span class="sc">==</span> <span class="st">'1989-12-19'</span> <span class="sc">|</span> date <span class="sc">==</span> <span class="st">'1989-12-20'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"venue"</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(missing_Amsterdam_shows)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  date       venue         
+  &lt;date&gt;     &lt;chr&gt;         
+1 1981-02-11 Paradiso      
+2 1989-12-19 Rai Europa Hal
+3 1989-12-20 Rai Europa Hal
+4 1981-02-11 Unknown Bar   </code></pre>
+</div>
+</div>
+</section>
+<section id="fixing-incorrect-city-and-venue-names" class="level2">
+<h2 class="anchored" data-anchor-id="fixing-incorrect-city-and-venue-names">Fixing incorrect city and venue names</h2>
+<p>As mentioned, the number of shows in some cities did not match the number listed at u2gigs.com. I explored this by obtaining a list of all cities listed at u2gigs.com (<a href="https://www.u2gigs.com/all-locations-city.html" class="uri">https://www.u2gigs.com/all-locations-city.html</a>), and by getting a list of unique city names in my data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get and print unique cities</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'city'</span>)]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 410 × 1
+   city      
+   &lt;chr&gt;     
+ 1 Dublin    
+ 2 Glasgow   
+ 3 Rotterdam 
+ 4 Amsterdam 
+ 5 New York  
+ 6 Washington
+ 7 Belfast   
+ 8 Drammen   
+ 9 Edinburgh 
+10 Stockholm 
+# ℹ 400 more rows</code></pre>
+</div>
+</div>
+<p>I took the list of cities from both sources in Excel and identified the different city entries. I observed 5 strange city entries in my data:</p>
+<ul>
+<li>arne</li>
+<li>elin</li>
+<li>enis</li>
+<li>losters</li>
+<li>rent</li>
+</ul>
+<p>I then retrieved more info about these entries in my data, including the showID so that I could manually check these shows at u2gigs.com.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check cities not listed at u2gigs.com</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>extra_cities <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, city <span class="sc">==</span> <span class="st">'arne'</span> <span class="sc">|</span> city <span class="sc">==</span> <span class="st">'elin'</span> <span class="sc">|</span> city <span class="sc">==</span> <span class="st">'enis'</span> <span class="sc">|</span> city <span class="sc">==</span> <span class="st">'losters'</span> <span class="sc">|</span> city <span class="sc">==</span> <span class="st">'rent'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"country"</span>, <span class="st">"city"</span>, <span class="st">"date"</span>,<span class="st">"venue"</span>))</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(extra_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 247 × 5
+   showID country city  date       venue                       
+    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; &lt;date&gt;     &lt;chr&gt;                       
+ 1    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 2    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 3    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 4    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 5    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 6    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 7    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 8    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+ 9    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+10    978 France  arne  1980-12-04 Pavillon Baltard - Nogent-su
+# ℹ 237 more rows</code></pre>
+</div>
+</div>
+<p>I concluded that the following correct city names corresponded to these entries:</p>
+<ul>
+<li>arne -&gt; Nogent-sur-Marne</li>
+<li>elin -&gt; Vaulx-en-Velin</li>
+<li>enis -&gt; Saint-Denis</li>
+<li>losters -&gt; Davos-Klosters</li>
+<li>rent -&gt; Stoke-on-Trent</li>
+</ul>
+<p>All these issues were caused by a flaw in the scraping code when using a regular expression to separate the venue from the city. The issue occurred either when dashes ‘-’ were present in the city name or in the venue name.</p>
+<p>I corrected this with the following commands in the data file:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: change "Pavillon Baltard - Nogent-su","arne" to "Pavillon Baltard","Nogent-sur-Marne"</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># first check pattern</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Pavillon Baltard - Nogent-su\",\"arne\"'</span> u2data_all_shows_clean_final.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>      <span class="ex">12</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># now replace</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/\"Pavillon Baltard - Nogent-su\",\"arne\"/,"\"Pavillon Baltard\",\"Nogent-sur-Marne\"")}1'</span> u2data_all_shows_clean_final.csv <span class="op">&gt;</span> u2data_all_shows_clean_final2.csv</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check result</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Pavillon Baltard - Nogent-su\",\"arne\"'</span> u2data_all_shows_clean_final2.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>       <span class="ex">0</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Pavillon Baltard\",\"Nogent-sur-Marne\"'</span> u2data_all_shows_clean_final2.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>      <span class="ex">12</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: change "Ecole Nationale des Travaux Publics - Vaulx-e","elin" to "Ecole Nationale des Travaux Public","Vaulx-en-Velin"</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="co"># first check pattern</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Ecole Nationale des Travaux Publics - Vaulx-e\",\"elin\"'</span> u2data_all_shows_clean_final2.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="co"># now replace</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/\"Ecole Nationale des Travaux Publics - Vaulx-e\",\"elin\"/,"\"Ecole Nationale des Travaux Publics\",\"Vaulx-en-Velin\"")}1'</span> u2data_all_shows_clean_final2.csv <span class="op">&gt;</span> u2data_all_shows_clean_final3.csv</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="co"># check result</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Ecole Nationale des Travaux Publics - Vaulx-e\",\"elin\"'</span> u2data_all_shows_clean_final3.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>      <span class="ex">0</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Ecole Nationale des Travaux Publics\",\"Vaulx-en-Velin\"'</span> u2data_all_shows_clean_final3.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: change "Stade de France - Sain","enis" to "Stade de France","Saint-Denis"</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="co"># first check pattern</span></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Stade de France - Sain\",\"enis\"'</span> u2data_all_shows_clean_final3.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>      <span class="ex">232</span></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="co"># now replace</span></span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/\"Stade de France - Sain\",\"enis\"/,"\"Stade de France\",\"Saint-Denis\"")}1'</span> u2data_all_shows_clean_final3.csv <span class="op">&gt;</span> u2data_all_shows_clean_final4.csv</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a><span class="co"># check result</span></span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Stade de France - Sain\",\"enis\"'</span> u2data_all_shows_clean_final4.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>      <span class="ex">0</span></span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"Stade de France","Saint-Denis\"'</span> u2data_all_shows_clean_final4.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span></span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: change "World Economic Forum - Davo","losters" to "World Economic Forum","Davos-Klosters"</span></span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a><span class="co"># first check pattern</span></span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"World Economic Forum - Davo\",\"losters\"'</span> u2data_all_shows_clean_final4.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span></span>
+<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a><span class="co"># now replace</span></span>
+<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/\"World Economic Forum - Davo\",\"losters\"/,"\"World Economic Forum\",\"Davos-Klosters\"")}1'</span> u2data_all_shows_clean_final4.csv <span class="op">&gt;</span> u2data_all_shows_clean_final5.csv</span>
+<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a><span class="co"># check result</span></span>
+<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"World Economic Forum - Davo\",\"losters\"'</span> u2data_all_shows_clean_final5.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>      <span class="ex">0</span></span>
+<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\"World Economic Forum","Davos-Klosters\"'</span> u2data_all_shows_clean_final5.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-48"><a href="#cb29-48" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span> </span>
+<span id="cb29-49"><a href="#cb29-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-50"><a href="#cb29-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-51"><a href="#cb29-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: change "King's Hall - Stoke-o","rent" to "King's Hall","Stoke-on-Trent"</span></span>
+<span id="cb29-52"><a href="#cb29-52" aria-hidden="true" tabindex="-1"></a><span class="co"># first check pattern</span></span>
+<span id="cb29-53"><a href="#cb29-53" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">"</span><span class="dt">\"</span><span class="st">King\'s Hall - Stoke-o</span><span class="dt">\"</span><span class="st">,</span><span class="dt">\"</span><span class="st">rent</span><span class="dt">\"</span><span class="st">"</span> u2data_all_shows_clean_final5.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-54"><a href="#cb29-54" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span></span>
+<span id="cb29-55"><a href="#cb29-55" aria-hidden="true" tabindex="-1"></a><span class="co"># now replace </span></span>
+<span id="cb29-56"><a href="#cb29-56" aria-hidden="true" tabindex="-1"></a><span class="co"># note that \047 is used to match the single quote</span></span>
+<span id="cb29-57"><a href="#cb29-57" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/\"King\047s Hall - Stoke-o\",\"rent\"/,"\"King\047s Hal\",\"Stoke-on-Trent\"")}1'</span> u2data_all_shows_clean_final5.csv <span class="op">&gt;</span> u2data_all_shows_clean_final6.csv</span>
+<span id="cb29-58"><a href="#cb29-58" aria-hidden="true" tabindex="-1"></a><span class="co"># check result</span></span>
+<span id="cb29-59"><a href="#cb29-59" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">"</span><span class="dt">\"</span><span class="st">King\'s Hall - Stoke-o</span><span class="dt">\"</span><span class="st">,</span><span class="dt">\"</span><span class="st">rent</span><span class="dt">\"</span><span class="st">"</span> u2data_all_shows_clean_final6.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-60"><a href="#cb29-60" aria-hidden="true" tabindex="-1"></a>      <span class="ex">0</span></span>
+<span id="cb29-61"><a href="#cb29-61" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">"</span><span class="dt">\"</span><span class="st">King's Hal</span><span class="dt">\"</span><span class="st">,</span><span class="dt">\"</span><span class="st">Stoke-on-Trent</span><span class="dt">\"</span><span class="st">"</span> u2data_all_shows_clean_final6.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb29-62"><a href="#cb29-62" aria-hidden="true" tabindex="-1"></a>      <span class="ex">1</span> </span>
+<span id="cb29-63"><a href="#cb29-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-64"><a href="#cb29-64" aria-hidden="true" tabindex="-1"></a><span class="co"># file house keeping</span></span>
+<span id="cb29-65"><a href="#cb29-65" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final.csv archive/u2data_all_shows_clean_final_incorrect_cities.csv</span>
+<span id="cb29-66"><a href="#cb29-66" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final2.csv archive/u2data_all_shows_clean_final2.csv</span>
+<span id="cb29-67"><a href="#cb29-67" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final3.csv archive/u2data_all_shows_clean_final3.csv</span>
+<span id="cb29-68"><a href="#cb29-68" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final4.csv archive/u2data_all_shows_clean_final4.csv</span>
+<span id="cb29-69"><a href="#cb29-69" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final5.csv archive/u2data_all_shows_clean_final5.csv</span>
+<span id="cb29-70"><a href="#cb29-70" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final6.csv u2data_all_shows_clean_final.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fixing-additional-issues-in-the-song_lyrics-field" class="level2">
+<h2 class="anchored" data-anchor-id="fixing-additional-issues-in-the-song_lyrics-field">Fixing additional issues in the song_lyrics field</h2>
+<p>Loading the file with read_csv() still produced some error messages in the song_lyrics field. In the affected lines I observed three potential issues: ;“,”;, “. This was fixed as follows:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: fix ";</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'";'</span> u2data_all_shows_clean_final.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>       <span class="ex">8</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/\";/,"")}1'</span> u2data_all_shows_clean_final.csv <span class="op">&gt;</span> u2data_all_shows_clean_final7.csv</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'";'</span> u2data_all_shows_clean_final7.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>       <span class="ex">0</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: fix ;"</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">';"'</span> u2data_all_shows_clean_final.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>       <span class="ex">8</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/;\"/,"")}1'</span> u2data_all_shows_clean_final7.csv <span class="op">&gt;</span> u2data_all_shows_clean_final8.csv</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">';"'</span> u2data_all_shows_clean_final8.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>       <span class="ex">0</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: fix \"</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\\"'</span> u2data_all_shows_clean_final.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>      <span class="ex">30</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{gsub(/\\"/,"\"")}1'</span> u2data_all_shows_clean_final8.csv <span class="op">&gt;</span> u2data_all_shows_clean_final9.csv</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'\\"'</span> u2data_all_shows_clean_final9.csv <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>       <span class="ex">0</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a><span class="co"># file house keeping       </span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final.csv archive/u2data_all_shows_clean_final_incorrect_cities_more_issues.csv</span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final7.csv archive/u2data_all_shows_clean_final7.csv</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final8.csv archive/u2data_all_shows_clean_final8.csv</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> u2data_all_shows_clean_final9.csv u2data_all_shows_clean_final.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="final-data-loading-of-fixed-data" class="level2">
+<h2 class="anchored" data-anchor-id="final-data-loading-of-fixed-data">Final data loading of fixed data</h2>
+<p>Now the fixed data file was loaded in R with read_CSV() successfully:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load required libraries</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># read file</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co"># normally the following file would be read</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># however after this "final" file was loaded one more issue was detected</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># this issue is referred to as the 'Rosemont duplication issue'</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co"># this is explained on the 'Basic Statistics U2 Concerts' page of this report</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># u2data &lt;- read_csv('u2data/u2data_all_shows_clean_final.csv')</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co"># for the sake of the rmarkdown report </span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># read the following file where the Rosemont duplication was not fixed yet</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 39674 Columns: 15
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (10): tour, leg, venue, city, state, country, song_title, show_url, son...
+dbl   (2): showID, song_position
+lgl   (2): snippet, encore
+date  (1): date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see the structure of the data frame</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(u2data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [39,674 × 15] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ showID       : num [1:39674] 1 1 1 1 1 1 1 1 2 2 ...
+ $ tour         : chr [1:39674] "U2 Early Days" "U2 Early Days" "U2 Early Days" "U2 Early Days" ...
+ $ leg          : chr [1:39674] "Early Days - Irish Shows, 1976-78" "Early Days - Irish Shows, 1976-78" "Early Days - Irish Shows, 1976-78" "Early Days - Irish Shows, 1976-78" ...
+ $ date         : Date[1:39674], format: "1977-04-11" "1977-04-11" ...
+ $ venue        : chr [1:39674] "St Fintan's School" "St Fintan's School" "St Fintan's School" "St Fintan's School" ...
+ $ city         : chr [1:39674] "Dublin" "Dublin" "Dublin" "Dublin" ...
+ $ state        : chr [1:39674] NA NA NA NA ...
+ $ country      : chr [1:39674] "Ireland" "Ireland" "Ireland" "Ireland" ...
+ $ song_position: num [1:39674] 1 2 3 4 5 6 7 8 1 2 ...
+ $ snippet      : logi [1:39674] FALSE FALSE FALSE FALSE FALSE FALSE ...
+ $ encore       : logi [1:39674] FALSE FALSE FALSE FALSE FALSE FALSE ...
+ $ song_title   : chr [1:39674] "Show Me The Way" "Johnny B. Goode" "Nights In White Satin" "Peaceful Easy Feeling" ...
+ $ show_url     : chr [1:39674] "https://www.u2gigs.com/show1.html" "https://www.u2gigs.com/show1.html" "https://www.u2gigs.com/show1.html" "https://www.u2gigs.com/show1.html" ...
+ $ song_url     : chr [1:39674] "https://www.u2gigs.com/Show_Me_The_Way-s296.html" "https://www.u2gigs.com/Johnny_B_Goode-s561.html" "https://www.u2gigs.com/Nights_In_White_Satin-s562.html" "https://www.u2gigs.com/Peaceful_Easy_Feeling-s563.html" ...
+ $ song_lyrics  : chr [1:39674] "I wonder how your feeling. There's ringing in my ears. And no one to relate to, 'cept the sea.  Who can I beliv"| __truncated__ "Deep down Louisiana close to New Orleans Way back up in the woods among the evergreens There stood a log cabin "| __truncated__ "Nights in white satin Never reaching the end; Letters I've written Never meaning to send  Beauty I'd always mis"| __truncated__ "I like the way your sparkling earrings lay, against your skin, it's so brown and I wanna sleep with you in the "| __truncated__ ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   showID = col_double(),
+  ..   tour = col_character(),
+  ..   leg = col_character(),
+  ..   date = col_date(format = ""),
+  ..   venue = col_character(),
+  ..   city = col_character(),
+  ..   state = col_character(),
+  ..   country = col_character(),
+  ..   song_position = col_double(),
+  ..   snippet = col_logical(),
+  ..   encore = col_logical(),
+  ..   song_title = col_character(),
+  ..   show_url = col_character(),
+  ..   song_url = col_character(),
+  ..   song_lyrics = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

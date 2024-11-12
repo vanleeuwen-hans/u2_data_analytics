@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hans van Leeuwen">
+
+<title>Basic Statistics U2 Concerts – U2 Data Analytics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1c7b62f4d0d50372e742f1b5cfa807cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">U2 Data Analytics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic-stats-u2-concerts.html">Analysis &amp; Visualization</a></li><li class="breadcrumb-item"><a href="./basic-stats-u2-concerts.html">5. Basic Statistics U2 Concerts</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting the Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ask-the-right-questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Asking the Right Questions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prepare-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Data Preparation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./process-clean-and-fix-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Data Processing &amp; Cleaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./check-and-initial-exploration-of-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Initial Data Exploration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Analysis &amp; Visualization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basic-stats-u2-concerts.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">5. Basic Statistics U2 Concerts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visual-exploration-of-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Visual Exploration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interactive-visual-apps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Multiple Setlist Alignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multiple-setlist-alignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Interactive Visualizations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Conclusions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusions-and-lessons-learned.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Conclusions &amp; Lessons Learned</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#load-custom-concertdata-package" id="toc-load-custom-concertdata-package" class="nav-link active" data-scroll-target="#load-custom-concertdata-package">Load custom concertData package</a></li>
+  <li><a href="#longest-set-lists" id="toc-longest-set-lists" class="nav-link" data-scroll-target="#longest-set-lists">Longest set lists</a></li>
+  <li><a href="#shows-with-most-snippets" id="toc-shows-with-most-snippets" class="nav-link" data-scroll-target="#shows-with-most-snippets">Shows with most snippets</a></li>
+  <li><a href="#cities-with-most-shows" id="toc-cities-with-most-shows" class="nav-link" data-scroll-target="#cities-with-most-shows">Cities with most shows</a></li>
+  <li><a href="#venues-with-most-shows" id="toc-venues-with-most-shows" class="nav-link" data-scroll-target="#venues-with-most-shows">Venues with most shows</a></li>
+  <li><a href="#countries-with-most-shows" id="toc-countries-with-most-shows" class="nav-link" data-scroll-target="#countries-with-most-shows">Countries with most shows</a></li>
+  <li><a href="#top-10-most-played-songs" id="toc-top-10-most-played-songs" class="nav-link" data-scroll-target="#top-10-most-played-songs">Top 10 most played songs</a></li>
+  <li><a href="#top-10-opening-songs" id="toc-top-10-opening-songs" class="nav-link" data-scroll-target="#top-10-opening-songs">Top 10 opening songs</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic-stats-u2-concerts.html">Analysis &amp; Visualization</a></li><li class="breadcrumb-item"><a href="./basic-stats-u2-concerts.html">5. Basic Statistics U2 Concerts</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Basic Statistics U2 Concerts</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hans van Leeuwen </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this section we look at some basic statistics of the U2 shows and compare this with the statistics listed at <a href="https://www.u2gigs.com" class="uri">https://www.u2gigs.com</a>.</p>
+<section id="load-custom-concertdata-package" class="level2">
+<h2 class="anchored" data-anchor-id="load-custom-concertdata-package">Load custom concertData package</h2>
+<p>First we load my custom concertData package where I organized all the functions to analyze the U2 concert data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>(<span class="st">"../packages/concertData"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(concertData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the following file where the Rosemont duplication was not fixed yet</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this is explained further down on this page</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_concertData_csv</span>(<span class="st">'u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="longest-set-lists" class="level2">
+<h2 class="anchored" data-anchor-id="longest-set-lists">Longest set lists</h2>
+<p>List the shows with the longest set lists, i.e.&nbsp;where U2 played most songs in a concert. The list corresponds to the statistics at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># longest set lists</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>longest_setlists <span class="ot">&lt;-</span> <span class="fu">find_longest_setlists</span>(u2data)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(longest_setlists)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date    city country             venue Number of songs played
+1 2015-12-06   Paris  France AccorHotels Arena                     27
+2 2018-05-02   Tulsa     USA        BOK Center                     27
+3 2015-10-18 Cologne Germany     Lanxess Arena                     27</code></pre>
+</div>
+</div>
+<p>The info at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="u2gigs/u2_longest_setlists-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Longest U2 set lists - source u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>One of these shows, with 27 songs played, was in Cologne on October 18th, 2015. I was there with my wife, and before the show we had the chance to meet and greet with Adam Clayton, U2’s bass player. He signed my copy of the 1991 Achtung Baby album. I have included some pictures of that moment below.</p>
+<p><img src="u2hvl/AdamClaytonCologne.JPG" class="img-fluid" width="208" alt="Meeting Adam Clayton in Cologne - source Hans van Leeuwen - 18 October 2015."> <img src="u2hvl/HvLmeetandgreetAdamClayton.JPG" class="img-fluid" width="246" alt="Meeting Adam Clayton in Cologne - source Hans van Leeuwen - 18 October 2015."> <img src="u2hvl/AchtungBaby_signed.JPG" class="img-fluid" width="162" alt="Meeting Adam Clayton in Cologne - source Hans van Leeuwen - 18 October 2015."></p>
+</section>
+<section id="shows-with-most-snippets" class="level2">
+<h2 class="anchored" data-anchor-id="shows-with-most-snippets">Shows with most snippets</h2>
+<p>A snippet is a short piece of song (either from another artist or from U2 themselves) played as part of a regular song in the show.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get shows with most snippets</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>snippet_summary <span class="ot">&lt;-</span> <span class="fu">find_shows_with_most_snippets</span>(u2data)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(snippet_summary, <span class="at">n=</span><span class="dv">10</span>)  <span class="co"># Show top 10 shows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 5
+   date       city     country          venue             number_snippets_played
+   &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;            &lt;chr&gt;                              &lt;int&gt;
+ 1 2015-11-28 Dublin   Ireland          3Arena                                24
+ 2 2015-11-19 Belfast  Northern Ireland The SSE Arena                         23
+ 3 2015-10-30 London   England          The O2                                23
+ 4 2015-11-24 Dublin   Ireland          3Arena                                20
+ 5 2015-11-23 Dublin   Ireland          3Arena                                20
+ 6 2015-11-03 London   England          The O2                                20
+ 7 2015-05-19 San Jose USA              SAP Center at Sa…                     20
+ 8 2015-12-06 Paris    France           AccorHotels Arena                     19
+ 9 2015-11-27 Dublin   Ireland          3Arena                                19
+10 1997-07-31 Mannheim Germany          Maimarkt                              19</code></pre>
+</div>
+</div>
+<p>The info at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="u2gigs/u2_shows_most_snippets-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>U2 shows with most snippets played - source u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>I noticed a discrepancy in number of snippets for some of these shows when comparing with the statistics at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>, for example the London show on November 3rd, 2015, where my data calculates the number of snippets played as 20, while the info at <a href="https://www.u2gigs.com/show1957.html" class="uri">https://www.u2gigs.com/show1957.html</a> states 19. I first checked in my data which song was incorrectly identified as snippet. That turned out to be ‘Even Better Than The Real Thing’.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check london show 2015-11-03</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>london_show <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, date <span class="sc">==</span> <span class="st">'2015-11-03'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>,<span class="st">"song_title"</span>, <span class="st">"snippet"</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(london_show, <span class="at">n =</span> <span class="fu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 4
+   showID date       song_title                           snippet
+    &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                                &lt;lgl&gt;  
+ 1   1957 2015-11-03 Van Morrison's Gloria                TRUE   
+ 2   1957 2015-11-03 Do You Remember Rock 'n' Roll Radio? TRUE   
+ 3   1957 2015-11-03 Hold Me Close                        TRUE   
+ 4   1957 2015-11-03 When Johnny Comes Marching Home      TRUE   
+ 5   1957 2015-11-03 Psalm 23                             TRUE   
+ 6   1957 2015-11-03 Love and Peace or Else               TRUE   
+ 7   1957 2015-11-03 Words                                TRUE   
+ 8   1957 2015-11-03 A Clockwork Orange                   TRUE   
+ 9   1957 2015-11-03 Even Better Than The Real Thing      TRUE   
+10   1957 2015-11-03 Burning Down The House               TRUE   
+11   1957 2015-11-03 Young Americans                      TRUE   
+12   1957 2015-11-03 1969                                 TRUE   
+13   1957 2015-11-03 Love Me Do                           TRUE   
+14   1957 2015-11-03 Ode To Joy                           TRUE   
+15   1957 2015-11-03 19                                   TRUE   
+16   1957 2015-11-03 California (There Is No End To Love) TRUE   
+17   1957 2015-11-03 Yellow                               TRUE   
+18   1957 2015-11-03 Live Forever                         TRUE   
+19   1957 2015-11-03 Mother And Child Reunion             TRUE   
+20   1957 2015-11-03 40                                   TRUE   </code></pre>
+</div>
+</div>
+<p>The issue seems to be in the different HTML coding for one snippet on that page: <img src="u2gigs/london_snippet_count_u2gigscom.png" class="img-fluid" alt="London snippet count - source u2gigs.com - 3 November 2015."></p>
+<p>If we check the HTML code for the ‘Fish Out of Water Mix’ we see that it has a ‘snippet’ tag:</p>
+<pre><code>&lt;li&gt;&lt;a href="/Even_Better_Than_The_Real_Thing-s38.html"&gt;Even Better Than The Real Thing&lt;/a&gt; &lt;em class="snippet"&gt;Fish Out of Water Mix&lt;/em&gt;&lt;/li&gt;</code></pre>
+<p>Now compare this to what the HTML looks like normally for snippets at u2gigs.com:</p>
+<pre><code>&lt;li&gt;&lt;a href="/Mysterious_Ways-s26.html"&gt;Mysterious Ways&lt;/a&gt; / &lt;a class="snippet" href="/Burning_Down_The_House-s878.html"&gt;Burning Down The House&lt;/a&gt; &lt;span class="snippet"&gt;(snippet)&lt;/span&gt; / &lt;a class="snippet" href="/Young_Americans-s30.html"&gt;Young Americans&lt;/a&gt; &lt;span class="snippet"&gt;(snippet)&lt;/span&gt;&lt;/li&gt;</code></pre>
+<p>I’m not sure what u2gigs.com intended to do here, and whether this is a snippet or not. It does explain the different numbers seen earlier as my scraping code has counted songs preceding songs with those tags as snippet incorrectly.</p>
+</section>
+<section id="cities-with-most-shows" class="level2">
+<h2 class="anchored" data-anchor-id="cities-with-most-shows">Cities with most shows</h2>
+<p>We used this metric for data curation already, but here is the top 11 (instead of Top 10 so that Amsterdam is displayed 😀 ) of cities where U2 played most often. This matches exactly the statistics listed at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cities with most shows played</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>top_cities <span class="ot">&lt;-</span> <span class="fu">find_most_played_cities</span>(u2data, <span class="at">n =</span> <span class="dv">13</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              city number_of_shows
+1           Dublin             202
+2         New York             146
+3           London             126
+4        Las Vegas              54
+5      Los Angeles              53
+6          Chicago              41
+7           Boston              35
+8          Toronto              30
+9            Paris              29
+10 East Rutherford              27
+11          Sydney              27
+12      Washington              27
+13       Amsterdam              23</code></pre>
+</div>
+</div>
+<p>The info at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/u2_top_played_cities-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Cities with most shows played - source u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+</section>
+<section id="venues-with-most-shows" class="level2">
+<h2 class="anchored" data-anchor-id="venues-with-most-shows">Venues with most shows</h2>
+<p>Here is the top 10 of venues where U2 played most often. This matches exactly the statistics listed at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 venues with most shows played</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>top_venues <span class="ot">&lt;-</span> <span class="fu">find_most_played_venues</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_venues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   venue        city number_of_shows
+1                 Sphere   Las Vegas              40
+2  Madison Square Garden    New York              30
+3            McGonagle's      Dublin              28
+4          United Center     Chicago              19
+5   Entertainment Centre      Sydney              14
+6             Croke Park      Dublin              13
+7           Sports Arena Los Angeles              13
+8         Staples Center Los Angeles              13
+9         Beacon Theatre    New York              13
+10      Arcadia Ballroom        Cork              11</code></pre>
+</div>
+</div>
+<p>The info at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/u2_top_played_venues-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Venues with most shows played - source u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+</section>
+<section id="countries-with-most-shows" class="level2">
+<h2 class="anchored" data-anchor-id="countries-with-most-shows">Countries with most shows</h2>
+<p>The top 10 of countries where U2 played most often can be seen below. This matches exactly the statistics listed at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># countries with most shows played</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 countries with most shows played</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>top_countries <span class="ot">&lt;-</span> <span class="fu">find_most_played_countries</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_countries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       country number_of_shows
+1          USA             930
+2      England             279
+3      Ireland             279
+4       Canada              80
+5      Germany              78
+6    Australia              75
+7       France              63
+8  Netherlands              61
+9        Italy              46
+10    Scotland              32</code></pre>
+</div>
+</div>
+<p>The info at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/u2_top_played_countries-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Countries with most shows played - source u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+</section>
+<section id="top-10-most-played-songs" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-most-played-songs">Top 10 most played songs</h2>
+<p>Before we look at the top 10, let’s see how many different songs U2 has played live.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of unique songs  played</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'song_title'</span>)]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 994</code></pre>
+</div>
+</div>
+<p>This does not match the info at <a href="https://www.u2gigs.com/all-songnames.html" class="uri">https://www.u2gigs.com/all-songnames.html</a> as there it is stated:</p>
+<blockquote class="blockquote">
+<p>We have 1011 different songs in our database.</p>
+</blockquote>
+<p>However, at at a different page (<a href="https://www.u2gigs.com/most-played-songs.html" class="uri">https://www.u2gigs.com/most-played-songs.html</a>) it is stated:</p>
+<blockquote class="blockquote">
+<p>We found 994 different songs in our database.</p>
+</blockquote>
+<p>And that number coincides with the number found in my data.</p>
+<p>The top 10 of songs that U2 played most often can be seen below. This does not match completely with the statistics listed at <a href="https://www.u2gigs.com/most-played-songs.html" class="uri">https://www.u2gigs.com/most-played-songs.html</a>. There are several songs that have a count that is 1 higher in my data (Pride, Streets, One, Bullet, Still Haven’t Found).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># songs most played</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>top_played_songs <span class="ot">&lt;-</span> <span class="fu">find_most_played_songs</span>(u2data, <span class="at">n =</span> <span class="dv">15</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_played_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 4
+   song_title       times_played_total times_played_regular times_played_snippet
+   &lt;chr&gt;                         &lt;int&gt;                &lt;int&gt;                &lt;int&gt;
+ 1 Sunday Bloody S…               1082                  935                  147
+ 2 Pride (In the N…               1057                 1057                    0
+ 3 I Will Follow                  1053                 1053                    0
+ 4 Where the Stree…                977                  975                    2
+ 5 With or Without…                913                  910                    3
+ 6 One                             865                  852                   13
+ 7 New Year's Day                  805                  804                    1
+ 8 Bullet the Blue…                793                  793                    0
+ 9 I Still Haven't…                697                  691                    6
+10 Beautiful Day                   674                  673                    1
+11 Until the End o…                648                  648                    0
+12 Mysterious Ways                 639                  639                    0
+13 Vertigo                         603                  586                   17
+14 Bad                             568                  561                    7
+15 Elevation                       560                  558                    2</code></pre>
+</div>
+</div>
+<p>The info at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/U2_shows_top_played_songs-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Most played songs - source u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>I took a closer look at the song Pride to see where the difference of 1 time played is between my data and the data at <a href="https://www.u2gigs.com/Pride_(In_the_Name_of_Love)-s40.html" class="uri">https://www.u2gigs.com/Pride_(In_the_Name_of_Love)-s40.html</a>. I copied all the times the song was played from that page and pasted in Excel. With the code below I obtained the list from my data and compared that side by side in Excel.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pride - number of times played</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pride_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Pride (In the Name of Love)'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>,<span class="st">"city"</span>,<span class="st">"tour"</span>, <span class="st">"song_title"</span>, <span class="st">"showID"</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(pride_data, "pride_data.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I discovered that the issue in my data is at the ZOO TV show on March 31, 1992 in Rosemont: <a href="https://www.u2gigs.com/show235.html" class="uri">https://www.u2gigs.com/show235.html</a>. Pride was played one time at that show but appears in my data as it was played 2 times during that show:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rosemont show 1992 set list</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>rosemont_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, showID <span class="sc">==</span> <span class="dv">235</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(rosemont_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 46 × 6
+   date       city     song_position song_title                   snippet encore
+   &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;                        &lt;lgl&gt;   &lt;lgl&gt; 
+ 1 1992-03-31 Rosemont             1 Zoo Station                  FALSE   FALSE 
+ 2 1992-03-31 Rosemont             2 The Fly                      FALSE   FALSE 
+ 3 1992-03-31 Rosemont             3 Even Better Than The Real T… FALSE   FALSE 
+ 4 1992-03-31 Rosemont             4 Mysterious Ways              FALSE   FALSE 
+ 5 1992-03-31 Rosemont             4 Love To Love You Baby        TRUE    FALSE 
+ 6 1992-03-31 Rosemont             5 One                          FALSE   FALSE 
+ 7 1992-03-31 Rosemont             6 Until the End of the World   FALSE   FALSE 
+ 8 1992-03-31 Rosemont             7 Who's Gonna Ride Your Wild … FALSE   FALSE 
+ 9 1992-03-31 Rosemont             8 Tryin' to Throw Your Arms A… FALSE   FALSE 
+10 1992-03-31 Rosemont             8 Love And Affection           TRUE    FALSE 
+# ℹ 36 more rows</code></pre>
+</div>
+</div>
+<p>With this we can see that there is duplicated data for this show in my data. I went back to my original scraped files and indeed I saw that the duplication happened where the scraping process had been interrupted and later restarted manually. Let’s check to what extent there are duplicated rows in my data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># show duplicate rows </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>duplicated_rows <span class="ot">&lt;-</span> u2data[<span class="fu">duplicated</span>(u2data), ]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(duplicated_rows, <span class="at">n=</span><span class="fu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 24 × 15
+   showID tour  leg   date       venue city  state country song_position snippet
+    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;lgl&gt;  
+ 1    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 1 FALSE  
+ 2    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 2 FALSE  
+ 3    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 3 FALSE  
+ 4    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 4 FALSE  
+ 5    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 4 TRUE   
+ 6    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 5 FALSE  
+ 7    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 6 FALSE  
+ 8    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 7 FALSE  
+ 9    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 8 FALSE  
+10    235 U2 Z… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 8 TRUE   
+# ℹ 14 more rows
+# ℹ 5 more variables: encore &lt;lgl&gt;, song_title &lt;chr&gt;, show_url &lt;chr&gt;,
+#   song_url &lt;chr&gt;, song_lyrics &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Here we see the Rosemont show (show ID 235) again. I manually checked the others:</p>
+<ul>
+<li>El Pueblo Vencerá at show with showID 1056, and also at show with showID 1060
+<ul>
+<li>this turned out to be correct as the snippet was played two times in the same regular song (Mothers of the Disappeared), so it looks like a duplicate row but is correct.</li>
+</ul></li>
+<li>Two Shots of Happy, One Shot of Sad at show with showID 1133
+<ul>
+<li>this also turned out to be correct as the snippet was played two times in the same regular song (Stay), so it looks like a duplicate row but is correct.</li>
+</ul></li>
+</ul>
+<p>This means I only have to remove the Rosemont show duplicate rows, as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve row indices of all duplicated rows </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">duplicated</span>(u2data) <span class="sc">|</span> <span class="fu">duplicated</span>(u2data, <span class="at">fromLast =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  2959  2960  2961  2962  2963  2964  2965  2966  2967  2968  2969  2970
+[13]  2971  2972  2973  2974  2975  2976  2977  2978  2979  2980  2981  2982
+[25]  2983  2984  2985  2986  2987  2988  2989  2990  2991  2992  2993  2994
+[37]  2995  2996  2997  2998  2999  3000 18166 18168 18239 18241 20327 20329</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the first 21 are the ones that should be deleted</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check rows 20, 21 and 22 with indices 2959, 2979 and 2980, respectively</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2959</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 15
+  showID tour   leg   date       venue city  state country song_position snippet
+   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;lgl&gt;  
+1    235 U2 ZO… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 1 FALSE  
+# ℹ 5 more variables: encore &lt;lgl&gt;, song_title &lt;chr&gt;, show_url &lt;chr&gt;,
+#   song_url &lt;chr&gt;, song_lyrics &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2979</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 15
+  showID tour   leg   date       venue city  state country song_position snippet
+   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;lgl&gt;  
+1    235 U2 ZO… ZOO … 1992-03-31 Rose… Rose… Illi… USA                17 FALSE  
+# ℹ 5 more variables: encore &lt;lgl&gt;, song_title &lt;chr&gt;, show_url &lt;chr&gt;,
+#   song_url &lt;chr&gt;, song_lyrics &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2980</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 15
+  showID tour   leg   date       venue city  state country song_position snippet
+   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;lgl&gt;  
+1    235 U2 ZO… ZOO … 1992-03-31 Rose… Rose… Illi… USA                 1 FALSE  
+# ℹ 5 more variables: encore &lt;lgl&gt;, song_title &lt;chr&gt;, show_url &lt;chr&gt;,
+#   song_url &lt;chr&gt;, song_lyrics &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># correct, these two rows correspond to the first one to delete (Zoo Station), the last one to delete (Desire) and the first one to keep (Zoo Station), respectively</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># thus, we need to remove the rows with indices:</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2959  2960  2961  2962  2963  2964  2965  2966  2967  2968  2969  2970  2971  2972  2973  2974  2975</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2976  2977  2978  2979</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check number of rows before deletion</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(u2data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 39674</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># result: 39674</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># delete duplicated rows from Rosemont show</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> u2data[<span class="sc">-</span>(<span class="dv">2959</span><span class="sc">:</span><span class="dv">2979</span>),]</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co"># check number of rows after deletion</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(u2data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 39653</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#result: 39653</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># difference: 39674 - 39653</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">39674</span> <span class="sc">-</span> <span class="dv">39653</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># result: 21</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#correct</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># now save corrected data to csv file</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># commented out because this has already been done</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(u2data, file = "u2data/u2data_all_shows_clean_final.csv", row.names = FALSE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now that those duplicated rows were removed, let’s look at the songs by number of times played again and compare again to the info at <a href="https://www.u2gigs.com/most-played-songs.html" class="uri">https://www.u2gigs.com/most-played-songs.html</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the u2 concertData</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_concertData_csv</span>(<span class="st">'u2data/u2data_all_shows_clean_final.csv'</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># songs most played</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>top_played_songs <span class="ot">&lt;-</span> <span class="fu">find_most_played_songs</span>(u2data, <span class="at">n =</span> <span class="dv">15</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_played_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 4
+   song_title       times_played_total times_played_regular times_played_snippet
+   &lt;chr&gt;                         &lt;int&gt;                &lt;int&gt;                &lt;int&gt;
+ 1 Sunday Bloody S…               1082                  935                  147
+ 2 Pride (In the N…               1056                 1056                    0
+ 3 I Will Follow                  1053                 1053                    0
+ 4 Where the Stree…                976                  974                    2
+ 5 With or Without…                913                  910                    3
+ 6 One                             864                  851                   13
+ 7 New Year's Day                  805                  804                    1
+ 8 Bullet the Blue…                792                  792                    0
+ 9 I Still Haven't…                696                  690                    6
+10 Beautiful Day                   674                  673                    1
+11 Until the End o…                647                  647                    0
+12 Mysterious Ways                 638                  638                    0
+13 Vertigo                         603                  586                   17
+14 Bad                             567                  560                    7
+15 Elevation                       560                  558                    2</code></pre>
+</div>
+</div>
+<p>Yes, total times the songs were played match now. There is still discrepancies in the times it was played as regular song or snippet.</p>
+<p><img src="u2gigs/U2_shows_top_played_songs-u2gigscom.png" class="img-fluid quarto-figure quarto-figure-left" alt="Top played songs - u2gigs.com - October 2024."> Let’s check Where The Streets Have No Name. In the u2gigs.com it has a total play count of 976, all regular performances, no snippets. In my data it states 974 regular performances and 2 times as a snippet.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>WTSHNN_regular_play_count <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Where the Streets Have No Name'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(WTSHNN_regular_play_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 974 × 7
+   showID date       city           song_position song_title      snippet encore
+    &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;                  &lt;dbl&gt; &lt;chr&gt;           &lt;lgl&gt;   &lt;lgl&gt; 
+ 1      8 1990-01-05 Rotterdam                  5 Where the Stre… FALSE   FALSE 
+ 2      9 1990-01-06 Rotterdam                  1 Where the Stre… FALSE   FALSE 
+ 3     11 1990-01-09 Rotterdam                  1 Where the Stre… FALSE   FALSE 
+ 4     12 1990-01-10 Rotterdam                  6 Where the Stre… FALSE   FALSE 
+ 5     29 1998-01-27 Rio de Janeiro            16 Where the Stre… FALSE   FALSE 
+ 6     37 1998-01-30 Sao Paulo                 15 Where the Stre… FALSE   FALSE 
+ 7     42 1998-01-31 Sao Paulo                 15 Where the Stre… FALSE   FALSE 
+ 8     55 1998-02-05 Buenos Aires              15 Where the Stre… FALSE   FALSE 
+ 9     58 1998-02-06 Buenos Aires              15 Where the Stre… FALSE   FALSE 
+10     59 1998-02-07 Buenos Aires              16 Where the Stre… FALSE   FALSE 
+# ℹ 964 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>WTSHNN_snippet_play_count <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Where the Streets Have No Name'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(WTSHNN_snippet_play_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  showID date       city     song_position song_title             snippet encore
+   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;                  &lt;lgl&gt;   &lt;lgl&gt; 
+1   1887 2014-12-01 New York             4 Where the Streets Hav… TRUE    TRUE  
+2   2108 2017-12-04 New York             4 Where the Streets Hav… TRUE    FALSE </code></pre>
+</div>
+</div>
+<p>In the two shows where my scraping code had counted WTSHNN as a snippet, we see the format difference:</p>
+<pre><code>&lt;li&gt;&lt;a href='/Where_the_Streets_Have_No_Name-s17.html'&gt;Where the Streets Have No Name&lt;/a&gt; &lt;span class='guestartist'&gt;(with Bruce Springsteen)&lt;/span&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='/Where_the_Streets_Have_No_Name-s17.html'&gt;Where the Streets Have No Name&lt;/a&gt; &lt;em class='snippet'&gt;partial chords&lt;/em&gt;&lt;/li&gt;</code></pre>
+<p>Compared to a more normal coding for regular songs on the u2gigs.com site:</p>
+<pre><code>&lt;li&gt;&lt;a href='/Where_the_Streets_Have_No_Name-s17.html'&gt;Where the Streets Have No Name&lt;/a&gt;&lt;/li&gt;</code></pre>
+<p>Thus, my scraping code had not identified these two performances of WTSHNN as regular but incorrectly as snippets. As my project was ending I did not follow up to correct my u2data set with these relativelz few errors in the snippet flag.</p>
+</section>
+<section id="top-10-opening-songs" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-opening-songs">Top 10 opening songs</h2>
+<p>Which were the songs U2 played most to open the shows? This can be seen at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/u2_top_opening_songs-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Top 10 opening songs - u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>In my data the numbers are like shown below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 opening songs</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>top_10_openers <span class="ot">&lt;-</span> <span class="fu">find_most_played_opening_songs</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_10_openers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 2
+   song_title                     times_played
+   &lt;chr&gt;                                 &lt;int&gt;
+ 1 Zoo Station                             197
+ 2 Gloria                                  130
+ 3 Elevation                               118
+ 4 11 O'Clock Tick Tock                    117
+ 5 City of Blinding Lights                 116
+ 6 Where the Streets Have No Name          114
+ 7 Mofo                                     94
+ 8 The Miracle (of Joey Ramone)             85
+ 9 Out of Control                           72
+10 Sunday Bloody Sunday                     71</code></pre>
+</div>
+</div>
+<p>The numbers did not match the information at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>. I checked a few songs and observed a few things:</p>
+<p>First, the opening songs counts listed at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a> seem to be outdated. When you click on one the songs in that list it shows a different number on the song page. For example, Zoo Station has the opening song count of 196 at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a> (see earlier screen shot), but 197 at <a href="https://www.u2gigs.com/openingsong141.html" class="uri">https://www.u2gigs.com/openingsong141.html</a>:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/u2_zoo_station_opening.png" class="img-fluid figure-img"></p>
+<figcaption>Zoo Station opening song - u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>Thus, it looks like u2gigs.com needs to refresh the ‘Top 25 show opening songs’ list at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
+<p>Second, I observed a few rare cases on the u2gigs.com show pages which were not handled properly by my scraping code, or were not handled properly by u2gigs.com, for example:</p>
+<p><em>Example 1:</em></p>
+<p>Oct 23rd, 2000 set list, <a href="https://www.u2gigs.com/show1147.html" class="uri">https://www.u2gigs.com/show1147.html</a>: <img src="u2gigs/u2_2000-10-23_setlist-u2gigscom.png" class="img-fluid" alt="Rare setlist format on show page."></p>
+<p>My code and data did count Elevation as opening song for this ‘show’ while u2gigs.com did not count it, probably because it was preceded by an interview.</p>
+<p>The same issue occurred with this show: <a href="https://www.u2gigs.com/show1149.html" class="uri">https://www.u2gigs.com/show1149.html</a>, and potentially with other shows as I only checked shows that opened with Elevation. u2gigs.com may want to check how they count opening songs in such case.</p>
+<p><em>Example 2</em></p>
+<p>2001-09-06 set list, <a href="https://www.u2gigs.com/show1473.html" class="uri">https://www.u2gigs.com/show1473.html</a>. In this case the set list started with a medley, with two songs as one entry. This is different than a regular song plus a snippet. My scraping code could apparently not handle this.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/u2_2001-09-06_setlist-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Rare setlist format on show page.</figcaption>
+</figure>
+</div>
+<p>I decided not to invest more time in trying to detect and fix these rare issues.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
