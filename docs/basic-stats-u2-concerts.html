@@ -216,13 +216,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./interactive-visual-apps.html" class="sidebar-item-text sidebar-link">
+  <a href="./multiple-setlist-alignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. Multiple Setlist Alignment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./multiple-setlist-alignment.html" class="sidebar-item-text sidebar-link">
+  <a href="./interactive-visual-apps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Interactive Visualizations</span></a>
   </div>
 </li>
@@ -231,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Conclusions</span></a>
+ <span class="menu-text">Conclusions and Sharing</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -239,8 +239,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conclusions-and-lessons-learned.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Conclusions &amp; Lessons Learned</span></a>
+  <a href="./conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Conclusions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sharing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Sharing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./generative-ai-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Generative AI Support</span></a>
   </div>
 </li>
       </ul>
@@ -297,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this section we look at some basic statistics of the U2 shows and compare this with the statistics listed at <a href="https://www.u2gigs.com" class="uri">https://www.u2gigs.com</a>.</p>
 <section id="load-custom-concertdata-package" class="level2">
 <h2 class="anchored" data-anchor-id="load-custom-concertdata-package">Load custom concertData package</h2>
-<p>First we load my custom concertData package where I organized all the functions to analyze the U2 concert data.</p>
+<p>First we load my custom concertData package where I organized all the functions to analyze the U2 concert data. This R package is available on my GitHub page at: <a href="https://github.com/vanleeuwen-hans" class="uri">https://github.com/vanleeuwen-hans</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>(<span class="st">"../packages/concertData"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(concertData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -711,7 +723,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Yes, total times the songs were played match now. There is still discrepancies in the times it was played as regular song or snippet.</p>
-<p><img src="u2gigs/U2_shows_top_played_songs-u2gigscom.png" class="img-fluid quarto-figure quarto-figure-left" alt="Top played songs - u2gigs.com - October 2024."> Let’s check Where The Streets Have No Name. In the u2gigs.com it has a total play count of 976, all regular performances, no snippets. In my data it states 974 regular performances and 2 times as a snippet.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="u2gigs/U2_shows_top_played_songs-u2gigscom.png" class="img-fluid figure-img"></p>
+<figcaption>Top played songs - u2gigs.com - October 2024.</figcaption>
+</figure>
+</div>
+<p>Let’s check Where The Streets Have No Name. In the u2gigs.com it has a total play count of 976, all regular performances, no snippets. In my data it states 974 regular performances and 2 times as a snippet.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>WTSHNN_regular_play_count <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Where the Streets Have No Name'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(WTSHNN_regular_play_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
