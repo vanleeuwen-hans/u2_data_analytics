@@ -147,27 +147,25 @@ quarto render
 ``` 
 This creates the files in the docs folder (in the main branch).
 
-However, the docs folder is git managed in the other branch (gh-pages), so I then switch to the gh-pages branch:
+However, the docs folder is git managed in the other branch (gh-pages), so I manually copy the files to a temp folder, then switch to the gh-pages branch:
 
 ```         
 git checkout gh-pages
 ```
 
-and then copy the newly created docs files from the main branch into the gh-pages branch with:
+and then copy the newly created docs files from the temp folder into the gh-pages docs folder:
+
+Afterwards I do the usual add and commit, followed by a push to the remote. 
+Note: if I only rendered one particular qmd file I saw that the index.html file was overwritten with a template. So I had to make sure not to add that incorrect index.html file to the gh-pages docs folder.
 
 ```         
-git checkout main -- docs/
-```
-
-Afterwards I do the usual add and commit, followed by a push to the remote
-
-```         
-git add docs/*
 git commit -m "Update rendered documents from main"
 git push origin gh-pages
 ```
 
 which will make the new versions of the rendered HTML pages available on my Quarto website on GitHub Pages.
+
+I am still trying to figure out an easier way to maintain and update the Quarto web site documents, as currently it involves a lot of manual checking and work.
 
 ## Shiny Apps
 
