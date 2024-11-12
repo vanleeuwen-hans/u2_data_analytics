@@ -2,5 +2,8 @@
 .quarto/
 u2data
 mafft
-
+/u2gigs/
+/u2hvl/
+!/docs/u2gigs/
+!/docs/u2hvl
 /.quarto/
