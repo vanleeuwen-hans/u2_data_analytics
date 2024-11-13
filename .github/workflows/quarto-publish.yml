@@ -75,9 +75,9 @@ jobs:
                    collapse = ", ")),
             "~/.Rprofile"
           )
-      - name: Install jsonlite package
+      - name: Check for libproj
         run: |
-          Rscript -e 'install.packages("jsonlite")'
+          dpkg -l libproj*
       - name: Restore packages
         shell: Rscript {0}
         run: |
