@@ -4,4 +4,64 @@ author: "Hans van Leeuwen"
 editor: visual
 ---
 
-Text
+## Introduction
+
+## Examples
+
+### Automating the deployment of changes in the Quarto web site
+
+As explained in the [Sharing \> Maintenance and Updates](sharing.qmd#maintenance-and-updates) section, I initially had a cumbersome process that involved many manual steps to push changes to my Quarto web site. That was until I asked Claude.AI (3.5 Sonnet) for help. Here was my prompt:\
+
+> I have my R Studio project u2_data_analytics. I have a git repository locally and on GitHub. All the Quarto rendered files are in the docs folder and in the gh-pages branch, and published on GitHub pages. The rest is in the main branch. \
+> \
+> The process to update is currently cumbersome. I update qmd documents in main, render these, copy the new files from docs temporarily and manually somewhere outside of my project folder, then do a git stash, after which I switch to the gh-pages branch, then manually copy paste the new files into the docs folder of the gh-pages branch, followed by git add, commit and push. \
+> \
+> Is there a more automated way to deploy my qnd file changes to the Quarto site that is on GitHub pages?
+
+This was Claude's response:
+
+> I understand you want to streamline the process of updating your Quarto site deployed on GitHub Pages. Yes, there's a much simpler automated approach using GitHub Actions. Let me create a workflow file that will handle this automatically.
+>
+> GitHub Actions workflow for Quarto publishing (code was provided)
+>
+> To implement this automated workflow:
+>
+> Create a `.github/workflows` directory in your repository's main branch:
+>
+> ``` bash
+> mkdir -p .github/workflows
+> ```
+>
+> Save the workflow file I provided as `.github/workflows/quarto-publish.yml`
+>
+> Commit and push these changes to your main branch:
+>
+> ``` bash
+> git add .github/workflows/quarto-publish.yml
+> git commit -m "Add Quarto publishing workflow"
+> git push origin main
+> ```
+>
+> This workflow will:
+>
+> -   Trigger automatically when you push changes to .qmd, .Rmd, or .md files in the main branch
+>
+> -   Set up R and Quarto in the GitHub Actions environment
+>
+> -   Install your R dependencies using renv
+>
+> -   Render your Quarto project
+>
+> -   Automatically deploy the rendered files to the gh-pages branch
+>
+> Now your process becomes much simpler:
+>
+> 1.  Make changes to your Quarto documents in the main branch
+>
+> 2.  Commit and push to main
+>
+> 3.  GitHub Actions will automatically handle the rendering and deployment
+>
+> The changes should appear on your GitHub Pages site within a few minutes after pushing to main.
+>
+> Would you like me to explain any part of this workflow in more detail?

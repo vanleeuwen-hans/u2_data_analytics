@@ -135,37 +135,21 @@ git config --global http.postBuffer 524288000
 
 ### Maintenance and Updates
 
-The setup is to have two branches in the u2_data_analytics repository: \* main: where project files arae manged - not needed for the published web site \* gh-pages:documents needed for the published web site - the result of Quarto render
+The setup is to have two branches in the u2_data_analytics repository:
 
-On my local system I will for example work in the R Studio project u2_data_analytics while in the main branch, i.e. before starting up R Studio I use this in the terminal while in the project folder:
-``` 
-git checkout main
-``` 
-I then update the qmd report files in R Studio, with new analyses or changes in the code chunks or text. Once I am happy with the changes I render the pages with quarto render:
-``` 
-quarto render
-``` 
-This creates the files in the docs folder (in the main branch).
+-   main: where project files are manged - not needed for the published web site
 
-However, the docs folder is git managed in the other branch (gh-pages), so I manually copy the files to a temp folder, then switch to the gh-pages branch:
+-   gh-pages:documents needed for the published web site - the result of Quarto render
 
-```         
-git checkout gh-pages
-```
+Initially I had a process that involved many manual steps to push changes to my Quarto web site. That was until I asked Claude.AI (3.5 Sonnet) for help. The details how that was achieved are in the [Generative AI Support \> Examples](generative-ai-support.qmd#examples) section of this report.
 
-and then copy the newly created docs files from the temp folder into the gh-pages docs folder:
+The process is simple, and as follows:
 
-Afterwards I do the usual add and commit, followed by a push to the remote. 
-Note: if I only rendered one particular qmd file I saw that the index.html file was overwritten with a template. So I had to make sure not to add that incorrect index.html file to the gh-pages docs folder.
+1.  Make changes to the Quarto documents in the main branch
 
-```         
-git commit -m "Update rendered documents from main"
-git push origin gh-pages
-```
+2.  Commit and push to main
 
-which will make the new versions of the rendered HTML pages available on my Quarto website on GitHub Pages.
-
-I am still trying to figure out an easier way to maintain and update the Quarto web site documents, as currently it involves a lot of manual checking and work.
+3.  GitHub Actions will automatically handle the rendering and deployment
 
 ## Shiny Apps
 
