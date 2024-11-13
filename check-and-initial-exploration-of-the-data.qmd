@@ -147,7 +147,7 @@ print(missing_Amsterdam_shows)
 
 ## Fixing incorrect city and venue names
 
-As mentioned, the number of shows in some cities did not match the number listed at u2gigs.com. I explored this by obtaining a list of all cities listed at u2gigs.com (<https://www.u2gigs.com/all-locations-city.html>), and by getting a list of unique city names in my data:
+As mentioned, the number of shows in some cities did not fully match the number listed at u2gigs.com. I explored this by obtaining a list of all cities listed at u2gigs.com (<https://www.u2gigs.com/all-locations-city.html>), and by getting a list of unique city names in my data:
 
 ```{r checking cities, message = FALSE, warning = FALSE}
 
