@@ -38,8 +38,7 @@ jobs:
 
       - name: Install specific version of MASS
         run: |
-          Rscript -e 'install.packages("remotes")'
-          Rscript -e 'remotes::install_version("MASS", version = "7.3-60", repos = "http://cran.us.r-project.org")'
+          Rscript -e 'install.packages("MASS", version = "7.3-60", repos = "http://cran.us.r-project.org")'
 
       - name: Install specific Rcpp version
         run: |
