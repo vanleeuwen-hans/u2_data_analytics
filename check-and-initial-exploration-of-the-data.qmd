@@ -5,7 +5,7 @@ author: "Hans van Leeuwen"
 
 ## Comparing my data and numbers with u2gigs.com
 
-I performed an initial data exploration, comparing some numbers with the tour statistics listed on the u2gigs.com site page: <https://www.u2gigs.com/tourdb-stats.html>. Remember, that is the source of my data.
+I performed an initial data exploration, comparing some numbers with the U2 tour statistics listed on the u2gigs.com site page: <https://www.u2gigs.com/tourdb-stats.html>. Remember, that is the source of my data.
 
 ```{r initial data exploration, message = FALSE, warning = FALSE}
 
