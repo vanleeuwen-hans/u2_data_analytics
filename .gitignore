@@ -7,6 +7,7 @@ renv/library/
 renv/staging/
 /u2data/
 !u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv
+!u2data/archive/u2data_all_shows_clean.csv
 !u2data/geocoded_cities.csv
 !u2data_all_shows_clean_final.csv
 /docs/
