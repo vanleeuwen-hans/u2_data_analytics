@@ -86,7 +86,7 @@ jobs:
           
           # Update Bioconductor version if needed
           if (!is.null(lock_data$Bioconductor)) {
-            lock_data$Bioconductor <- "3.18"
+            lock_data$Bioconductor <- c("3.18")
             # Write back the modified lock file
             jsonlite::write_json(lock_data, "renv.lock", auto_unbox = TRUE, pretty = TRUE)
           }
