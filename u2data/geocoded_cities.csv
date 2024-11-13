@@ -1,0 +1,415 @@
+"city","country","location","lat","long"
+"Dublin","Ireland","Dublin, Ireland",53.3493795,-6.2605593
+"Glasgow","Scotland","Glasgow, Scotland",55.861155,-4.2501687
+"Rotterdam","Netherlands","Rotterdam, Netherlands",51.9244424,4.47775
+"Amsterdam","Netherlands","Amsterdam, Netherlands",52.3730796,4.8924534
+"New York","USA","New York, USA",40.7127281,-74.0060152
+"Washington","USA","Washington, USA",38.8950368,-77.0365427
+"Belfast","Northern Ireland","Belfast, Northern Ireland",54.596391,-5.9301829
+"Drammen","Norway","Drammen, Norway",59.6964936,10.1756419500128
+"Edinburgh","Scotland","Edinburgh, Scotland",55.9533456,-3.1883749
+"Stockholm","Sweden","Stockholm, Sweden",59.3251172,18.0710935
+"Gothenburg","Sweden","Gothenburg, Sweden",57.7072326,11.9670171
+"Manchester","England","Manchester, England",53.4794892,-2.2451148
+"Rio de Janeiro","Brazil","Rio de Janeiro, Brazil",-22.9110137,-43.2093727
+"Hamburg","Germany","Hamburg, Germany",53.550341,10.000654
+"Northampton","England","Northampton, England",52.23433665,-0.902807276818583
+"Offenbach am Main","Germany","Offenbach am Main, Germany",50.1055002,8.7610698
+"Loughborough","England","Loughborough, England",52.7723859,-1.2077985
+"Sao Paulo","Brazil","Sao Paulo, Brazil",-23.5506507,-46.6333824
+"Cologne","Germany","Cologne, Germany",50.938361,6.959974
+"Tullamore","Ireland","Tullamore, Ireland",53.2743768,-7.4927486
+"London","England","London, England",51.4893335,-0.144055084527687
+"Mannheim","Germany","Mannheim, Germany",49.4892913,8.4673098
+"Munich","Germany","Munich, Germany",48.1371079,11.5753822
+"Milan","Italy","Milan, Italy",45.4641943,9.1896346
+"Bologna","Italy","Bologna, Italy",44.4938203,11.3426327
+"Buenos Aires","Argentina","Buenos Aires, Argentina",-34.6083696,-58.4440583
+"Zurich","Switzerland","Zurich, Switzerland",47.3744489,8.5410422
+"Brussels","Belgium","Brussels, Belgium",50.8465573,4.351697
+"Paris","France","Paris, France",48.8534951,2.3483915
+"New Orleans","USA","New Orleans, USA",29.9759983,-90.0782127
+"Santiago","Chile","Santiago, Chile",-33.4377756,-70.6504502
+"The Hague","Netherlands","The Hague, Netherlands",52.0799838,4.3113461
+"Austin","USA","Austin, USA",30.2711286,-97.7436995
+"Dallas","USA","Dallas, USA",32.7762719,-96.7968559
+"Oklahoma City","USA","Oklahoma City, USA",35.4729886,-97.5170536
+"Perth","Australia","Perth, Australia",-31.9558933,115.8605855
+"St. Louis","USA","St. Louis, USA",38.6280278,-90.1910154
+"Minneapolis","USA","Minneapolis, USA",44.9772995,-93.2654692
+"Melbourne","Australia","Melbourne, Australia",-37.8142454,144.9631732
+"Madison","USA","Madison, USA",43.074761,-89.3837613
+"Champaign","USA","Champaign, USA",40.1164841,-88.2430932
+"Kansas City","USA","Kansas City, USA",39.100105,-94.5781416
+"Brisbane","Australia","Brisbane, Australia",-27.4689682,153.0234991
+"Dundee","Scotland","Dundee, Scotland",56.4605938,-2.97019
+"Denver","USA","Denver, USA",39.7392364,-104.984862
+"Aberdeen","Scotland","Aberdeen, Scotland",57.1482429,-2.0928095
+"Houston","USA","Houston, USA",29.7589382,-95.3676974
+"Lakeland","USA","Lakeland, USA",28.0394654,-81.9498042
+"Sydney","Australia","Sydney, Australia",-33.8698439,151.2082848
+"Newcastle","England","Newcastle, England",54.9738474,-1.6131572
+"Phoenix","USA","Phoenix, USA",33.4484367,-112.074141
+"Miami","USA","Miami, USA",25.7741728,-80.19362
+"Lancaster","England","Lancaster, England",54.0484068,-2.7990345
+"Los Angeles","USA","Los Angeles, USA",34.0536909,-118.242766
+"Liverpool","England","Liverpool, England",53.4071991,-2.99168
+"Charlotte","USA","Charlotte, USA",35.2272086,-80.8430827
+"Philadelphia","USA","Philadelphia, USA",39.9527237,-75.1635262
+"West Palm Beach","USA","West Palm Beach, USA",26.715364,-80.0532942
+"Hanley","England","Hanley, England",53.026111,-2.1754512
+"Albany","USA","Albany, USA",42.6511674,-73.754968
+"Tampa","USA","Tampa, USA",27.9477595,-82.458444
+"Atlanta","USA","Atlanta, USA",33.7489924,-84.3902644
+"Tokyo","Japan","Tokyo, Japan",35.6768601,139.7638947
+"Boston","USA","Boston, USA",42.3554334,-71.060511
+"Tallahassee","USA","Tallahassee, USA",30.4380832,-84.2809332
+"Portsmouth","England","Portsmouth, England",50.800031,-1.0906023
+"Bristol","England","Bristol, England",51.4538022,-2.5972985
+"Daly City","USA","Daly City, USA",37.6904826,-122.47267
+"Hampton","USA","Hampton, USA",37.0264414,-76.3442846
+"Uniondale","USA","Uniondale, USA",40.7095827,-73.592341
+"Ottawa","Canada","Ottawa, Canada",45.4208777,-75.6901106
+"Knoxville","USA","Knoxville, USA",35.9603948,-83.9210261
+"Birmingham","England","Birmingham, England",52.4796992,-1.9026911
+"Toronto","Canada","Toronto, Canada",43.6534817,-79.3839347
+"Cardiff","Wales","Cardiff, Wales",51.4816546,-3.1791934
+"Honolulu","USA","Honolulu, USA",21.304547,-157.855676
+"Osaka","Japan","Osaka, Japan",34.6937569,135.5014539
+"Memphis","USA","Memphis, USA",35.1460249,-90.0517638
+"Hartford","USA","Hartford, USA",41.764582,-72.6908547
+"Louisville","USA","Louisville, USA",38.2542376,-85.759407
+"Brighton","England","Brighton, England",50.8214626,-0.1400561
+"Worcester","USA","Worcester, USA",42.2625621,-71.8018877
+"San Diego","USA","San Diego, USA",32.7174202,-117.162772
+"Indianapolis","USA","Indianapolis, USA",39.7683331,-86.1583502
+"Reseda","USA","Reseda, USA",34.2006552,-118.536528
+"Ipswich","England","Ipswich, England",52.0579324,1.1528095
+"Providence","USA","Providence, USA",41.8239891,-71.4128343
+"Amherst","USA","Amherst, USA",42.3731948,-72.5198761
+"Cape Town","South Africa","Cape Town, South Africa",-33.9288301,18.4172197
+"Limerick","Ireland","Limerick, Ireland",52.661252,-8.6301239
+"Sheffield","England","Sheffield, England",53.3806626,-1.4702278
+"San Jose","USA","San Jose, USA",37.3361663,-121.890591
+"Leeds","England","Leeds, England",53.7974185,-1.5437941
+"East Rutherford","USA","East Rutherford, USA",40.833989,-74.0970865
+"San Francisco","USA","San Francisco, USA",37.7792588,-122.4193286
+"Chicago","USA","Chicago, USA",41.8755616,-87.6244212
+"Johannesburg","South Africa","Johannesburg, South Africa",-26.205,28.049722
+"Seattle","USA","Seattle, USA",47.6038321,-122.330062
+"Detroit","USA","Detroit, USA",42.3315509,-83.0466403
+"Montreal","Canada","Montreal, Canada",45.5031824,-73.5698065
+"Vancouver","Canada","Vancouver, Canada",49.2608724,-123.113952
+"Richfield","USA","Richfield, USA",44.8766431,-93.2877877
+"Auburn Hills","USA","Auburn Hills, USA",42.6875323,-83.2341028
+"Nottingham","England","Nottingham, England",52.9534193,-1.1496461
+"Rosemont","USA","Rosemont, USA",41.9941334,-87.8756737
+"Tempe","USA","Tempe, USA",33.4255117,-111.940016
+"Bourges","France","Bourges, France",47.0811658,2.399125
+"Tulsa","USA","Tulsa, USA",36.1563122,-95.9927516
+"Tucson","USA","Tucson, USA",32.2228765,-110.974847
+"Landover","USA","Landover, USA",38.92531295,-76.8815433044285
+"Pittsburgh","USA","Pittsburgh, USA",40.4416941,-79.9900861
+"Ames","USA","Ames, USA",42.0267567,-93.6170448
+"Las Cruces","USA","Las Cruces, USA",32.3140354,-106.779807
+"Las Vegas","USA","Las Vegas, USA",36.1672559,-115.148516
+"Milwaukee","USA","Milwaukee, USA",43.0386475,-87.9090751
+"Cincinnati","USA","Cincinnati, USA",39.1014537,-84.5124602
+"Sacramento","USA","Sacramento, USA",38.5810606,-121.493895
+"Oakland","USA","Oakland, USA",37.8044557,-122.271356
+"Columbus","USA","Columbus, USA",39.9622601,-83.0007065
+"Tacoma","USA","Tacoma, USA",47.2455013,-122.438329
+"Chapel Hill","USA","Chapel Hill, USA",35.9131542,-79.05578
+"Norfolk","USA","Norfolk, USA",36.8493695,-76.2899539
+"College Park","USA","College Park, USA",38.980666,-76.9369189
+"Auburn","USA","Auburn, USA",47.3075369,-122.2301808
+"Rochester","USA","Rochester, USA",43.157285,-77.615214
+"Delhi","USA","Delhi, USA",42.4297057,-91.3309112
+"Jacksonville","USA","Jacksonville, USA",30.3321838,-81.655651
+"Pontiac","USA","Pontiac, USA",42.6389216,-83.2910468
+"Unknown","England","Unknown, England",53.9111297,-1.698569
+"Stony Brook","USA","Stony Brook, USA",40.9256538,-73.140943
+"Gainesville","USA","Gainesville, USA",29.6519684,-82.3249846
+"Salt Lake City","USA","Salt Lake City, USA",40.7596198,-111.886797
+"Hallendale","USA","Hallendale, USA",26.880979,-82.199538
+"Eugene","USA","Eugene, USA",44.0505054,-123.0950506
+"Gent","Belgium","Gent, Belgium",51.0538286,3.7250121
+"New Haven","USA","New Haven, USA",41.3082138,-72.9250518
+"Lyon","France","Lyon, France",45.7578137,4.8320114
+"Passaic","USA","Passaic, USA",41.0461864,-74.3177933
+"Lausanne","Switzerland","Lausanne, Switzerland",46.5218269,6.6327025
+"Santa Monica","USA","Santa Monica, USA",34.0194704,-118.491227
+"Upper Darby","USA","Upper Darby, USA",39.9284459,-75.2737955
+"Hattem","Netherlands","Hattem, Netherlands",52.4773176,6.0560015
+"San Sebastian","Spain","San Sebastian, Spain",43.3224219,-1.9838889
+"Lisbon","Portugal","Lisbon, Portugal",38.7077507,-9.1365919
+"Buffalo","USA","Buffalo, USA",42.8867166,-78.8783922
+"Barcelona","Spain","Barcelona, Spain",41.3828939,2.1774322
+"Clemson","USA","Clemson, USA",34.6850749,-82.8364111
+"Cleveland","USA","Cleveland, USA",41.4996574,-81.6936772
+"Oviedo","Spain","Oviedo, Spain",43.3618625,-5.8483581
+"Syracuse","USA","Syracuse, USA",43.0481221,-76.1474244
+"Madrid","Spain","Madrid, Spain",40.4167047,-3.7035825
+"Hampton Beach","USA","Hampton Beach, USA",42.914083,-70.8129787
+"Vienna","Austria","Vienna, Austria",48.2083537,16.3725042
+"Adenau/Koblenz","Germany","Adenau/Koblenz, Germany",50.3796194,7.0891805
+"Stuttgart","Germany","Stuttgart, Germany",48.7784485,9.1800132
+"Nantes","France","Nantes, France",47.2186371,-1.5541362
+"Portland","USA","Portland, USA",45.5202471,-122.674194
+"Muenster","Germany","Muenster, Germany",51.9625101,7.6251879
+"Rome","Italy","Rome, Italy",41.8933203,12.4829321
+"Modena","Italy","Modena, Italy",44.5384728,10.9359608705307
+"Frankfurt","Germany","Frankfurt, Germany",50.1106444,8.6820917
+"Werchter","Belgium","Werchter, Belgium",50.970584,4.6937963
+"Devore","USA","Devore, USA",39.4297683,-86.7527843
+"Asbury Park","USA","Asbury Park, USA",40.2203907,-74.0120817
+"Basel","Switzerland","Basel, Switzerland",47.5581077,7.5878261
+"Dortmund","Germany","Dortmund, Germany",51.5142273,7.4652789
+"Aylesbury","England","Aylesbury, England",51.8161412,-0.8130383
+"Boulder","USA","Boulder, USA",40.0149856,-105.270545
+"Inglewood","USA","Inglewood, USA",33.9562003,-118.353132
+"Randalls Island","USA","Randalls Island, USA",40.7967677,-73.9220815
+"Herne Hill","England","Herne Hill, England",51.4554407,-0.1001002
+"Geleen","Netherlands","Geleen, Netherlands",50.9673322,5.8277007
+"Bremen","Germany","Bremen, Germany",53.0758196,8.8071646
+"Norman","USA","Norman, USA",35.2225717,-97.4394816
+"Winnipeg","Canada","Winnipeg, Canada",49.8955367,-97.1384584
+"Kiel","Germany","Kiel, Germany",54.3227085,10.135555
+"Edmonton","Canada","Edmonton, Canada",53.5462055,-113.491241
+"Berlin","Germany","Berlin, Germany",52.510885,13.3989367
+"Glastonbury","England","Glastonbury, England",51.14804,-2.716577
+"Orlando","USA","Orlando, USA",28.5421109,-81.3790304
+"Milton Keynes","England","Milton Keynes, England",52.0406502,-0.7594092
+"Strasbourg","France","Strasbourg, France",48.584614,7.7507127
+"Leiden","Netherlands","Leiden, Netherlands",52.1594747,4.4908843
+"Foxborough","USA","Foxborough, USA",42.0653768,-71.2478308
+"Roskilde","Denmark","Roskilde, Denmark",55.6433478,12.0819247
+"Torhout","Belgium","Torhout, Belgium",51.0647837,3.1016415
+"Verona","Italy","Verona, Italy",45.4424977,10.9857376894448
+"Slane","Ireland","Slane, Ireland",53.7090675,-6.5426177
+"Kai Iwi","New Zealand","Kai Iwi, New Zealand",-43.0649799,171.1854314
+"Naples","Italy","Naples, Italy",40.8358846,14.2487679
+"Turin","Italy","Turin, Italy",45.0677551,7.6824892
+"Marseille","France","Marseille, France",43.2961743,5.3699525
+"Naas","Ireland","Naas, Ireland",53.2214677,-6.6574093
+"Montpellier","France","Montpellier, France",43.6112422,3.8767337
+"Budapest","Hungary","Budapest, Hungary",47.48138955,19.1460941269125
+"Co. Kildare","Ireland","Co. Kildare, Ireland",53.15436455,-6.81841756609764
+"Copenhagen","Denmark","Copenhagen, Denmark",55.6867243,12.5700724
+"Oslo","Norway","Oslo, Norway",59.9133301,10.7389701
+"Leipzig","Germany","Leipzig, Germany",51.3406321,12.3747329
+"Gateshead","England","Gateshead, England",54.9625789,-1.6019294
+"Howth","Ireland","Howth, Ireland",53.3858337,-6.0651186
+"Vilar De Mouros","Portugal","Vilar De Mouros, Portugal",41.8887316,-8.7909404
+"Nijmegen","Netherlands","Nijmegen, Netherlands",51.8474946,5.8637771
+"Turku","Finland","Turku, Finland",60.4517531,22.2670522
+"Hershey","USA","Hershey, USA",40.2854881,-76.6506001
+"Cork","Ireland","Cork, Ireland",51.897077,-8.4654674
+"Helsinki","Finland","Helsinki, Finland",60.1674881,24.9427473
+"Warsaw","Poland","Warsaw, Poland",52.2337172,21.0714322356365
+"Prague","Czech Republic","Prague, Czech Republic",50.0596288,14.446459273258
+"Wiener Neustadt","Austria","Wiener Neustadt, Austria",47.8131847,16.2441166
+"Saratoga Springs","USA","Saratoga Springs, USA",43.0821793,-73.7853915
+"Nuremberg","Germany","Nuremberg, Germany",49.453872,11.077298
+"St. Goarshausen","Germany","St. Goarshausen, Germany",50.1548796,7.7160976
+"Hannover","Germany","Hannover, Germany",52.3744779,9.7385532
+"Odell","England","Odell, England",52.21843025,-0.592126078776335
+"Christchurch","New Zealand","Christchurch, New Zealand",-43.530955,172.6364343
+"Wellington","New Zealand","Wellington, New Zealand",-41.2887953,174.7772114
+"Auckland","New Zealand","Auckland, New Zealand",-36.852095,174.7631803
+"Coventry","England","Coventry, England",52.4081812,-1.510477
+"Scarborough","England","Scarborough, England",54.2820009,-0.4011868
+"Tinley Park","USA","Tinley Park, USA",41.5733669,-87.7844944
+"Plymouth","England","Plymouth, England",50.3714122,-4.1424451
+"Stroud","England","Stroud, England",51.745424,-2.2198605
+"Reggio Emilia","Italy","Reggio Emilia, Italy",44.6086674,10.5940666759148
+"Adelaide","Australia","Adelaide, Australia",-34.9281805,138.5999312
+"Columbia","USA","Columbia, USA",34.0003117,-81.0331309
+"Sarajevo","Bosnia and Herzegovina","Sarajevo, Bosnia and Herzegovina",43.8519774,18.3866868
+"Thessaloniki","Greece","Thessaloniki, Greece",40.6403167,22.9352716
+"Tel Aviv","Israel","Tel Aviv, Israel",32.0852997,34.7818064
+"Norwich","England","Norwich, England",52.6285576,1.2923954
+"Salford","England","Salford, England",53.4877463,-2.2891921
+"Leicester","England","Leicester, England",52.6362,-1.1331969
+"Birmingham","USA","Birmingham, USA",33.5206824,-86.8024326
+"Hilversum","Netherlands","Hilversum, Netherlands",52.2241375,5.1719396
+"Groningen","Netherlands","Groningen, Netherlands",53.2190652,6.5680077
+"Irving","USA","Irving, USA",32.8295183,-96.9442177
+"Apeldoorn","Netherlands","Apeldoorn, Netherlands",52.17957375,5.93007746080725
+"Bracknell","England","Bracknell, England",51.4143513,-0.7449925
+"Toulouse","France","Toulouse, France",43.6044622,1.4442469
+"Iowa City","USA","Iowa City, USA",41.6612561,-91.5299106
+"Hemel Hempstead","England","Hemel Hempstead, England",51.7511784,-0.472528
+"Bordeaux","France","Bordeaux, France",44.841225,-0.5800364
+"Lexington","USA","Lexington, USA",38.0464066,-84.4970393
+"Herenthout","Belgium","Herenthout, Belgium",51.1392427,4.7543972
+"El Paso","USA","El Paso, USA",31.7601164,-106.4870404
+"Arnhem","Netherlands","Arnhem, Netherlands",51.984257,5.9108573
+"Saint Paul","USA","Saint Paul, USA",44.9497487,-93.0931028
+"Canterbury","England","Canterbury, England",51.2800275,1.0802533
+"Anaheim","USA","Anaheim, USA",33.8347516,-117.911732
+"Mexico City","Mexico","Mexico City, Mexico",19.4326296,-99.1331785
+"Seto City","Japan","Seto City, Japan",35.2253681,137.1010248
+"Fort Worth","USA","Fort Worth, USA",32.753177,-97.3327459
+"Yokohama","Japan","Yokohama, Japan",35.4443947,139.6367727
+"San Antonio","USA","San Antonio, USA",29.4246002,-98.4951405
+"Baton Rouge","USA","Baton Rouge, USA",30.4494155,-91.1869659
+"Murfreesboro","USA","Murfreesboro, USA",35.8460396,-86.3921096
+"West Hampstead","England","West Hampstead, England",51.5468194,-0.1899646
+"Nashville","USA","Nashville, USA",36.1622767,-86.7742984
+"Nogent-sur-Marne","France","Nogent-sur-Marne, France",48.8387639,2.4916592
+"Covent Garden","England","Covent Garden, England",51.5129126,-0.12254983063602
+"Grand Rapids","USA","Grand Rapids, USA",42.9632425,-85.6678639
+"Camden","England","Camden, England",51.54279655,-0.16248031357799
+"East Lansing","USA","East Lansing, USA",42.7320307,-84.4721678
+"Utrecht","Netherlands","Utrecht, Netherlands",52.0907006,5.1215634
+"Canning Town","England","Canning Town, England",51.5139887,0.0082987
+"Genk","Belgium","Genk, Belgium",50.9654864,5.5001456
+"Lido Beach","USA","Lido Beach, USA",40.5889927,-73.6254072
+"Long Beach","USA","Long Beach, USA",33.7690164,-118.191604
+"Galway","Ireland","Galway, Ireland",53.2744122,-9.0490601
+"Sunrise","USA","Sunrise, USA",26.1666888,-80.2787573
+"Calgary","Canada","Calgary, Canada",51.0456064,-114.057541
+"Antwerp","Belgium","Antwerp, Belgium",51.2211097,4.3997081
+"Universal City","USA","Universal City, USA",34.1419225,-118.358411
+"South Bend","USA","South Bend, USA",41.6833813,-86.2500066
+"Hamilton","Canada","Hamilton, Canada",43.2560802,-79.8728583
+"Baltimore","USA","Baltimore, USA",39.2908816,-76.610759
+"Burbank","USA","Burbank, USA",34.1812089,-118.307201
+"San Remo","Italy","San Remo, Italy",43.818410,7.778420
+"Little Rock","USA","Little Rock, USA",34.7465071,-92.2896267
+"Gelsenkirchen","Germany","Gelsenkirchen, Germany",51.5110321,7.0960124
+"Chorzow","Poland","Chorzow, Poland",50.2978791,18.9544466
+"Saint-Denis","France","Saint-Denis, France",48.935773,2.3580232
+"Nice","France","Nice, France",43.7009358,7.2683912
+"Glendale","USA","Glendale, USA",34.1469416,-118.2478471
+"Omaha","USA","Omaha, USA",41.2587459,-95.9383758
+"Hulme","England","Hulme, England",53.4660305,-2.2481663
+"Sutton","Ireland","Sutton, Ireland",53.3893873,-6.1098089
+"Lincoln","USA","Lincoln, USA",40.8088861,-96.7077751
+"Monterrey","Mexico","Monterrey, Mexico",25.6802019,-100.315258
+"Ballymore Eustace","Ireland","Ballymore Eustace, Ireland",53.1334772,-6.6152013
+"Monte Carlo","Monaco","Monte Carlo, Monaco",43.7402961,7.426559
+"Ballina","Ireland","Ballina, Ireland",54.1143359,-9.1532099
+"Davington","England","Davington, England",51.3197525,0.8767018
+"Saitama","Japan","Saitama, Japan",35.9754168,139.4160114
+"Rostock","Germany","Rostock, Germany",54.0886707,12.1400211
+"Cannes","France","Cannes, France",43.5515198,7.0134418
+"Islington","England","Islington, England",51.5384287,-0.0999051
+"Raheny","Ireland","Raheny, Ireland",53.3801975,-6.1751462
+"Somerville","USA","Somerville, USA",42.3875968,-71.0994968
+"Zagreb","Croatia","Zagreb, Croatia",45.84264135,15.9622314765936
+"Charlottesville","USA","Charlottesville, USA",38.029306,-78.4766781
+"Raleigh","USA","Raleigh, USA",35.7803977,-78.6390989
+"Arlington","USA","Arlington, USA",32.7355816,-97.1071186
+"Pasadena","USA","Pasadena, USA",34.1476507,-118.144155
+"Horsens","Denmark","Horsens, Denmark",55.8611696,9.8444774
+"Moscow","Russia","Moscow, Russia",55.7505412,37.6174782
+"Athens","Greece","Athens, Greece",37.9755648,23.7348324
+"Istanbul","Turkey","Istanbul, Turkey",41.0766019,29.052495
+"Seville","Spain","Seville, Spain",37.3886303,-5.9953403
+"Coimbra","Portugal","Coimbra, Portugal",40.2111931,-8.4294632
+"Sligo","Ireland","Sligo, Ireland",54.27051505,-8.47371223327622
+"La Plata","Argentina","La Plata, Argentina",-34.9206797,-57.9537638
+"Potomac","USA","Potomac, USA",39.0180508,-77.1956331355745
+"Moncton","Canada","Moncton, Canada",46.0985679,-64.8004265
+"Hollywood","USA","Hollywood, USA",34.0980031,-118.329523
+"Palo Alto","USA","Palo Alto, USA",37.4443293,-122.1598465
+"Potsdam","Germany","Potsdam, Germany",52.4009309,13.0591397
+"Timbuktu","Mali","Timbuktu, Mali",16.7719091,-3.0087272
+"La Quinta","USA","La Quinta, USA",33.677474,-116.2958789
+"Beverly Hills","USA","Beverly Hills, USA",34.0696501,-118.3963062
+"St Tropez","France","St Tropez, France",43.2727191,6.6405225
+"Cupertino","USA","Cupertino, USA",37.3228934,-122.0322895
+"San José del Cabo","Mexico","San José del Cabo, Mexico",23.0598364,-109.7025148
+"Malibu","USA","Malibu, USA",34.035591,-118.689423
+"Bray","Ireland","Bray, Ireland",53.2014604,-6.1105049
+"Tralee","Ireland","Tralee, Ireland",52.2692116,-9.7057047
+"Cavan","Ireland","Cavan, Ireland",53.9911042,-7.3603119
+"Waterford","Ireland","Waterford, Ireland",52.2609997,-7.1119081
+"Kilkenny","Ireland","Kilkenny, Ireland",52.6506255,-7.2514438
+"Newry","Northern Ireland","Newry, Northern Ireland",54.1775283,-6.337506
+"Strandhill","Ireland","Strandhill, Ireland",54.2699517,-8.5942985
+"Salvador da Bahia","Brazil","Salvador da Bahia, Brazil",-12.9777, -38.5016
+"Maputo","Mozambique","Maputo, Mozambique",-25.966213,32.56745
+"Faversham","England","Faversham, England",51.3158434,0.8911283
+"Maidstone","England","Maidstone, England",51.2748258,0.5231646
+"Oberhausen","Germany","Oberhausen, Germany",51.4696137,6.8514435
+"Accra","Ghana","Accra, Ghana",5.5571096,-0.2012376
+"Donnybrook","Ireland","Donnybrook, Ireland",51.8672944,-8.4390128
+"Stanford","USA","Stanford, USA",37.4265407,-122.170305455341
+"West Hollywood","USA","West Hollywood, USA",34.0923014,-118.3692894
+"Harlem","USA","Harlem, USA",40.8078786,-73.9454154
+"Davos-Klosters","Switzerland","Davos-Klosters, Switzerland",46.86738045,9.88246875886722
+"Vatican City","Italy","Vatican City, Italy",41.9029, 12.4534
+"Gaziantep","Turkey","Gaziantep, Turkey",37.0628317,37.3792617
+"Santa Clara","USA","Santa Clara, USA",37.2333253,-121.6846349
+"Manchester","USA","Manchester, USA",42.9956397,-71.4547891
+"Oxfordshire","England","Oxfordshire, England",51.833333,-1.25
+"Oxford","England","Oxford, England",51.7520131,-1.2578499
+"Bogota","Colombia","Bogota, Colombia",4.6533816,-74.0836333
+"Duluth","USA","Duluth, USA",46.7729322,-92.1251218
+"Newark","USA","Newark, USA",40.735657,-74.1723667
+"Uncasville","USA","Uncasville, USA",41.4345426,-72.1097996
+"Bourne","USA","Bourne, USA",41.7412166,-70.5989196
+"Seoul","South Korea","Seoul, South Korea",37.5666791,126.9782914
+"Bangor","Northern Ireland","Bangor, Northern Ireland",54.662595,-5.6679127
+"Singapore","Singapore","Singapore, Singapore",1.2899175,103.8519072
+"Manila","Philippines","Manila, Philippines",14.5904492,120.9803621
+"Mumbai","India","Mumbai, India",19.054999,72.8692035
+"Eze","France","Eze, France",43.7288923,7.3620705
+"Unknown","Unknown","Unknown, Unknown",12.4989994,124.674674128295
+"Hydra","Greece","Hydra, Greece",37.33210755,23.466423663574
+"Hatfield","England","Hatfield, England",51.7634675,-0.2258741
+"Kyiv","Ukraine","Kyiv, Ukraine",50.4500336,30.5241361
+"Cheltenham","England","Cheltenham, England",51.8995685,-2.0711559
+"Dalkey","Ireland","Dalkey, Ireland",53.2754961,-6.10256140910403
+"Crofton","Ireland","Crofton, Ireland",53.6151722,-8.18366409522351
+"York","England","York, England",53.9590555,-1.0815361
+"St. Albans","England","St. Albans, England",51.753051,-0.3379675
+"Sittard","Netherlands","Sittard, Netherlands",50.9974235,5.8666627
+"Geneva","Switzerland","Geneva, Switzerland",46.2017559,6.1466014
+"Vaulx-en-Velin","France","Vaulx-en-Velin, France",45.7784255,4.9206153
+"Fort Collins","USA","Fort Collins, USA",40.5871782,-105.0770113
+"Fort Meyers","USA","Fort Meyers, USA",26.6406, -81.8723
+"Exeter","England","Exeter, England",50.7256138,-3.5269209
+"Poole","England","Poole, England",50.7179472,-1.981521
+"Garden City","USA","Garden City, USA",37.9716898,-100.8726618
+"Derby","England","Derby, England",52.9212617,-1.4761491
+"Lubbock","USA","Lubbock, USA",33.5855677,-101.8470215
+"Fort Lauderdale","USA","Fort Lauderdale, USA",26.1223084,-80.1433786
+"Nuneaton","England","Nuneaton, England",52.5246182,-1.4684488
+"Dudley","England","Dudley, England",52.5110832,-2.0816813
+"Wichita","USA","Wichita, USA",37.6922361,-97.3375448
+"Hull","England","Hull, England",53.7435722,-0.3394758
+"Penzance","England","Penzance, England",50.1194794,-5.5352463
+"Totnes","England","Totnes, England",50.4322816,-3.6871525
+"Wollaston","England","Wollaston, England",52.2543819,-0.6710134
+"Retford","England","Retford, England",53.3231315,-0.9424879
+"Stoke-on-Trent","England","Stoke-on-Trent, England",53.0162014,-2.1812607
+"Deinze","Belgium","Deinze, Belgium",50.9840526,3.5274017
+"Tilburg","Netherlands","Tilburg, Netherlands",51.58561845,5.06606161313677
+"Southampton","England","Southampton, England",50.9025349,-1.404189
+"Bradford","England","Bradford, England",53.7944229,-1.7519186
+"Kidderminster","England","Kidderminster, England",52.3880787,-2.2478582
+"Reading","England","Reading, England",51.4564242,-0.9700664
+"Wolverhampton","England","Wolverhampton, England",52.5847651,-2.127567
+"Blackpool","England","Blackpool, England",53.8179442,-3.0509812
+"Clapham","England","Clapham, England",51.4614469,-0.138627
+"Mechelen","Belgium","Mechelen, Belgium",51.0281381,4.4803453
+"Harrow Road","England","Harrow Road, England",51.2921297,-0.8438444
+"Unknown","Sweden","Unknown, Sweden",NA,NA
+"Half Moon Bay","USA","Half Moon Bay, USA",37.4635519,-122.428586
+"Addis Ababa","Ethiopia","Addis Ababa, Ethiopia",9.0358287,38.7524127
+"Ennis","Ireland","Ennis, Ireland",52.8435152,-8.983747
+"Mullingar","Ireland","Mullingar, Ireland",53.525822,-7.341304
+"Coleraine","Northern Ireland","Coleraine, Northern Ireland",55.1315912,-6.671861
+"Victoria","England","Victoria, England",51.49511265,-0.14412339929527
+"Clondalkin","Ireland","Clondalkin, Ireland",53.3219624,-6.3942689
+"Gorey","Ireland","Gorey, Ireland",52.67672795,-6.29511878002157
+"Cambridge","England","Cambridge, England",52.2055314,0.1186637
+"Schuettorf","Germany","Schuettorf, Germany",52.321619,7.2220864
+"Duesseldorf","Germany","Duesseldorf, Germany",51.2254018,6.7763137
+"Rennes","France","Rennes, France",48.1113387,-1.6800198
+"Laval","Canada","Laval, Canada",45.60558895,-73.7345601450885
+"Rensselaer","USA","Rensselaer, USA",42.7091389,-73.5107732
