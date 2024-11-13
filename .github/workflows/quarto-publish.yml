@@ -48,15 +48,45 @@ jobs:
           key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
             ${{ runner.os }}-renv-
-      - name: Setup R repositories
-        run: |
-          install.packages('BiocManager')
-          BiocManager::install(version = '3.18')
+      - name: Setup R and Bioconductor
         shell: Rscript {0}
-      - name: Setup RSPM
         run: |
-          echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/jammy/latest'))" >> ~/.Rprofile
-          echo "options(HTTPUserAgent = sprintf('R/%s R (%s)', getRversion(), paste(getRversion(), R.version['platform'], R.version['arch'], R.version['os'])))" >> ~/.Rprofile
+          # Install and configure BiocManager
+          if (!requireNamespace("BiocManager", quietly = TRUE)) {
+            install.packages("BiocManager")
+          }
+          
+          # Install compatible Bioconductor version for R 4.3.2
+          BiocManager::install(version = "3.18", update = TRUE, ask = FALSE)
+          
+          # Set up repositories
+          options(repos = c(
+            BioCsoft = "https://bioconductor.org/packages/3.18/bioc",
+            BioCann = "https://bioconductor.org/packages/3.18/data/annotation",
+            BioCexp = "https://bioconductor.org/packages/3.18/data/experiment",
+            BioCworkflows = "https://bioconductor.org/packages/3.18/workflows",
+            CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
+          ))
+          
+          # Save the repository configuration
+          writeLines(
+            sprintf('options(repos = c(%s))',
+                   paste(sprintf('"%s" = "%s"', names(getOption("repos")), unname(getOption("repos"))),
+                   collapse = ", ")),
+            "~/.Rprofile"
+          )
+      - name: Update renv.lock Bioconductor version
+        shell: Rscript {0}
+        run: |
+          # Read the renv.lock file
+          lock_data <- jsonlite::fromJSON("renv.lock")
+          
+          # Update Bioconductor version if needed
+          if (!is.null(lock_data$Bioconductor)) {
+            lock_data$Bioconductor <- "3.18"
+            # Write back the modified lock file
+            jsonlite::write_json(lock_data, "renv.lock", auto_unbox = TRUE, pretty = TRUE)
+          }
       - name: Restore packages
         shell: Rscript {0}
         run: |
