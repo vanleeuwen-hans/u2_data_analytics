@@ -332,7 +332,7 @@
         "tidyr",
         "utils"
       ],
-      "Hash": "3e3bb5fe1c84e3684c20cc60aed66d90"
+      "Hash": "0307bf86dbef35a7a86325c1a44acf9f"
     },
     "cpp11": {
       "Package": "cpp11",
