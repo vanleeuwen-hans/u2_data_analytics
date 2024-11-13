@@ -16,8 +16,8 @@ I also created an interactive Shiny app for this where you can select the tour o
 
 First we load my custom concertData package where I organized all the functions to analyze the U2 concert data.
 
-```{r load custom concertData package, message = FALSE, warning = FALSE}
-devtools::load_all("../packages/concertData")
+```{r load custom concertData package, echo = FALSE, message = FALSE, warning = FALSE}
+devtools::install_github("vanleeuwen-hans/concertData")
 library(concertData)
 ```
 

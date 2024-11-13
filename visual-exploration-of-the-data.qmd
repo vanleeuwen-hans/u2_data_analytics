@@ -11,7 +11,7 @@ Going beyond the basic statistics and comparison with the u2gigs.com statistics,
 First we load my custom concertData package where I organized all the functions to analyze the U2 concert data. This R package is available on my GitHub page at: https://github.com/vanleeuwen-hans.
 
 ```{r load custom concertData package, message = FALSE, warning = FALSE}
-devtools::load_all("../packages/concertData")
+devtools::install_github("vanleeuwen-hans/concertData")
 library(concertData)
 ```
 
