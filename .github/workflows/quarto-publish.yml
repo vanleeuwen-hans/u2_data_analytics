@@ -31,11 +31,6 @@ jobs:
         run: |
           echo 'options(repos = c(CRAN = "https://cran.r-project.org"))' >> ~/.Rprofile
 
-      - name: Restore renv environment
-        run: |
-          Rscript -e 'install.packages("renv")'
-          Rscript -e 'renv::restore()'
-      
       - name: Install system dependencies
         run: |
           sudo apt-get update
@@ -45,7 +40,11 @@ jobs:
         run: |
           Rscript -e 'install.packages("remotes")'
           Rscript -e 'remotes::install_version("MASS", version = "7.3-60", repos = "http://cran.us.r-project.org")'
-   
+
+      - name: Install specific Rcpp version
+        run: |
+          Rscript -e 'install.packages("Rcpp", version = "1.0.10", repos = "https://cloud.r-project.org")'
+      
       - name: Install R Dependencies
         env:
           GITHUB_PAT: ${{secrets.R_GITHUB_PAT}}
@@ -53,10 +52,6 @@ jobs:
         with:
           cache-version: 1
 
-      - name: Install specific Rcpp version
-        run: |
-          Rscript -e 'install.packages("Rcpp", version = "1.0.10", repos = "https://cloud.r-project.org")'
-   
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         with:
