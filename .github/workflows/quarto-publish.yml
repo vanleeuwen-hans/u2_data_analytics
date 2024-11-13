@@ -27,6 +27,15 @@ jobs:
         with:
           r-version: '4.2.3'  # Specify a stable version
 
+      - name: Set CRAN mirror
+        run: |
+          echo 'options(repos = c(CRAN = "https://cran.r-project.org"))' >> ~/.Rprofile
+
+      - name: Restore renv environment
+        run: |
+          Rscript -e 'install.packages("renv")'
+          Rscript -e 'renv::restore()'
+      
       - name: Install system dependencies
         run: |
           sudo apt-get update
