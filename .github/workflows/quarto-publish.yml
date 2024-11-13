@@ -52,9 +52,9 @@ jobs:
         run: |
           Rscript -e 'install.packages("Rcpp", version = "1.0.10", repos = "https://cloud.r-project.org")'
 
-      - name: Install MASS from CRAN directly
+      - name: Install MASS directly from URL
         run: |
-          Rscript -e 'install.packages("MASS", repos = "https://cran.r-project.org")'
+          Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/MASS_7.3-61.tar.gz", repos = NULL, type = "source")'
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
