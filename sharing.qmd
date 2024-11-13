@@ -50,7 +50,7 @@ The changes can then be committed and pushed to GitHub from R-Studio.
 
 ### Code Chunks in the Quarto Report
 
-I used [Quarto](https://quarto.org/) to publish my Capstone Project report for the Google Data analytics Certification, containing my methods, analysis code chunks, results including plots, insights and lessons learned. More about the set-up in the next paragraph. Example R Code chunks with my analysis code and outputs can be seen at my [U2 Data Analytics](https://vanleeuwen-hans.github.io/u2_data_analytics/) Quarto web site.
+I used [Quarto](https://quarto.org/) to publish my Capstone Project report for the Google Data analytics Certification, containing my methods, analysis code chunks, results including plots, insights and lessons learned. More about the set-up in the next paragraph. Some example R Code chunks with my analysis code and outputs can be seen at my [U2 Data Analytics](https://vanleeuwen-hans.github.io/u2_data_analytics/) Quarto web site.
 
 ## Quarto Report on GitHub Pages
 
