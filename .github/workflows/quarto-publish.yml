@@ -15,6 +15,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.R_GITHUB_PAT }}
       RENV_PATHS_ROOT: ~/.local/share/renv
+      RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.posit.co/cran/__linux__/jammy/latest
 
     steps:
       - name: Check out repository
@@ -54,11 +55,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-renv-
 
+      - name: Setup RSPM
+        run: |
+          echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/jammy/latest'))" >> ~/.Rprofile
+          echo "options(HTTPUserAgent = sprintf('R/%s R (%s)', getRversion(), paste(getRversion(), R.version['platform'], R.version['arch'], R.version['os'])))" >> ~/.Rprofile
+
       - name: Restore packages
         shell: Rscript {0}
         run: |
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
-          renv::restore(repos = c(CRAN = "https://cloud.r-project.org"), clean = TRUE)
+          renv::init(bare = TRUE)
+          renv::restore()
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
