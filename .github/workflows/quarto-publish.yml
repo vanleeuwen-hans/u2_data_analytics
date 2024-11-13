@@ -54,8 +54,8 @@ jobs:
 
       - name: Install specific version of MASS
         run: |
-          Rscript -e 'install.packages("http://cran.r-project.org/src/contrib/Archive/MASS/MASS_7.3-60.tar.gz", repos = NULL, type = "source")'
-
+          Rscript -e 'install.packages("remotes")'
+          Rscript -e 'remotes::install_version("MASS", version = "7.3-60", repos = "http://cran.us.r-project.org")'
       
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
