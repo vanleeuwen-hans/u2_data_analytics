@@ -1,5 +1,4 @@
 name: Quarto Publish
-
 on:
   push:
     branches: main
@@ -13,6 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      GITHUB_PAT: ${{ secrets.R_GITHUB_PAT }}
+      R_REPOS_URL: "https://cloud.r-project.org"
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -25,31 +28,41 @@ jobs:
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.3'  # Specify a stable version
-
-      - name: Set CRAN mirror
+          r-version: '4.3.2'  # Specify exact version for stability
+          
+      - name: Set up R package management
         run: |
-          echo 'options(repos = c(CRAN = "https://cran.r-project.org"))' >> ~/.Rprofile
+          echo '.libPaths(c("/home/runner/work/r-packages", .libPaths()))' >> ~/.Rprofile
+          echo 'options(repos = c(CRAN = "https://cloud.r-project.org"))' >> ~/.Rprofile
+          mkdir -p /home/runner/work/r-packages
 
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+          sudo apt-get install -y --no-install-recommends \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev \
+            libfontconfig1-dev \
+            libfreetype6-dev \
+            libfribidi-dev \
+            libharfbuzz-dev \
+            libjpeg-dev \
+            libpng-dev \
+            libtiff-dev
 
-      - name: Install specific version of MASS
-        run: |
-          Rscript -e 'install.packages("MASS", version = "7.3-51", repos = "http://cran.r-project.org")'
-
-      - name: Install specific Rcpp version
-        run: |
-          Rscript -e 'install.packages("Rcpp", version = "1.0.10", repos = "https://cloud.r-project.org")'
-      
-      - name: Install R Dependencies
-        env:
-          GITHUB_PAT: ${{secrets.R_GITHUB_PAT}}
-        uses: r-lib/actions/setup-renv@v2
+      - name: Cache R packages
+        uses: actions/cache@v3
         with:
-          cache-version: 1
+          path: /home/runner/work/r-packages
+          key: r-${{ runner.os }}-${{ hashFiles('**/renv.lock') }}
+          restore-keys: r-${{ runner.os }}-
+
+      - name: Install required R packages
+        run: |
+          install.packages(c("renv", "remotes"))
+          renv::restore()
+        shell: Rscript {0}
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
