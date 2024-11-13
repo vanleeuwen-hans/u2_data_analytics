@@ -84,7 +84,7 @@ jobs:
             libgeos-dev
       - name: Rebuild renv environment
         run: |
-          renv::restore(force = TRUE)
+          Rscript -e 'renv::restore(force = TRUE)'
       - name: Restore packages
         shell: Rscript {0}
         run: |
