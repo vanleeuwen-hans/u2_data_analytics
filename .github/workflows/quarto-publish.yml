@@ -33,6 +33,8 @@ jobs:
           sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
 
       - name: Install R Dependencies
+        env:
+          GITHUB_PAT: ${{ secrets.R_GITHUB_PAT }}
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
