@@ -91,7 +91,7 @@ jobs:
           Rscript -e 'renv::init()'
       - name: Rebuild renv environment
         run: |
-          Rscript -e 'renv::restore(force = TRUE)'
+          Rscript -e 'renv::restore()'
       - name: Restore packages
         shell: Rscript {0}
         run: |
