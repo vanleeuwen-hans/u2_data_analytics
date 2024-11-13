@@ -25,7 +25,7 @@ jobs:
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.3.2'
+          r-version: '4.4.0'
           use-public-rspm: true
       - name: Install system dependencies
         run: |
@@ -56,15 +56,15 @@ jobs:
             install.packages("BiocManager")
           }
           
-          # Install compatible Bioconductor version for R 4.3.2
-          BiocManager::install(version = "3.18", update = TRUE, ask = FALSE)
+          # Install compatible Bioconductor version for R 4.4.0
+          BiocManager::install(version = "3.20", update = TRUE, ask = FALSE)
           
           # Set up repositories
           options(repos = c(
-            BioCsoft = "https://bioconductor.org/packages/3.18/bioc",
-            BioCann = "https://bioconductor.org/packages/3.18/data/annotation",
-            BioCexp = "https://bioconductor.org/packages/3.18/data/experiment",
-            BioCworkflows = "https://bioconductor.org/packages/3.18/workflows",
+            BioCsoft = "https://bioconductor.org/packages/3.20/bioc",
+            BioCann = "https://bioconductor.org/packages/3.20/data/annotation",
+            BioCexp = "https://bioconductor.org/packages/3.20/data/experiment",
+            BioCworkflows = "https://bioconductor.org/packages/3.20/workflows",
             CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
           ))
           
@@ -78,18 +78,6 @@ jobs:
       - name: Install jsonlite package
         run: |
           Rscript -e 'install.packages("jsonlite")'
-      - name: Update renv.lock Bioconductor version
-        shell: Rscript {0}
-        run: |
-          # Read the renv.lock file
-          lock_data <- jsonlite::fromJSON("renv.lock")
-          
-          # Update Bioconductor version if needed
-          if (!is.null(lock_data$Bioconductor)) {
-            lock_data$Bioconductor <- c("3.18")
-            # Write back the modified lock file
-            jsonlite::write_json(lock_data, "renv.lock", auto_unbox = TRUE, pretty = TRUE)
-          }
       - name: Restore packages
         shell: Rscript {0}
         run: |
