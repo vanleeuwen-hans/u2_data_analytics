@@ -55,7 +55,7 @@ jobs:
       - name: Install MASS directly from URL
         run: |
           Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/MASS_7.3-61.tar.gz", repos = NULL, type = "source")'
-
+      
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         with:
