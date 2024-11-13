@@ -2,6 +2,7 @@
 title: "Multiple Setlist Alignment"
 author: "Hans van Leeuwen"
 editor: visual
+bibliography: references.bib
 ---
 
 ## Tour set-list alignment
@@ -372,7 +373,7 @@ grid.arrange(main_plot,
 
 ## Distance tree of aligned setlists
 
-Another way to display the relatedness of setlists is to use a distance tree, often used for biological sequences, producing so called phylogenetic trees.
+Another way to display the relatedness of setlists is to use a distance tree, often used for biological sequences, producing so called phylogenetic trees. The [@xu2022]ggtree and [@paradis2018]ape packages were used for the plots.
 
 ```{r data analysis - tour setlist distance tree, warning=FALSE, message=FALSE, error=FALSE}
 
