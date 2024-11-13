@@ -14,20 +14,25 @@ In the plots below you can very well see the conserved blocks of the show, as we
 
 I also created an interactive Shiny app for this where you can select the tour of interest. See more info on the page [Interactive Visualizations](interactive-visual-apps.qmd#tour-setlist-alignment-with-interactive-tour-filter-using-shiny).
 
-First we load my custom concertData package where I organized all the functions to analyze the U2 concert data.
+## Load custom concertData package
 
-```{r load custom concertData package, echo = FALSE, message = FALSE, warning = FALSE}
+First we load my custom concertData package where I organized all the functions to analyze the U2 concert data. This R package is available on my GitHub page at: <https://github.com/vanleeuwen-hans/concertData>.
+
+```{r load custom concertData package, message = FALSE, warning = FALSE}
+library(devtools)
 devtools::install_github("vanleeuwen-hans/concertData")
 library(concertData)
 ```
 
-Load the u2data file.
+## Load the u2data
 
 ```{r data analysis - load libraries, message = FALSE, warning = FALSE}
 
 # read the u2 concertData
 u2data <- read_concertData_csv('u2data/u2data_all_shows_clean_final.csv')
 ```
+
+## Set-list alignment with NW approach
 
 ```{r data analysis - tour setlist alignment NW, warning=FALSE, message=FALSE, error=FALSE, out.width="100%" }
 
