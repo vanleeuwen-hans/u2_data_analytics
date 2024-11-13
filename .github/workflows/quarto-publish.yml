@@ -43,7 +43,7 @@ jobs:
 
       - name: Install R Dependencies
         env:
-          GITHUB_PAT: ${{ secrets.R_GITHUB_PAT }}
+          GITHUB_PAT: ${{secrets.R_GITHUB_PAT}}
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
