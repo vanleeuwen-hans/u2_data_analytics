@@ -75,9 +75,16 @@ jobs:
                    collapse = ", ")),
             "~/.Rprofile"
           )
-      - name: Check for libproj
+      - name: Install libproj and dependencies
         run: |
-          dpkg -l libproj*
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libproj-dev \
+            libgdal-dev \
+            libgeos-dev
+      - name: Rebuild renv environment
+        run: |
+          renv::restore(force = TRUE)
       - name: Restore packages
         shell: Rscript {0}
         run: |
