@@ -65,3 +65,21 @@ This was Claude's response:
 > The changes should appear on your GitHub Pages site within a few minutes after pushing to main.
 >
 > Would you like me to explain any part of this workflow in more detail?
+
+I implemented this but there was a failure on the first attempt. That was due to a missing renv.lock file in my repository. As Claude.AI had timed out (I have a free account) I went to Perplexity.AI who helped to resolve this issue:\
+The error "This project does not contain a lockfile" suggests that you're using a package management system (likely renv for R or pip for Python) but haven't created a lockfile yet. Here's how to resolve this:
+
+> 1.  Locally, in your R project, run:
+>
+> ```         
+> renv::snapshot()
+> ```
+>
+> This will create a **`renv.lock`** file in your project directory.
+>
+> 2.  Commit and push the **`renv.lock`** file to your repository.
+
+When I created the `renv.lock` file I got a warning about my local loading of my concertData R package, so I changed the loading of that package in my Quarto code chunks:
+
+From: `devtools::load_all("../packages/concertData")`
+To: `devtools::install_github("vanleeuwen-hans/concertData")`
