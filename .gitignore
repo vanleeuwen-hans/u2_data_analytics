@@ -3,6 +3,8 @@
 .Rprofile
 .RData
 .quarto
+renv/library/
+renv/staging/
 /u2gigs/
 /u2data/
 /u2hvl/
