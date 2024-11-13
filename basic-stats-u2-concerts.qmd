@@ -17,7 +17,7 @@ library(concertData)
 ```{r basic stats - read data, message = FALSE, warning = FALSE}
 
 # read the following file where the Rosemont duplication was not fixed yet
-# this is explained further down on this page
+# this is explained further down on this report
 u2data <- read_concertData_csv('u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv')
 ```
 
