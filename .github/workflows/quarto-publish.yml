@@ -75,6 +75,9 @@ jobs:
                    collapse = ", ")),
             "~/.Rprofile"
           )
+      - name: Install jsonlite package
+        run: |
+          Rscript -e 'install.packages("jsonlite")'
       - name: Update renv.lock Bioconductor version
         shell: Rscript {0}
         run: |
