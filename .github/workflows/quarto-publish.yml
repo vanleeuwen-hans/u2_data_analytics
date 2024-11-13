@@ -82,6 +82,13 @@ jobs:
             libproj-dev \
             libgdal-dev \
             libgeos-dev
+      - name: Install renv
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: renv
+      - name: Initialize renv
+        run: |
+          Rscript -e 'renv::init()'
       - name: Rebuild renv environment
         run: |
           Rscript -e 'renv::restore(force = TRUE)'
