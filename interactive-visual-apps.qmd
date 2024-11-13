@@ -2,11 +2,12 @@
 title: "Interactive Visual Apps"
 author: "Hans van Leeuwen"
 editor: visual
+bibliography: references.bib
 ---
 
 ## World map with interactive tour and song filter using Shiny
 
-I created an interactive version of the world map so that the user can filter by tour and/or song. This was done with R-Shiny and deployed to shinyapps.io at: [U2 Tour Map](https://qjxo03-hans-van0leeuwen.shinyapps.io/u2_tour_map/).
+I created an interactive version of the world map so that the user can filter by tour and/or song. This was done with [@shiny]R-Shiny and deployed to shinyapps.io at: [U2 Tour Map](https://qjxo03-hans-van0leeuwen.shinyapps.io/u2_tour_map/).
 
 The code of this Shiny app can be found in my GitHub repository at: <https://github.com/vanleeuwen-hans/u2_tour_map>
 
