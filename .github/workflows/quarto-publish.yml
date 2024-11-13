@@ -28,8 +28,8 @@ jobs:
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.3.2'  # Specify exact version for stability
-          
+          r-version: '4.3.2'
+
       - name: Set up R package management
         run: |
           echo '.libPaths(c("/home/runner/work/r-packages", .libPaths()))' >> ~/.Rprofile
@@ -58,10 +58,20 @@ jobs:
           key: r-${{ runner.os }}-${{ hashFiles('**/renv.lock') }}
           restore-keys: r-${{ runner.os }}-
 
-      - name: Install required R packages
+      - name: Install and configure renv
         run: |
-          install.packages(c("renv", "remotes"))
-          renv::restore()
+          install.packages("renv")
+          renv::init(bare = TRUE)
+        shell: Rscript {0}
+
+      - name: Install latest versions directly
+        run: |
+          install.packages(c("Matrix", "mgcv", "lattice", "splines", "nlme"), dependencies = TRUE)
+        shell: Rscript {0}
+
+      - name: Restore remaining renv environment
+        run: |
+          renv::restore(prompt = FALSE)
         shell: Rscript {0}
 
       - name: Render Quarto Project
