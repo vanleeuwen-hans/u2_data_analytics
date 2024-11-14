@@ -699,7 +699,7 @@ print(decades_plot)
 
 ### World map with zoom and popups using leaflet
 
-With the leaflet package we have a world map here where one can zoom in and out, and you can click on the dots to see more info!
+With the leaflet package we have a world map here where you can zoom in and out, and you can click on the dots to see more info!
 
 ```{r visual exploration - zoomable world map, message=FALSE, warning=FALSE}
 
