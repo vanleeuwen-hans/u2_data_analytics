@@ -8,6 +8,11 @@ on:
       - '**.Rmd'
       - '**.md'
       - '_quarto.yml'
+    paths-ignore:
+      - 'mafft/**'
+      - 'u2data/**'
+      - 'u2gigs/**' 
+      - 'u2hvl/**'
 
 jobs:
   build-deploy:
