@@ -270,7 +270,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
   <ul class="collapse">
+  <li><a href="#brainstorming-ideas-for-data-analytics-and-visuals" id="toc-brainstorming-ideas-for-data-analytics-and-visuals" class="nav-link" data-scroll-target="#brainstorming-ideas-for-data-analytics-and-visuals">Brainstorming ideas for data analytics and visuals</a></li>
+  <li><a href="#troubleshooting-coding-errors" id="toc-troubleshooting-coding-errors" class="nav-link" data-scroll-target="#troubleshooting-coding-errors">Troubleshooting coding errors</a></li>
+  <li><a href="#advise-for-tools-and-hosting-platforms" id="toc-advise-for-tools-and-hosting-platforms" class="nav-link" data-scroll-target="#advise-for-tools-and-hosting-platforms">Advise for tools and hosting platforms</a></li>
+  <li><a href="#creating-the-structure-for-an-r-package" id="toc-creating-the-structure-for-an-r-package" class="nav-link" data-scroll-target="#creating-the-structure-for-an-r-package">Creating the structure for an R Package</a></li>
   <li><a href="#automating-the-deployment-of-changes-in-the-quarto-web-site" id="toc-automating-the-deployment-of-changes-in-the-quarto-web-site" class="nav-link" data-scroll-target="#automating-the-deployment-of-changes-in-the-quarto-web-site">Automating the deployment of changes in the Quarto web site</a></li>
+  <li><a href="#connecting-with-a-private-repository-to-protect-sensitive-data" id="toc-connecting-with-a-private-repository-to-protect-sensitive-data" class="nav-link" data-scroll-target="#connecting-with-a-private-repository-to-protect-sensitive-data">Connecting with a private repository to protect sensitive data</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -308,6 +314,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<section id="brainstorming-ideas-for-data-analytics-and-visuals" class="level3">
+<h3 class="anchored" data-anchor-id="brainstorming-ideas-for-data-analytics-and-visuals">Brainstorming ideas for data analytics and visuals</h3>
+</section>
+<section id="troubleshooting-coding-errors" class="level3">
+<h3 class="anchored" data-anchor-id="troubleshooting-coding-errors">Troubleshooting coding errors</h3>
+</section>
+<section id="advise-for-tools-and-hosting-platforms" class="level3">
+<h3 class="anchored" data-anchor-id="advise-for-tools-and-hosting-platforms">Advise for tools and hosting platforms</h3>
+</section>
+<section id="creating-the-structure-for-an-r-package" class="level3">
+<h3 class="anchored" data-anchor-id="creating-the-structure-for-an-r-package">Creating the structure for an R Package</h3>
+</section>
 <section id="automating-the-deployment-of-changes-in-the-quarto-web-site" class="level3">
 <h3 class="anchored" data-anchor-id="automating-the-deployment-of-changes-in-the-quarto-web-site">Automating the deployment of changes in the Quarto web site</h3>
 <p>As explained in the <a href="./sharing.html#maintenance-and-updates">Sharing &gt; Maintenance and Updates</a> section, I initially had a cumbersome process that involved many manual steps to push changes to my Quarto web site. That was until I asked Claude.AI (3.5 Sonnet) for help. Here was my prompt:<br>
@@ -317,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <br>
 The process to update is currently cumbersome. I update qmd documents in main, render these, copy the new files from docs temporarily and manually somewhere outside of my project folder, then do a git stash, after which I switch to the gh-pages branch, then manually copy paste the new files into the docs folder of the gh-pages branch, followed by git add, commit and push.<br>
 <br>
-Is there a more automated way to deploy my qnd file changes to the Quarto site that is on GitHub pages?</p>
+Is there a more automated way to deploy my qmd file changes to the Quarto site that is on GitHub pages?</p>
 </blockquote>
 <p>This was Claude’s response:</p>
 <blockquote class="blockquote">
@@ -349,8 +367,9 @@ Is there a more automated way to deploy my qnd file changes to the Quarto site t
 <p>Would you like me to explain any part of this workflow in more detail?</p>
 </blockquote>
 <p>I implemented this but there was a failure on the first attempt. That was due to a missing renv.lock file in my repository. As Claude.AI had timed out (I have a free account) I went to Perplexity.AI who helped to resolve this issue:<br>
-The error “This project does not contain a lockfile” suggests that you’re using a package management system (likely renv for R or pip for Python) but haven’t created a lockfile yet. Here’s how to resolve this:</p>
+</p>
 <blockquote class="blockquote">
+<p>The error “This project does not contain a lockfile” suggests that you’re using a package management system (likely renv for R or pip for Python) but haven’t created a lockfile yet. Here’s how to resolve this:</p>
 <ol type="1">
 <li>Locally, in your R project, run:</li>
 </ol>
@@ -361,7 +380,15 @@ The error “This project does not contain a lockfile” suggests that you’re 
 </ol>
 </blockquote>
 <p>When I created the <code>renv.lock</code> file I got a warning about my local loading of my concertData R package, so I changed the loading of that package in my Quarto code chunks:</p>
-<p>From: <code>devtools::load_all("../packages/concertData")</code> To: <code>devtools::install_github("vanleeuwen-hans/concertData")</code></p>
+<p>From: <code>devtools::load_all("../packages/concertData")</code></p>
+<p>To: <code>devtools::install_github("vanleeuwen-hans/concertData")</code></p>
+<p>And that was basically it, now the deployment is fully automated whenever I change something in my report qmd files and push it to GitHub.</p>
+</section>
+<section id="connecting-with-a-private-repository-to-protect-sensitive-data" class="level3">
+<h3 class="anchored" data-anchor-id="connecting-with-a-private-repository-to-protect-sensitive-data">Connecting with a private repository to protect sensitive data</h3>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 
 
 </section>

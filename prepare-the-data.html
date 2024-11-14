@@ -293,6 +293,13 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>song_url</strong>: the URL to the song info on u2gigs.com</li>
 <li><strong>song_lyrics</strong>: the lyrics of the song (e.g.&nbsp;‘I can’t believe the news today, I can’t close my eyes and make it go away…..’)</li>
 </ul>
+<p>For this project I decided to work with one aggregated data files containing all this information. From a data management perspective, it would be wiser to structure the data into different levels, and then these different levels would be linked to each other, like in a relational database with primary and foreign keys. I posed a question to Claude.AI to come up with a possible database scheme, and it provided the following possible Entity Relationship Diagram in mere seconds:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="u2data/u2data_ERD_claude.png" class="img-fluid figure-img"></p>
+<figcaption>u2data Entity Relationship Diagram created by Claude.AI</figcaption>
+</figure>
+</div>
 </section>
 <section id="web-scraping-methodology" class="level2">
 <h2 class="anchored" data-anchor-id="web-scraping-methodology">Web scraping methodology</h2>
