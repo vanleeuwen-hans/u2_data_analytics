@@ -8,7 +8,7 @@ editor: visual
 
 ## GitHub Code Sharing
 
-All the code that I wrote, and in many cases co-wrote with Claude.AI and/or Perplexity.AI, is available in my GitHub repositories, in the following ways.
+All the code that I wrote, and in some cases co-wrote with Claude.AI and/or Perplexity.AI, is available in my GitHub repositories, in the following ways.
 
 ### concertData R-package
 
