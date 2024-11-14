@@ -9,7 +9,7 @@ Well, first of all because **I am a big U2 fan**, a spark that was lit when I pu
 
 Second, **I am a data scientist**. I am a plant molecular biology and genetics scientist by training, and at some point in my professional journey I transitioned into bioinformatics, scripting, coding, trying to make sense of the avalanche of data coming from new genetic and genomic technologies like the Next-Gen Sequencing revolution in the first decade of this century. Now I work in pharmaceutical data science, data strategy and governance. So yes, you can say that I love to dig into data, to uncover hard to find insights that can help us to bring new medicine or treatments to people with unmet medical needs.
 
-The work documented on this site is is my **Capstone Project for the Google Data Analytics Certification program**.
+The work documented on this site is my **Capstone Project for the Google Data Analytics Certification program**.
 
 <div style="text-align: center;"><div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6275b026-af2c-4382-93a5-1796ea53fafc" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script></div>
 
