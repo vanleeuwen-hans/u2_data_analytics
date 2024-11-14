@@ -77,6 +77,12 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
+          # Copy data/image files from private repository
+          run: |
+            cp -r u2_data_analytics_data/mafft .
+            cp -r u2_data_analytics_data/u2data .
+            cp -r u2_data_analytics_data/u2gigs .
+            cp -r u2_data_analytics_data/u2hvl .
 
       - name: Create .nojekyll
         run: touch docs/.nojekyll
