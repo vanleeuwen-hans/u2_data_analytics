@@ -66,33 +66,10 @@ jobs:
           renv::init(bare = TRUE)
           renv::restore()
 
-      - name: Get changed files
-        id: changed-files
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const fs = require('fs')
-            const changedFiles = await github.rest.repos.getCommit({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: 'HEAD'
-            }).then(({ data }) => {
-              return new Set(data.files.map(({ filename }) => filename))
-            })
-
-            const relevantFiles = new Set([
-              ...changedFiles,
-              '_quarto.yml'
-            ])
-            console.log(`Relevant files: ${[...relevantFiles].join(', ')}`)
-            return { relevant_files: [...relevantFiles] }
-
-      - name: Render updated Quarto files
+      - name: Render full Quarto project
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
-          files: ${{ steps.changed-files.outputs.relevant_files }}
 
       - name: Create .nojekyll
         run: touch docs/.nojekyll
