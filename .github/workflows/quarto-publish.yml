@@ -1,7 +1,7 @@
 name: Quarto Publish
 on:
   push:
-    branches: main
+    branches: main 
     paths:
       - '**.qmd'
       - '**.Rmd'
@@ -16,7 +16,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.R_GITHUB_PAT }}
       RENV_PATHS_ROOT: ~/.local/share/renv
       RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.posit.co/cran/__linux__/jammy/latest
-
+      
     steps:
       - uses: actions/checkout@v4
       
@@ -48,21 +48,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-renv-
 
-      - name: Setup R and Bioconductor
-        shell: Rscript {0}
-        run: |
-          if (!requireNamespace("BiocManager", quietly = TRUE)) {
-            install.packages("BiocManager")
-          }
-          BiocManager::install(version = "3.20", update = TRUE, ask = FALSE)
-          options(repos = c(
-            BioCsoft = "https://bioconductor.org/packages/3.20/bioc",
-            BioCann = "https://bioconductor.org/packages/3.20/data/annotation",
-            BioCexp = "https://bioconductor.org/packages/3.20/data/experiment",
-            BioCworkflows = "https://bioconductor.org/packages/3.20/workflows",
-            CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
-          ))
-
       - name: Setup renv and restore packages
         shell: Rscript {0}
         run: |
@@ -75,7 +60,7 @@ jobs:
         with:
           to: html
 
-      - name: Create .nojekyll
+      - name: Create .nojekyll 
         run: touch docs/.nojekyll
 
       - name: Publish to GitHub Pages
