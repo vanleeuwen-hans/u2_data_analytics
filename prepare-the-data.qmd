@@ -29,6 +29,10 @@ To answer [the questions](ask-the-right-questions.qmd) I had asked myself at the
 -   **song_url**: the URL to the song info on u2gigs.com
 -   **song_lyrics**: the lyrics of the song (e.g. 'I can't believe the news today, I can't close my eyes and make it go away.....')
 
+For this project I decided to work with one aggregated data files containing all this information. From a data management perspective, it would be wiser to structure the data into different levels, and then these different levels would be linked to each other, like in a relational database with primary and foreign keys. I posed a question to Claude.AI to come up with a possible database scheme, and it provided the following possible Entity Relationship Diagram in mere seconds:
+
+![u2data Entity Relationship Diagram created by Claude.AI](u2data/u2data_ERD_claude.png){fig-align="center"}
+
 ## Web scraping methodology
 
 On u2gigs.com each show has a web page, and each song ever played has a web page. The earliest show available is from 1976 when U2 played at their Mount Temple Comprehensive School in Dublin. The last show available at the time of this project was in the Sphere in Las Vegas on March 2, 2024. The outline of the scraping approach can be seen below. For details feel free to reach out to me.

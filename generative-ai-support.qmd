@@ -8,6 +8,14 @@ editor: visual
 
 ## Examples
 
+### Brainstorming ideas for data analytics and visuals
+
+### Troubleshooting coding errors
+
+### Advise for tools and hosting platforms
+
+### Creating the structure for an R Package
+
 ### Automating the deployment of changes in the Quarto web site
 
 As explained in the [Sharing \> Maintenance and Updates](sharing.qmd#maintenance-and-updates) section, I initially had a cumbersome process that involved many manual steps to push changes to my Quarto web site. That was until I asked Claude.AI (3.5 Sonnet) for help. Here was my prompt:\
@@ -16,7 +24,7 @@ As explained in the [Sharing \> Maintenance and Updates](sharing.qmd#maintenance
 > \
 > The process to update is currently cumbersome. I update qmd documents in main, render these, copy the new files from docs temporarily and manually somewhere outside of my project folder, then do a git stash, after which I switch to the gh-pages branch, then manually copy paste the new files into the docs folder of the gh-pages branch, followed by git add, commit and push.\
 > \
-> Is there a more automated way to deploy my qnd file changes to the Quarto site that is on GitHub pages?
+> Is there a more automated way to deploy my qmd file changes to the Quarto site that is on GitHub pages?
 
 This was Claude's response:
 
@@ -67,8 +75,9 @@ This was Claude's response:
 > Would you like me to explain any part of this workflow in more detail?
 
 I implemented this but there was a failure on the first attempt. That was due to a missing renv.lock file in my repository. As Claude.AI had timed out (I have a free account) I went to Perplexity.AI who helped to resolve this issue:\
-The error "This project does not contain a lockfile" suggests that you're using a package management system (likely renv for R or pip for Python) but haven't created a lockfile yet. Here's how to resolve this:
 
+> The error "This project does not contain a lockfile" suggests that you're using a package management system (likely renv for R or pip for Python) but haven't created a lockfile yet. Here's how to resolve this:
+>
 > 1.  Locally, in your R project, run:
 >
 > ```         
@@ -81,4 +90,12 @@ The error "This project does not contain a lockfile" suggests that you're using 
 
 When I created the `renv.lock` file I got a warning about my local loading of my concertData R package, so I changed the loading of that package in my Quarto code chunks:
 
-From: `devtools::load_all("../packages/concertData")` To: `devtools::install_github("vanleeuwen-hans/concertData")`
+From: `devtools::load_all("../packages/concertData")`
+
+To: `devtools::install_github("vanleeuwen-hans/concertData")`
+
+And that was basically it, now the deployment is fully automated whenever I change something in my report qmd files and push it to GitHub.
+
+### Connecting with a private repository to protect sensitive data
+
+### 
