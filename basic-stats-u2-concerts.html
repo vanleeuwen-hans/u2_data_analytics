@@ -312,37 +312,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>First we load my custom concertData package where I organized all the functions to analyze the U2 concert data. This R package is available on my GitHub page at: <a href="https://github.com/vanleeuwen-hans/concertData" class="uri">https://github.com/vanleeuwen-hans/concertData</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"vanleeuwen-hans/concertData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>curl        (5.2.3  -&gt; 6.0.0   ) [CRAN]
-Rcpp        (1.0.13 -&gt; 1.0.13-1) [CRAN]
-yulab.utils (0.1.7  -&gt; 0.1.8   ) [CRAN]</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/tmp/RtmpPSRHiN/remotes21097c7e80ef/vanleeuwen-hans-concertData-9837f74/DESCRIPTION’ ... OK
-* preparing ‘concertData’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-Omitted ‘LazyData’ from DESCRIPTION
-* building ‘concertData_0.1.0.tar.gz’</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(concertData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"vanleeuwen-hans/concertData"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(concertData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the following file where the Rosemont duplication was not fixed yet</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this is explained further down on this report</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_concertData_csv</span>(<span class="st">'u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the following file where the Rosemont duplication was not fixed yet</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># this is explained further down on this report</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_concertData_csv</span>(<span class="st">'u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="longest-set-lists" class="level2">
 <h2 class="anchored" data-anchor-id="longest-set-lists">Longest set lists</h2>
 <p>List the shows with the longest set lists, i.e.&nbsp;where U2 played most songs in a concert. The list corresponds to the statistics at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># longest set lists</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>longest_setlists <span class="ot">&lt;-</span> <span class="fu">find_longest_setlists</span>(u2data)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(longest_setlists)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># longest set lists</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>longest_setlists <span class="ot">&lt;-</span> <span class="fu">find_longest_setlists</span>(u2data)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(longest_setlists)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        date    city country             venue Number of songs played
 1 2015-12-06   Paris  France AccorHotels Arena                     27
@@ -364,9 +349,9 @@ Omitted ‘LazyData’ from DESCRIPTION
 <h2 class="anchored" data-anchor-id="shows-with-most-snippets">Shows with most snippets</h2>
 <p>A snippet is a short piece of song (either from another artist or from U2 themselves) played as part of a regular song in the show.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get shows with most snippets</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>snippet_summary <span class="ot">&lt;-</span> <span class="fu">find_shows_with_most_snippets</span>(u2data)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(snippet_summary, <span class="at">n=</span><span class="dv">10</span>)  <span class="co"># Show top 10 shows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get shows with most snippets</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>snippet_summary <span class="ot">&lt;-</span> <span class="fu">find_shows_with_most_snippets</span>(u2data)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(snippet_summary, <span class="at">n=</span><span class="dv">10</span>)  <span class="co"># Show top 10 shows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
    date       city     country          venue             number_snippets_played
@@ -392,9 +377,9 @@ Omitted ‘LazyData’ from DESCRIPTION
 </div>
 <p>I noticed a discrepancy in number of snippets for some of these shows when comparing with the statistics at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>, for example the London show on November 3rd, 2015, where my data calculates the number of snippets played as 20, while the info at <a href="https://www.u2gigs.com/show1957.html" class="uri">https://www.u2gigs.com/show1957.html</a> states 19. I first checked in my data which song was incorrectly identified as snippet. That turned out to be ‘Even Better Than The Real Thing’.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check london show 2015-11-03</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>london_show <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, date <span class="sc">==</span> <span class="st">'2015-11-03'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>,<span class="st">"song_title"</span>, <span class="st">"snippet"</span>))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(london_show, <span class="at">n =</span> <span class="fu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check london show 2015-11-03</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>london_show <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, date <span class="sc">==</span> <span class="st">'2015-11-03'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>,<span class="st">"song_title"</span>, <span class="st">"snippet"</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(london_show, <span class="at">n =</span> <span class="fu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20 × 4
    showID date       song_title                           snippet
@@ -432,9 +417,9 @@ Omitted ‘LazyData’ from DESCRIPTION
 <h2 class="anchored" data-anchor-id="cities-with-most-shows">Cities with most shows</h2>
 <p>We used this metric for data curation already, but here is the top 11 (instead of Top 10 so that Amsterdam is displayed 😀 ) of cities where U2 played most often. This matches exactly the statistics listed at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cities with most shows played</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>top_cities <span class="ot">&lt;-</span> <span class="fu">find_most_played_cities</span>(u2data, <span class="at">n =</span> <span class="dv">13</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cities with most shows played</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>top_cities <span class="ot">&lt;-</span> <span class="fu">find_most_played_cities</span>(u2data, <span class="at">n =</span> <span class="dv">13</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              city number_of_shows
 1           Dublin             202
@@ -464,9 +449,9 @@ Omitted ‘LazyData’ from DESCRIPTION
 <h2 class="anchored" data-anchor-id="venues-with-most-shows">Venues with most shows</h2>
 <p>Here is the top 10 of venues where U2 played most often. This matches exactly the statistics listed at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 venues with most shows played</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>top_venues <span class="ot">&lt;-</span> <span class="fu">find_most_played_venues</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_venues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 venues with most shows played</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>top_venues <span class="ot">&lt;-</span> <span class="fu">find_most_played_venues</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_venues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   venue        city number_of_shows
 1                 Sphere   Las Vegas              40
@@ -493,10 +478,10 @@ Omitted ‘LazyData’ from DESCRIPTION
 <h2 class="anchored" data-anchor-id="countries-with-most-shows">Countries with most shows</h2>
 <p>The top 10 of countries where U2 played most often can be seen below. This matches exactly the statistics listed at <a href="https://www.u2gigs.com/tourdb-stats.html" class="uri">https://www.u2gigs.com/tourdb-stats.html</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># countries with most shows played</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 countries with most shows played</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>top_countries <span class="ot">&lt;-</span> <span class="fu">find_most_played_countries</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_countries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># countries with most shows played</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 countries with most shows played</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>top_countries <span class="ot">&lt;-</span> <span class="fu">find_most_played_countries</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_countries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       country number_of_shows
 1          USA             930
@@ -523,8 +508,8 @@ Omitted ‘LazyData’ from DESCRIPTION
 <h2 class="anchored" data-anchor-id="top-10-most-played-songs">Top 10 most played songs</h2>
 <p>Before we look at the top 10, let’s see how many different songs U2 has played live.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of unique songs  played</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'song_title'</span>)]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of unique songs  played</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(<span class="fu">unique</span>(u2data[,<span class="fu">c</span>(<span class="st">'song_title'</span>)]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 994</code></pre>
 </div>
@@ -540,9 +525,9 @@ Omitted ‘LazyData’ from DESCRIPTION
 <p>And that number coincides with the number found in my data.</p>
 <p>The top 10 of songs that U2 played most often can be seen below. This does not match completely with the statistics listed at <a href="https://www.u2gigs.com/most-played-songs.html" class="uri">https://www.u2gigs.com/most-played-songs.html</a>. There are several songs that have a count that is 1 higher in my data (Pride, Streets, One, Bullet, Still Haven’t Found).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># songs most played</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>top_played_songs <span class="ot">&lt;-</span> <span class="fu">find_most_played_songs</span>(u2data, <span class="at">n =</span> <span class="dv">15</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_played_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># songs most played</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>top_played_songs <span class="ot">&lt;-</span> <span class="fu">find_most_played_songs</span>(u2data, <span class="at">n =</span> <span class="dv">15</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_played_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 15 × 4
    song_title       times_played_total times_played_regular times_played_snippet
@@ -573,15 +558,15 @@ Omitted ‘LazyData’ from DESCRIPTION
 </div>
 <p>I took a closer look at the song Pride to see where the difference of 1 time played is between my data and the data at <a href="https://www.u2gigs.com/Pride_(In_the_Name_of_Love)-s40.html" class="uri">https://www.u2gigs.com/Pride_(In_the_Name_of_Love)-s40.html</a>. I copied all the times the song was played from that page and pasted in Excel. With the code below I obtained the list from my data and compared that side by side in Excel.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pride - number of times played</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pride_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Pride (In the Name of Love)'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>,<span class="st">"city"</span>,<span class="st">"tour"</span>, <span class="st">"song_title"</span>, <span class="st">"showID"</span>))</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(pride_data, "pride_data.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pride - number of times played</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pride_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Pride (In the Name of Love)'</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>,<span class="st">"city"</span>,<span class="st">"tour"</span>, <span class="st">"song_title"</span>, <span class="st">"showID"</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(pride_data, "pride_data.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>I discovered that the issue in my data is at the ZOO TV show on March 31, 1992 in Rosemont: <a href="https://www.u2gigs.com/show235.html" class="uri">https://www.u2gigs.com/show235.html</a>. Pride was played one time at that show but appears in my data as it was played 2 times during that show:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rosemont show 1992 set list</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>rosemont_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, showID <span class="sc">==</span> <span class="dv">235</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(rosemont_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rosemont show 1992 set list</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>rosemont_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, showID <span class="sc">==</span> <span class="dv">235</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(rosemont_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 46 × 6
    date       city     song_position song_title                   snippet encore
@@ -601,9 +586,9 @@ Omitted ‘LazyData’ from DESCRIPTION
 </div>
 <p>With this we can see that there is duplicated data for this show in my data. I went back to my original scraped files and indeed I saw that the duplication happened where the scraping process had been interrupted and later restarted manually. Let’s check to what extent there are duplicated rows in my data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># show duplicate rows </span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>duplicated_rows <span class="ot">&lt;-</span> u2data[<span class="fu">duplicated</span>(u2data), ]</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(duplicated_rows, <span class="at">n=</span><span class="fu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># show duplicate rows </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>duplicated_rows <span class="ot">&lt;-</span> u2data[<span class="fu">duplicated</span>(u2data), ]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(duplicated_rows, <span class="at">n=</span><span class="fu">max</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 24 × 15
    showID tour  leg   date       venue city  state country song_position snippet
@@ -636,18 +621,18 @@ Omitted ‘LazyData’ from DESCRIPTION
 </ul>
 <p>This means I only have to remove the Rosemont show duplicate rows, as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve row indices of all duplicated rows </span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">duplicated</span>(u2data) <span class="sc">|</span> <span class="fu">duplicated</span>(u2data, <span class="at">fromLast =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve row indices of all duplicated rows </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(<span class="fu">duplicated</span>(u2data) <span class="sc">|</span> <span class="fu">duplicated</span>(u2data, <span class="at">fromLast =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  2959  2960  2961  2962  2963  2964  2965  2966  2967  2968  2969  2970
 [13]  2971  2972  2973  2974  2975  2976  2977  2978  2979  2980  2981  2982
 [25]  2983  2984  2985  2986  2987  2988  2989  2990  2991  2992  2993  2994
 [37]  2995  2996  2997  2998  2999  3000 18166 18168 18239 18241 20327 20329</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the first 21 are the ones that should be deleted</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check rows 20, 21 and 22 with indices 2959, 2979 and 2980, respectively</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2959</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the first 21 are the ones that should be deleted</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># check rows 20, 21 and 22 with indices 2959, 2979 and 2980, respectively</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2959</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 15
   showID tour   leg   date       venue city  state country song_position snippet
@@ -656,7 +641,7 @@ Omitted ‘LazyData’ from DESCRIPTION
 # ℹ 5 more variables: encore &lt;lgl&gt;, song_title &lt;chr&gt;, show_url &lt;chr&gt;,
 #   song_url &lt;chr&gt;, song_lyrics &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2979</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2979</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 15
   showID tour   leg   date       venue city  state country song_position snippet
@@ -665,7 +650,7 @@ Omitted ‘LazyData’ from DESCRIPTION
 # ℹ 5 more variables: encore &lt;lgl&gt;, song_title &lt;chr&gt;, show_url &lt;chr&gt;,
 #   song_url &lt;chr&gt;, song_lyrics &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2980</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>u2data[<span class="dv">2980</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 15
   showID tour   leg   date       venue city  state country song_position snippet
@@ -674,49 +659,49 @@ Omitted ‘LazyData’ from DESCRIPTION
 # ℹ 5 more variables: encore &lt;lgl&gt;, song_title &lt;chr&gt;, show_url &lt;chr&gt;,
 #   song_url &lt;chr&gt;, song_lyrics &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># correct, these two rows correspond to the first one to delete (Zoo Station), the last one to delete (Desire) and the first one to keep (Zoo Station), respectively</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># thus, we need to remove the rows with indices:</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2959  2960  2961  2962  2963  2964  2965  2966  2967  2968  2969  2970  2971  2972  2973  2974  2975</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2976  2977  2978  2979</span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check number of rows before deletion</span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(u2data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># correct, these two rows correspond to the first one to delete (Zoo Station), the last one to delete (Desire) and the first one to keep (Zoo Station), respectively</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># thus, we need to remove the rows with indices:</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2959  2960  2961  2962  2963  2964  2965  2966  2967  2968  2969  2970  2971  2972  2973  2974  2975</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2976  2977  2978  2979</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># check number of rows before deletion</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(u2data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 39674</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># result: 39674</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># delete duplicated rows from Rosemont show</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> u2data[<span class="sc">-</span>(<span class="dv">2959</span><span class="sc">:</span><span class="dv">2979</span>),]</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># check number of rows after deletion</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(u2data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># result: 39674</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># delete duplicated rows from Rosemont show</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> u2data[<span class="sc">-</span>(<span class="dv">2959</span><span class="sc">:</span><span class="dv">2979</span>),]</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co"># check number of rows after deletion</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(u2data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 39653</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#result: 39653</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># difference: 39674 - 39653</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">39674</span> <span class="sc">-</span> <span class="dv">39653</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#result: 39653</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># difference: 39674 - 39653</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">39674</span> <span class="sc">-</span> <span class="dv">39653</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 21</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># result: 21</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#correct</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># now save corrected data to csv file</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># commented out because this has already been done</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(u2data, file = "u2data/u2data_all_shows_clean_final.csv", row.names = FALSE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># result: 21</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#correct</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># now save corrected data to csv file</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># commented out because this has already been done</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co">#write.csv(u2data, file = "u2data/u2data_all_shows_clean_final.csv", row.names = FALSE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now that those duplicated rows were removed, let’s look at the songs by number of times played again and compare again to the info at <a href="https://www.u2gigs.com/most-played-songs.html" class="uri">https://www.u2gigs.com/most-played-songs.html</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the u2 concertData</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_concertData_csv</span>(<span class="st">'u2data/u2data_all_shows_clean_final.csv'</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co"># songs most played</span></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>top_played_songs <span class="ot">&lt;-</span> <span class="fu">find_most_played_songs</span>(u2data, <span class="at">n =</span> <span class="dv">15</span>)</span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_played_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read the u2 concertData</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_concertData_csv</span>(<span class="st">'u2data/u2data_all_shows_clean_final.csv'</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># songs most played</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>top_played_songs <span class="ot">&lt;-</span> <span class="fu">find_most_played_songs</span>(u2data, <span class="at">n =</span> <span class="dv">15</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_played_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 15 × 4
    song_title       times_played_total times_played_regular times_played_snippet
@@ -747,8 +732,8 @@ Omitted ‘LazyData’ from DESCRIPTION
 </div>
 <p>Let’s check Where The Streets Have No Name. In the u2gigs.com it has a total play count of 976, all regular performances, no snippets. In my data it states 974 regular performances and 2 times as a snippet.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>WTSHNN_regular_play_count <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Where the Streets Have No Name'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(WTSHNN_regular_play_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>WTSHNN_regular_play_count <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Where the Streets Have No Name'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">FALSE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(WTSHNN_regular_play_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 974 × 7
    showID date       city           song_position song_title      snippet encore
@@ -765,8 +750,8 @@ Omitted ‘LazyData’ from DESCRIPTION
 10     59 1998-02-07 Buenos Aires              16 Where the Stre… FALSE   FALSE 
 # ℹ 964 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>WTSHNN_snippet_play_count <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Where the Streets Have No Name'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(WTSHNN_snippet_play_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>WTSHNN_snippet_play_count <span class="ot">&lt;-</span> <span class="fu">subset</span>(u2data, song_title <span class="sc">==</span> <span class="st">'Where the Streets Have No Name'</span> <span class="sc">&amp;</span> snippet <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="at">select =</span> <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"date"</span>, <span class="st">"city"</span>, <span class="st">"song_position"</span>,<span class="st">"song_title"</span>,<span class="st">"snippet"</span>, <span class="st">"encore"</span>))</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(WTSHNN_snippet_play_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 7
   showID date       city     song_position song_title             snippet encore
@@ -794,9 +779,9 @@ Omitted ‘LazyData’ from DESCRIPTION
 </div>
 <p>In my data the numbers are like shown below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 opening songs</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>top_10_openers <span class="ot">&lt;-</span> <span class="fu">find_most_played_opening_songs</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_10_openers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get top 10 opening songs</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>top_10_openers <span class="ot">&lt;-</span> <span class="fu">find_most_played_opening_songs</span>(u2data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(top_10_openers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 2
    song_title                     times_played
@@ -933,7 +918,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/vanleeuwen-hans\.github\.io\/u2_data_analytics\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
