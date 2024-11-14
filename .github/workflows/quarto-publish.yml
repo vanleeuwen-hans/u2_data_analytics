@@ -76,10 +76,10 @@ jobs:
 
       - name: Copy data/image files from private repository
         run: |
-          cp -r private-repo/mafft .
-          cp -r private-repo/u2data .
-          cp -r private-repo/u2gigs .
-          cp -r private-repo/u2hvl .
+          cp -r u2_data_analytics_data/mafft .
+          cp -r u2_data_analytics_data/u2data .
+          cp -r u2_data_analytics_data/u2gigs .
+          cp -r u2_data_analytics_data/u2hvl .
 
       - name: Render full Quarto project
         uses: quarto-dev/quarto-actions/render@v2
