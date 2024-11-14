@@ -6,6 +6,7 @@ on:
       - '**.qmd'
       - '**.Rmd'
       - '**.md'
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -15,36 +16,30 @@ jobs:
       GITHUB_PAT: ${{ secrets.R_GITHUB_PAT }}
       RENV_PATHS_ROOT: ~/.local/share/renv
       RENV_CONFIG_REPOS_OVERRIDE: https://packagemanager.posit.co/cran/__linux__/jammy/latest
+
     steps:
-      # Check out repository 
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: release
-      # Install R
+
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.4.0'
           use-public-rspm: true
-      # Install system dependencies
+
       - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev \
-            libfontconfig1-dev \
-            libfreetype6-dev \
-            libfribidi-dev \
-            libharfbuzz-dev \
-            libjpeg-dev \
-            libpng-dev \
-            libtiff-dev
-      # Cache R packages
+            libcurl4-openssl-dev libssl-dev libxml2-dev \
+            libfontconfig1-dev libfreetype6-dev libfribidi-dev \
+            libharfbuzz-dev libjpeg-dev libpng-dev libtiff-dev \
+            libproj-dev libgdal-dev libgeos-dev
+
       - name: Cache R packages
         uses: actions/cache@v3
         with:
@@ -52,19 +47,14 @@ jobs:
           key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
             ${{ runner.os }}-renv-
-      # Setup R and Bioconductor
+
       - name: Setup R and Bioconductor
         shell: Rscript {0}
         run: |
-          # Install and configure BiocManager
           if (!requireNamespace("BiocManager", quietly = TRUE)) {
             install.packages("BiocManager")
           }
-          
-          # Install compatible Bioconductor version for R 4.4.0
           BiocManager::install(version = "3.20", update = TRUE, ask = FALSE)
-          
-          # Set up repositories
           options(repos = c(
             BioCsoft = "https://bioconductor.org/packages/3.20/bioc",
             BioCann = "https://bioconductor.org/packages/3.20/data/annotation",
@@ -72,51 +62,22 @@ jobs:
             BioCworkflows = "https://bioconductor.org/packages/3.20/workflows",
             CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
           ))
-          
-          # Save the repository configuration
-          writeLines(
-            sprintf('options(repos = c(%s))',
-                   paste(sprintf('"%s" = "%s"', names(getOption("repos")), unname(getOption("repos"))),
-                   collapse = ", ")),
-            "~/.Rprofile"
-          )
-      # Install libproj and dependencies
-      - name: Install libproj and dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            libproj-dev \
-            libgdal-dev \
-            libgeos-dev
-      # Install renv
-      - name: Install renv
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: renv
-      # Initialize renv
-      - name: Initialize renv
-        run: |
-          Rscript -e 'renv::init()'
-      - name: Rebuild renv environment
-        run: |
-          Rscript -e 'renv::restore()'
-      # Restore packages
-      - name: Restore packages
+
+      - name: Setup renv and restore packages
         shell: Rscript {0}
         run: |
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
           renv::init(bare = TRUE)
           renv::restore()
-      # Render
+
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
-      # Create .nojekyll before publishing
-      - name: Create .nojekyll file
-        run: |
-          touch docs/.nojekyll
-      # Publish
+
+      - name: Create .nojekyll
+        run: touch docs/.nojekyll
+
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
