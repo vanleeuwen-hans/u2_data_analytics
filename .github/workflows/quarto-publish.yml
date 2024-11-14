@@ -1,11 +1,12 @@
 name: Quarto Publish
 on:
   push:
-    branches: main 
+    branches: main
     paths:
       - '**.qmd'
       - '**.Rmd'
       - '**.md'
+      - '_quarto.yml'
 
 jobs:
   build-deploy:
@@ -19,7 +20,9 @@ jobs:
       
     steps:
       - uses: actions/checkout@v4
-      
+        with:
+          fetch-depth: 0
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -48,6 +51,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-renv-
 
+      - name: Cache Quarto build
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/quarto
+          key: ${{ runner.os }}-quarto-${{ hashFiles('**/renv.lock', '_quarto.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-quarto-
+
       - name: Setup renv and restore packages
         shell: Rscript {0}
         run: |
@@ -55,12 +66,19 @@ jobs:
           renv::init(bare = TRUE)
           renv::restore()
 
-      - name: Render Quarto Project
+      - name: Render updated Quarto files
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: html
+          changed-files: true
+
+      - name: Render full Quarto project
+        if: steps.render-changed-files.outputs.has-changes == 'false'
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
 
-      - name: Create .nojekyll 
+      - name: Create .nojekyll
         run: touch docs/.nojekyll
 
       - name: Publish to GitHub Pages
