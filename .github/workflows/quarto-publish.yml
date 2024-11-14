@@ -51,6 +51,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-renv-
 
+      - name: Checkout Private Repository
+        uses: actions/checkout@v3
+        with:
+          repository: vanleeuwen-hans/u2_data_analytics_data
+          token: ${{ secrets.U2_DATA_ANALYTICS_DATA_TOKEN }}
+          path: u2_data_analytics_data
+    
       - name: Cache Quarto build
         uses: actions/cache@v3
         with:
