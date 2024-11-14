@@ -9,9 +9,15 @@ Well, first of all because **I am a big U2 fan**, a spark that was lit when I pu
 
 Second, **I am a data scientist**. I am a plant molecular biology and genetics scientist by training, and at some point in my professional journey I transitioned into bioinformatics, scripting, coding, trying to make sense of the avalanche of data coming from new genetic and genomic technologies like the Next-Gen Sequencing revolution in the first decade of this century. Now I work in pharmaceutical data science, data strategy and governance. So yes, you can say that I love to dig into data, to uncover hard to find insights that can help us to bring new medicine or treatments to people with unmet medical needs.
 
-The work documented on this site is is my **Capstone Project for the Google Data Analytics Certification program**. The data used in this project was obtained from the excellent online U2 concert resource u2gigs.com. Permission to do so was requested and kindly granted by Matt \@ u2gigs.com. Thank you so much!
+The work documented on this site is is my **Capstone Project for the Google Data Analytics Certification program**.
 
-This was a very good and exciting experience and taught me a lot of valuable lessons in all the different phases of data analytics: **Ask, Prepare, Process, Analyze, Share and Act**. In addition, during the data visualization part I combined forces with AI assistants (mostly Claude.AI and Perplexity.AI) to troubleshoot the code and to create even better visualizations, e.g. the zoomable, interactive world maps of U2 concert locations over time and the U\@ Setlist Alignment app. A big thank you to my wife who has been on this U2 adventure with me and also provided very valuable feedback and input as I analyzed the data.
+<div style="text-align: center;"><div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6275b026-af2c-4382-93a5-1796ea53fafc" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script></div>
+
+This was a very good and exciting experience and taught me a lot of valuable lessons in all the different phases of data analytics: **Ask, Prepare, Process, Analyze, Share and Act**. In addition, during the data visualization part I combined forces with AI assistants (e.g. Claude , Gemini and Perplexity) to troubleshoot the code and to create even better visualizations, e.g. the zoomable, interactive world maps of U2 concert locations over time and the U2 Setlist Alignment app.
+
+The data used in this project was obtained from the excellent online U2 concert resource u2gigs.com. Permission to do so was requested and kindly granted by Matt \@ u2gigs.com. Thank you so much!
+
+A big thank you to my wife who has been on this U2 adventure with me and also provided very valuable feedback and input as I analyzed the data.
 
 Enjoy and let me know if you have any suggestions or other feedback.
 
