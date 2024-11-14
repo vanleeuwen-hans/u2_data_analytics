@@ -12,9 +12,9 @@ editor: visual
 
 As explained in the [Sharing \> Maintenance and Updates](sharing.qmd#maintenance-and-updates) section, I initially had a cumbersome process that involved many manual steps to push changes to my Quarto web site. That was until I asked Claude.AI (3.5 Sonnet) for help. Here was my prompt:\
 
-> I have my R Studio project u2_data_analytics. I have a git repository locally and on GitHub. All the Quarto rendered files are in the docs folder and in the gh-pages branch, and published on GitHub pages. The rest is in the main branch. \
+> I have my R Studio project u2_data_analytics. I have a git repository locally and on GitHub. All the Quarto rendered files are in the docs folder and in the gh-pages branch, and published on GitHub pages. The rest is in the main branch.\
 > \
-> The process to update is currently cumbersome. I update qmd documents in main, render these, copy the new files from docs temporarily and manually somewhere outside of my project folder, then do a git stash, after which I switch to the gh-pages branch, then manually copy paste the new files into the docs folder of the gh-pages branch, followed by git add, commit and push. \
+> The process to update is currently cumbersome. I update qmd documents in main, render these, copy the new files from docs temporarily and manually somewhere outside of my project folder, then do a git stash, after which I switch to the gh-pages branch, then manually copy paste the new files into the docs folder of the gh-pages branch, followed by git add, commit and push.\
 > \
 > Is there a more automated way to deploy my qnd file changes to the Quarto site that is on GitHub pages?
 
@@ -81,5 +81,4 @@ The error "This project does not contain a lockfile" suggests that you're using 
 
 When I created the `renv.lock` file I got a warning about my local loading of my concertData R package, so I changed the loading of that package in my Quarto code chunks:
 
-From: `devtools::load_all("../packages/concertData")`
-To: `devtools::install_github("vanleeuwen-hans/concertData")`
+From: `devtools::load_all("../packages/concertData")` To: `devtools::install_github("vanleeuwen-hans/concertData")`
