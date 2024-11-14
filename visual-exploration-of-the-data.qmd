@@ -154,7 +154,7 @@ head(opening_timeline, n = nrow(opening_timeline))
 
 ## Set-list variability across tours
 
-Here are two examples of a U2 set-list, from the Innocence + Experience Tour (2015) and the Joshua Tree Tour (2017), both in Amsterdam. These set-lists are actually used by the band during the show and the crew members give them to the fans after the show, sometimes.\
+Here are two examples of a U2 set list, from the Innocence + Experience Tour (2015) and the Joshua Tree Tour (2017), both in Amsterdam. These set-lists are actually used by the band during the show and the crew members give them to the fans after the show, sometimes.\
 ![U2 Innocence + Experience Tour, 9 September 2015, Amsterdam](u2hvl/IMG_3851.JPG "U2 Innocence + Experience Tour, 9 September 2015, Amsterdam"){width="300"}![U2 Joshua Tree Tour 2017, 30 July 2017, Amsterdam](u2hvl/20170730_231317.jpg "U2 Joshua Tree Tour 2017, 30 July 2017, Amsterdam"){width="295"}
 
 ### Data preparation for set-list variability analysis
@@ -527,7 +527,11 @@ ggplot() +
 
 ## World maps of U2 concerts locations
 
+There are two areas in the world where U2 fans have noting too complain with reagrds to the number of concerts they get. However, there are other countries where they hardly ever come or not at all. Use the following visualizations to check this out.
+
 ### Data pre-processing for world maps
+
+First the data was prepared for geographical visualizations. This means that we had to find the coordinates on planet Earth for the cities where U2 played their shows. In addition, a transformation of the data was done to display show counts by frequency. 
 
 ```{r visual exploration - generate data for worldmaps, message=FALSE, warning=FALSE, error=TRUE}
 
@@ -594,6 +598,8 @@ if (validation$total_shows != validation$total_shows_in_frequency) {
 
 ### World map using log scale and intensity
 
+In this world map we see the places where U2 played, and how often, since they started in the late seventies of the previous century.
+
 ```{r visual exploration - world map, message=FALSE, warning=FALSE, out.width="100%" }
 # Using a log scale for the size/color intensity
 
@@ -649,6 +655,8 @@ print(world_map)
 
 ### World map by decades
 
+Her we see the break down by decades: where and how often did they play in each decade since they started.
+
 ```{r visual exploration - world map by decades, message=FALSE, warning=FALSE, out.width="100%" }
 # Create decade-based maps
 
@@ -690,6 +698,8 @@ print(decades_plot)
 ```
 
 ### World map with zoom and popups using leaflet
+
+With the leaflet R package we see a wordl map here wehere you can zoom in and out. 
 
 ```{r visual exploration - zoomable world map, message=FALSE, warning=FALSE}
 

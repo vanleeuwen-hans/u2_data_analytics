@@ -11,7 +11,7 @@ Second, **I am a data scientist**. I am a plant molecular biology and genetics s
 
 The work documented on this site is my **Capstone Project for the Google Data Analytics Certification program**.
 
-<div style="text-align: center;"><div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6275b026-af2c-4382-93a5-1796ea53fafc" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script></div>
+<div style="text-align: center;"><div data-iframe-width="250" data-iframe-height="450" data-share-badge-id="6275b026-af2c-4382-93a5-1796ea53fafc" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script></div>
 
 This was a very good and exciting experience and taught me a lot of valuable lessons in all the different phases of data analytics: **Ask, Prepare, Process, Analyze, Share and Act**. In addition, during the data visualization part I combined forces with AI assistants (e.g. Claude , Gemini and Perplexity) to troubleshoot the code and to create even better visualizations, e.g. the zoomable, interactive world maps of U2 concert locations over time and the U2 Setlist Alignment app.
 
