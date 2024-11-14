@@ -102,9 +102,8 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Publish to GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          branch: gh-pages
-          folder: docs
-          clean: true
+          target: gh-pages
+          path: docs
