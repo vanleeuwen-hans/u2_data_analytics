@@ -1,4 +1,5 @@
 name: Quarto Publish
+
 on:
   push:
     branches: main
@@ -73,17 +74,17 @@ jobs:
           renv::init(bare = TRUE)
           renv::restore()
 
-- name: Copy data/image files from private repository
-  run: |
-    cp -r private-repo/mafft .
-    cp -r private-repo/u2data .
-    cp -r private-repo/u2gigs .
-    cp -r private-repo/u2hvl .
+      - name: Copy data/image files from private repository
+        run: |
+          cp -r private-repo/mafft .
+          cp -r private-repo/u2data .
+          cp -r private-repo/u2gigs .
+          cp -r private-repo/u2hvl .
 
-- name: Render full Quarto project
-  uses: quarto-dev/quarto-actions/render@v2
-  with:
-    to: html
+      - name: Render full Quarto project
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: html
 
       - name: Create .nojekyll
         run: touch docs/.nojekyll
