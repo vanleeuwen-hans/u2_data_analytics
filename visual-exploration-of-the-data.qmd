@@ -184,7 +184,7 @@ excluded_tours <- c(
 
 ### Average number of songs per show
 
-In the early days the U2 concerts were much shorter, for example after the launch of their first album 'Boy' the average numbers of songs played at their concerts was about 10. In more recent tours the number is somewhere between 22 and 25. As mentioned on the [Basic Statistics U2 Concerts page](basic-stats-u2-concerts.qmd#longest-set-lists), I was lucky to have attended of the longest shows ever: 27 songs played.
+In the early days the U2 concerts were much shorter, for example after the launch of their first album 'Boy' the average numbers of songs played at their concerts was about 10. In more recent tours the number is somewhere between 22 and 25. As mentioned on the [Basic Statistics U2 Concerts page](basic-stats-u2-concerts.qmd#longest-set-lists), I was lucky to have attended one of the longest shows ever: 27 songs played.
 
 ```{r data analysis - setlist variability - number of songs per show, message=FALSE, warning=FALSE, error=FALSE}
 
@@ -524,14 +524,13 @@ ggplot() +
        fill = "Variability\n(0-1 scale)")
 ```
 
-
 ## World maps of U2 concerts locations
 
 There are two areas in the world where U2 fans have noting too complain with reagrds to the number of concerts they get. However, there are other countries where they hardly ever come or not at all. Use the following visualizations to check this out.
 
 ### Data pre-processing for world maps
 
-First the data was prepared for geographical visualizations. This means that we had to find the coordinates on planet Earth for the cities where U2 played their shows. In addition, a transformation of the data was done to display show counts by frequency. 
+First the data was prepared for geographical visualizations. This means that we had to find the coordinates on planet Earth for the cities where U2 played their shows. In addition, a transformation of the data was done to display show counts by frequency.
 
 ```{r visual exploration - generate data for worldmaps, message=FALSE, warning=FALSE, error=TRUE}
 
