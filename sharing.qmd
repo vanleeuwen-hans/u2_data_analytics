@@ -6,7 +6,7 @@ editor: visual
 
 ## Introduction
 
-This project evolved over time, and more structure and organization of code, data and reports was needed. With some tips from Claude.AI I eventuallz arrived to the following set up, using a combination of public and private GitHub repositories for code, R-package, Quarto website and data management and versioning, the R Studio local environment connected to GitHub and the shinyapps.io hosting platform for the interactive visualization apps. This Mermaid diagram gives the overall set-up:
+This project evolved over time, and more structure and organization of code, data and reports was needed. With some tips from Claude.AI I eventually arrived to the following set up, using a combination of public and private GitHub repositories for code, R-package, Quarto website and data management and version control, the R Studio local environment connected to GitHub and the shinyapps.io hosting platform for the interactive visualization apps. This Mermaid diagram gives the overall set-up:
 
 ```{mermaid}
 flowchart TB
@@ -18,23 +18,22 @@ flowchart TB
 
     %% Main Project Repository
     MainRepo["u2_data_analytics\n(GitHub Repository)"]:::github
-    MainBranch["main branch\n(Quarto docs & code)"]
-    GHPages["gh-pages branch\n(rendered website)"]
-    Website["Project Website\nvanleeuwen-hans.github.io/\nu2_data_analytics"]:::website
+    MainBranch{{"main branch\n(Quarto docs & code)"}}:::github
+    GHPages{{"gh-pages branch\n(rendered website)"}}:::github
+    Website[\"Project Website\nvanleeuwen-hans.github.io/\nu2_data_analytics"\]:::website
 
     %% R Package
     Package["concertData\n(Public R Package)\n📦 Available on GitHub"]:::public
-    PackageWeb["Package Documentation\nvanleeuwen-hans.github.io/\nconcertData"]:::website
-    PublicNote["Anyone can install and use\nthe concertData package\nvia GitHub"]:::public
+    PackageWeb[\"Package Documentation\nvanleeuwen-hans.github.io/\nconcertData"\]:::website
 
     %% Private Data Repository
-    DataRepo["u2_data_analytics_data\n(Private Repository)"]:::github
+    DataRepo["u2_data_analytics_data\n(Private GitHub Repository)"]:::github
 
     %% Shiny Apps
     ShinyRepo1["u2_tour_map\n(GitHub Repository)"]:::github
-    ShinyApp1["Tour Map\nShiny App"]:::shiny
+    ShinyApp1("Tour Map\nShiny App"):::shiny
     ShinyRepo2["u2_setlist_alignment\n(GitHub Repository)"]:::github
-    ShinyApp2["Setlist Alignment\nShiny App"]:::shiny
+    ShinyApp2("Setlist Alignment\nShiny App"):::shiny
 
     subgraph Support ["Support Components"]
         direction TB
