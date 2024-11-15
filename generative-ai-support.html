@@ -268,16 +268,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
+  <li><a href="#positive-examples" id="toc-positive-examples" class="nav-link" data-scroll-target="#positive-examples">Positive examples</a>
   <ul class="collapse">
   <li><a href="#brainstorming-ideas-for-data-analytics-and-visuals" id="toc-brainstorming-ideas-for-data-analytics-and-visuals" class="nav-link" data-scroll-target="#brainstorming-ideas-for-data-analytics-and-visuals">Brainstorming ideas for data analytics and visuals</a></li>
   <li><a href="#troubleshooting-coding-errors" id="toc-troubleshooting-coding-errors" class="nav-link" data-scroll-target="#troubleshooting-coding-errors">Troubleshooting coding errors</a></li>
   <li><a href="#advise-for-tools-and-hosting-platforms" id="toc-advise-for-tools-and-hosting-platforms" class="nav-link" data-scroll-target="#advise-for-tools-and-hosting-platforms">Advise for tools and hosting platforms</a></li>
-  <li><a href="#creating-the-structure-for-an-r-package" id="toc-creating-the-structure-for-an-r-package" class="nav-link" data-scroll-target="#creating-the-structure-for-an-r-package">Creating the structure for an R Package</a></li>
+  <li><a href="#advising-on-the-structure-for-an-r-package" id="toc-advising-on-the-structure-for-an-r-package" class="nav-link" data-scroll-target="#advising-on-the-structure-for-an-r-package">Advising on the structure for an R Package</a></li>
   <li><a href="#automating-the-deployment-of-changes-in-the-quarto-web-site" id="toc-automating-the-deployment-of-changes-in-the-quarto-web-site" class="nav-link" data-scroll-target="#automating-the-deployment-of-changes-in-the-quarto-web-site">Automating the deployment of changes in the Quarto web site</a></li>
   <li><a href="#connecting-with-a-private-repository-to-protect-sensitive-data" id="toc-connecting-with-a-private-repository-to-protect-sensitive-data" class="nav-link" data-scroll-target="#connecting-with-a-private-repository-to-protect-sensitive-data">Connecting with a private repository to protect sensitive data</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
+  <li><a href="#negative-examples" id="toc-negative-examples" class="nav-link" data-scroll-target="#negative-examples">Negative examples</a></li>
   </ul>
 </nav>
     </div>
@@ -312,19 +312,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 </section>
-<section id="examples" class="level2">
-<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<section id="positive-examples" class="level2">
+<h2 class="anchored" data-anchor-id="positive-examples">Positive examples</h2>
 <section id="brainstorming-ideas-for-data-analytics-and-visuals" class="level3">
 <h3 class="anchored" data-anchor-id="brainstorming-ideas-for-data-analytics-and-visuals">Brainstorming ideas for data analytics and visuals</h3>
+<p>Given a description of the data and the objectives of the report, Claude.AI gave a detailed and long list of suggested analyses and visualizations. Many of those matched ideas that I already had thought of myself, but there were also new ones. Here is how the conversation went.</p>
+<blockquote class="blockquote">
+<p><strong><em>Me</em></strong>: I can use some suggestions for my capstone project in the Google data analytics certification</p>
+<p><strong><em>Claude</em></strong>: I’d be happy to help brainstorm ideas for your Google Data Analytics capstone project. Could you tell me what areas of data analysis interest you the most or what kind of industries you’d potentially like to work in? This would help me suggest projects that align with your career goals.</p>
+<p>Also, are you leaning towards using any particular data analysis tools (like R, Python, SQL, Tableau) that you learned during the certification? This would help me tailor the suggestions to your technical preferences.</p>
+<p><strong><em>Me</em></strong>: I am using R and am thinking about creating a Tableau dashboard as well. I am using, with permission, all the data about u2 concerts from U2 gigs.com.</p>
+<p><strong><em>Claude</em></strong>: That’s a fantastic dataset choice! U2’s concert history would offer rich opportunities for analysis across multiple dimensions. Here are some potential angles you could explore for your capstone:</p>
+<ol type="1">
+<li>Temporal Analysis:
+<ul>
+<li>Concert frequency patterns across decades</li>
+<li>Seasonal touring patterns</li>
+<li>Evolution of tour lengths over time</li>
+<li>Gap analysis between tours</li>
+</ul></li>
+<li>Geographic Analysis:
+<ul>
+<li>Global reach and market penetration</li>
+<li>Most frequently visited cities/venues</li>
+<li>Regional touring patterns</li>
+<li>New markets entered over time</li>
+<li>Heat maps of concert locations</li>
+</ul></li>
+<li>Venue Analysis:
+<ul>
+<li>Types of venues (stadiums vs.&nbsp;arenas vs.&nbsp;festivals)</li>
+<li>Venue capacity trends</li>
+<li>Favorite/recurring venues</li>
+<li>Indoor vs.&nbsp;outdoor shows</li>
+</ul></li>
+<li>Setlist/Performance Analysis (if the data includes this):
+<ul>
+<li>Most performed songs</li>
+<li>Song rotation patterns</li>
+<li>Set length changes over time</li>
+<li>Debut songs by tour</li>
+</ul></li>
+</ol>
+<p>For your Tableau dashboard, you could create:</p>
+<ul>
+<li><p>An interactive map showing tour routes</p></li>
+<li><p>Timeline visualizations of concert frequency</p></li>
+<li><p>Venue capacity comparisons</p></li>
+<li><p>Geographic distribution of shows by decade</p></li>
+</ul>
+<p>Would you like me to elaborate on any of these angles? Also, what specific aspects of U2’s concert history interest you the most? This could help us focus your analysis on the most compelling stories in the data.</p>
+</blockquote>
 </section>
 <section id="troubleshooting-coding-errors" class="level3">
 <h3 class="anchored" data-anchor-id="troubleshooting-coding-errors">Troubleshooting coding errors</h3>
+<p>When one encounters persistent and hard to figure out errors while coding, the typical thing to do is to use the internet to search for possible causes and solutions. There are many amazing forums and communities where people help each other. For the first part of my project I used that approach to solve coding challenges. However, at some point I switched to using AI tools for support while coding. I used tools like Claude, Perplexity, Gemini and ChatGPT. An example with Claude when there was an issue with a graph plotting distance trees of setl-ists</p>
+<blockquote class="blockquote">
+<p><strong><em>Me</em></strong>: Now the whole plot is narrower and moved to the left, but the tree tip labels are still cut off, and now there is a lot of empty space on the right of the plot</p>
+<p><strong><em>Claude</em></strong>: The issue is likely better solved by using coord_cartesian() to extend the plot area rather than xlim_tree(). Let’s fix this: (new code provided).</p>
+<p>Key changes: - Removed xlim_tree() - Added <code>coord_cartesian(clip = 'off')</code> to prevent label clipping - Used <code>scale_x_continuous(expand = ...)</code> to add appropriate padding on both sides - Reduced the right margin since we’re handling the spacing with scale expansion</p>
+<p>This should: - Keep the tree at its original width - Show all labels without cutting them off - Maintain proper spacing - Avoid excessive empty space</p>
+<p>If you still see labels being cut off, we can adjust the expansion multiplier (0.3) to a larger value. Let me know if further adjustments are needed!</p>
+<p><strong><em>Me</em></strong>: That’s good!</p>
+</blockquote>
 </section>
 <section id="advise-for-tools-and-hosting-platforms" class="level3">
 <h3 class="anchored" data-anchor-id="advise-for-tools-and-hosting-platforms">Advise for tools and hosting platforms</h3>
+<p>The AI tools were very good in advising on potential tools and hosting platforms to use for my U2 Data Analytics project as I was starting. I could have figured that out also by just searching on the internet, but the AI tools gave clear overviews, comparing different options in just seconds. that saved me a lot of time.</p>
 </section>
-<section id="creating-the-structure-for-an-r-package" class="level3">
-<h3 class="anchored" data-anchor-id="creating-the-structure-for-an-r-package">Creating the structure for an R Package</h3>
+<section id="advising-on-the-structure-for-an-r-package" class="level3">
+<h3 class="anchored" data-anchor-id="advising-on-the-structure-for-an-r-package">Advising on the structure for an R Package</h3>
+<p>As my project advanced I was creating more and more code for all the analyses. The R code chunks in the Quarto documents were getting long and complex. I decided it was time to start using a custom R package where I could manage custom R functions that perform a specific analysis, processing or transformation. Back in the days when I was scripting I used R packages but never created one myself… time to learn! With some help from Claude.AI.</p>
+<blockquote class="blockquote">
+<p><strong><em>Me</em></strong>: I want to create an R package for an existing R project. What location should I create this package?</p>
+<p><strong>Claude</strong>: I’ll help you set up a new R package structure. The best practice is to create a new, dedicated directory for your package that’s separate from your existing project files. Here’s the recommended approach:</p>
+<p>Create a new directory for your package with a valid package name (should contain only letters, numbers, and dots, start with a letter, and not end in a dot). For example:</p>
+<pre><code># Choose a location and create directory
+dir.create("~/path/to/mypackage")</code></pre>
+<p>Set up the basic package structure using either:</p>
+<p>RStudio: File &gt; New Project &gt; New Directory &gt; R Package</p>
+<p>Or from R console using <code>usethis</code>:</p>
+<pre><code># Install if needed
+install.packages("usethis")
+# Create package structure
+usethis::create_package("~/path/to/mypackage")</code></pre>
+<p>This will create the essential package structure:</p>
+<pre><code>mypackage/
+├── DESCRIPTION
+├── NAMESPACE
+├── R/
+└── .Rbuildignore</code></pre>
+<p>Would you like me to explain how to move your existing R code into this package structure?</p>
+</blockquote>
+<p>After this Claude.AI also helped me to convert my existing analysis code into functions, with proper header lines.</p>
 </section>
 <section id="automating-the-deployment-of-changes-in-the-quarto-web-site" class="level3">
 <h3 class="anchored" data-anchor-id="automating-the-deployment-of-changes-in-the-quarto-web-site">Automating the deployment of changes in the Quarto web site</h3>
@@ -343,12 +423,12 @@ Is there a more automated way to deploy my qmd file changes to the Quarto site t
 <p>GitHub Actions workflow for Quarto publishing (code was provided)</p>
 <p>To implement this automated workflow:</p>
 <p>Create a <code>.github/workflows</code> directory in your repository’s main branch:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> .github/workflows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> .github/workflows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Save the workflow file I provided as <code>.github/workflows/quarto-publish.yml</code></p>
 <p>Commit and push these changes to your main branch:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .github/workflows/quarto-publish.yml</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add Quarto publishing workflow"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .github/workflows/quarto-publish.yml</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add Quarto publishing workflow"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This workflow will:</p>
 <ul>
 <li><p>Trigger automatically when you push changes to .qmd, .Rmd, or .md files in the main branch</p></li>
@@ -386,12 +466,30 @@ Is there a more automated way to deploy my qmd file changes to the Quarto site t
 </section>
 <section id="connecting-with-a-private-repository-to-protect-sensitive-data" class="level3">
 <h3 class="anchored" data-anchor-id="connecting-with-a-private-repository-to-protect-sensitive-data">Connecting with a private repository to protect sensitive data</h3>
+<p>The data that I used in this project was obtained from u2gigs.com (with permission), and was used during rendering of my Quarto web site that combined the analysis code, the output and my reporting. I did not want to have this data publicly available in my GitHub repository, however, to deploy my web site the data was needed. So I asked Claude.AI for a solution and it helped me in easy to follow steps to set it up.</p>
+<blockquote class="blockquote">
+<p>Yes, it is possible to store the data/image files needed for rendering your Quarto website in a separate private GitHub repository, and then access them during the deployment workflow. This can be done by integrating the private repository into your GitHub Actions workflow. Here are the high-level steps:</p>
+<p>1. Create a new private GitHub repository to store the data/image files.</p>
+<p>2. In your GitHub Actions workflow, use the <code>actions/checkout@v3</code> action to fetch the files from the private repository.</p>
+<p>3. Make the files available to the Quarto rendering process during the deployment step.</p>
+<p>This allows you to keep sensitive or large files out of your public repository, while still using them for the website build. Let me know if you need any clarification or have additional questions!</p>
+</blockquote>
+<p>It then proceeded to help me with more detailed instructions on how to set this up. That worked very nicely and provided me with a secure solution in very little time!</p>
 </section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
+</section>
+<section id="negative-examples" class="level2">
+<h2 class="anchored" data-anchor-id="negative-examples">Negative examples</h2>
+<ul>
+<li><p>Sometimes the AI tools were <strong>mixing up a current request with a past request</strong>. For example, they would provide me with code that included parts that had nothing to do with the current request. Starting new threads is very helpful to separate different requests to AI tools. All these tools have a history/library of all past and current conversations, so it is easy to go back. It happened one time that this mixing up also happened across two different conversations, so always pay attention to the output and check if it makes sense.</p></li>
+<li><p>Sometimes the troubleshooting did not lead to resolving the issue, then the AI tool just keeps on suggesting “changes” to the code, while some times there was no change to previous suggestion. It also happened that a suggested fix that did not work 15 minutes ago comes back as a suggestion as the troubleshooting becomes lengthy. <strong>At times the suggested code fixes got worse and worse</strong> as I kept giving the feedback that it still did not work. In those cases it was important to have a manual deep-dive in the code and the problem. The good old human brain still beats the AI tools occasionally 😉</p></li>
+<li><p>Forgetting about previously agreed formats or details also happens at times. It is <strong>important to make a clear and detailed prompt</strong> and explain the what is the problem, what output I expect and in what format. There are many frame works and best practices around, here is an example from the Google Data Analytics Certification I completed:</p>
+<ul>
+<li>Task, Context, References, Evaluate and Iterate.</li>
+</ul></li>
+<li><p>It happened a few times when I provided a working piece of code and asked it to improve or add a certain functionality that the AI tool decided to change other things in the code that broke it. That costed me some time to figure out why it suddenly stopped working. I told the AI tool about it and it apologized for changing code that worked and didn’t really need to be changed. Again, always <strong>important to carefully check if the output from the AI tool makes sense</strong>.</p></li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
