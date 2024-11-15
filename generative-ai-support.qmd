@@ -6,15 +6,117 @@ editor: visual
 
 ## Introduction
 
-## Examples
+## Positive examples
 
 ### Brainstorming ideas for data analytics and visuals
 
+Given a description of the data and the objectives of the report, Claude.AI gave a detailed and long list of suggested analyses and visualizations. Many of those matched ideas that I already had thought of myself, but there were also new ones. Here is how the conversation went.
+
+> ***Me***: I can use some suggestions for my capstone project in the Google data analytics certification
+>
+> ***Claude***: I'd be happy to help brainstorm ideas for your Google Data Analytics capstone project. Could you tell me what areas of data analysis interest you the most or what kind of industries you'd potentially like to work in? This would help me suggest projects that align with your career goals.
+>
+> Also, are you leaning towards using any particular data analysis tools (like R, Python, SQL, Tableau) that you learned during the certification? This would help me tailor the suggestions to your technical preferences.
+>
+> ***Me***: I am using R and am thinking about creating a Tableau dashboard as well. I am using, with permission, all the data about u2 concerts from U2 gigs.com.
+>
+> ***Claude***: That's a fantastic dataset choice! U2's concert history would offer rich opportunities for analysis across multiple dimensions. Here are some potential angles you could explore for your capstone:
+>
+> 1.  Temporal Analysis:
+>     -   Concert frequency patterns across decades
+>     -   Seasonal touring patterns
+>     -   Evolution of tour lengths over time
+>     -   Gap analysis between tours
+> 2.  Geographic Analysis:
+>     -   Global reach and market penetration
+>     -   Most frequently visited cities/venues
+>     -   Regional touring patterns
+>     -   New markets entered over time
+>     -   Heat maps of concert locations
+> 3.  Venue Analysis:
+>     -   Types of venues (stadiums vs. arenas vs. festivals)
+>     -   Venue capacity trends
+>     -   Favorite/recurring venues
+>     -   Indoor vs. outdoor shows
+> 4.  Setlist/Performance Analysis (if the data includes this):
+>     -   Most performed songs
+>     -   Song rotation patterns
+>     -   Set length changes over time
+>     -   Debut songs by tour
+>
+> For your Tableau dashboard, you could create:
+>
+> -   An interactive map showing tour routes
+>
+> -   Timeline visualizations of concert frequency
+>
+> -   Venue capacity comparisons
+>
+> -   Geographic distribution of shows by decade
+>
+> Would you like me to elaborate on any of these angles? Also, what specific aspects of U2's concert history interest you the most? This could help us focus your analysis on the most compelling stories in the data.
+
 ### Troubleshooting coding errors
+
+When one encounters persistent and hard to figure out errors while coding, the typical thing to do is to use the internet to search for possible causes and solutions. There are many amazing forums and communities where people help each other. For the first part of my project I used that approach to solve coding challenges. However, at some point I switched to using AI tools for support while coding. I used tools like Claude, Perplexity, Gemini and ChatGPT. An example with Claude when there was an issue with a graph plotting distance trees of setl-ists
+
+> ***Me***: Now the whole plot is narrower and moved to the left, but the tree tip labels are still cut off, and now there is a lot of empty space on the right of the plot
+>
+> ***Claude***: The issue is likely better solved by using coord_cartesian() to extend the plot area rather than xlim_tree(). Let's fix this: (new code provided).
+>
+> Key changes: - Removed xlim_tree() - Added `coord_cartesian(clip = 'off')` to prevent label clipping - Used `scale_x_continuous(expand = ...)` to add appropriate padding on both sides - Reduced the right margin since we're handling the spacing with scale expansion
+>
+> This should: - Keep the tree at its original width - Show all labels without cutting them off - Maintain proper spacing - Avoid excessive empty space
+>
+> If you still see labels being cut off, we can adjust the expansion multiplier (0.3) to a larger value. Let me know if further adjustments are needed!
+>
+> ***Me***: That's good!
 
 ### Advise for tools and hosting platforms
 
-### Creating the structure for an R Package
+The AI tools were very good in advising on potential tools and hosting platforms to use for my U2 Data Analytics project as I was starting. I could have figured that out also by just searching on the internet, but the AI tools gave clear overviews, comparing different options in just seconds. that saved me a lot of time.
+
+### Advising on the structure for an R Package
+
+As my project advanced I was creating more and more code for all the analyses. The R code chunks in the Quarto documents were getting long and complex. I decided it was time to start using a custom R package where I could manage custom R functions that perform a specific analysis, processing or transformation. Back in the days when I was scripting I used R packages but never created one myself... time to learn! With some help from Claude.AI.
+
+> ***Me***: I want to create an R package for an existing R project. What location should I create this package?
+>
+> **Claude**: I'll help you set up a new R package structure. The best practice is to create a new, dedicated directory for your package that's separate from your existing project files. Here's the recommended approach:
+>
+> Create a new directory for your package with a valid package name (should contain only letters, numbers, and dots, start with a letter, and not end in a dot). For example:
+>
+> ```         
+> # Choose a location and create directory
+> dir.create("~/path/to/mypackage")
+> ```
+>
+> Set up the basic package structure using either:
+>
+> RStudio: File \> New Project \> New Directory \> R Package
+>
+> Or from R console using `usethis`:
+>
+> ```         
+> # Install if needed
+> install.packages("usethis")
+> # Create package structure
+> usethis::create_package("~/path/to/mypackage")
+> ```
+>
+> This will create the essential package structure:
+>
+> ```         
+> mypackage/
+> ├── DESCRIPTION
+> ├── NAMESPACE
+> ├── R/
+> └── .Rbuildignore
+> ```
+>
+> Would you like me to explain how to move your existing R code into this package structure?
+
+After this Claude.AI also helped me to convert my existing analysis code into functions, with proper header lines.
 
 ### Automating the deployment of changes in the Quarto web site
 
@@ -98,4 +200,28 @@ And that was basically it, now the deployment is fully automated whenever I chan
 
 ### Connecting with a private repository to protect sensitive data
 
-### 
+The data that I used in this project was obtained from u2gigs.com (with permission), and was used during rendering of my Quarto web site that combined the analysis code, the output and my reporting. I did not want to have this data publicly available in my GitHub repository, however, to deploy my web site the data was needed. So I asked Claude.AI for a solution and it helped me in easy to follow steps to set it up.
+
+> Yes, it is possible to store the data/image files needed for rendering your Quarto website in a separate private GitHub repository, and then access them during the deployment workflow. This can be done by integrating the private repository into your GitHub Actions workflow. Here are the high-level steps:
+>
+> 1\. Create a new private GitHub repository to store the data/image files.
+>
+> 2\. In your GitHub Actions workflow, use the `actions/checkout@v3` action to fetch the files from the private repository.
+>
+> 3\. Make the files available to the Quarto rendering process during the deployment step.
+>
+> This allows you to keep sensitive or large files out of your public repository, while still using them for the website build. Let me know if you need any clarification or have additional questions!
+
+It then proceeded to help me with more detailed instructions on how to set this up. That worked very nicely and provided me with a secure solution in very little time!
+
+## Negative examples
+
+-   Sometimes the AI tools were **mixing up a current request with a past request**. For example, they would provide me with code that included parts that had nothing to do with the current request. Starting new threads is very helpful to separate different requests to AI tools. All these tools have a history/library of all past and current conversations, so it is easy to go back. It happened one time that this mixing up also happened across two different conversations, so always pay attention to the output and check if it makes sense.
+
+-   Sometimes the troubleshooting did not lead to resolving the issue, then the AI tool just keeps on suggesting "changes" to the code, while some times there was no change to previous suggestion. It also happened that a suggested fix that did not work 15 minutes ago comes back as a suggestion as the troubleshooting becomes lengthy. **At times the suggested code fixes got worse and worse** as I kept giving the feedback that it still did not work. In those cases it was important to have a manual deep-dive in the code and the problem. The good old human brain still beats the AI tools occasionally 😉
+
+-   Forgetting about previously agreed formats or details also happens at times. It is **important to make a clear and detailed prompt** and explain the what is the problem, what output I expect and in what format. There are many frame works and best practices around, here is an example from the Google Data Analytics Certification I completed:
+
+    -   Task, Context, References, Evaluate and Iterate.
+
+-   It happened a few times when I provided a working piece of code and asked it to improve or add a certain functionality that the AI tool decided to change other things in the code that broke it. That costed me some time to figure out why it suddenly stopped working. I told the AI tool about it and it apologized for changing code that worked and didn't really need to be changed. Again, always **important to carefully check if the output from the AI tool makes sense**.

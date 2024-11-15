@@ -1,5 +1,5 @@
 ---
-title: "Conclusions and Sharing"
+title: "Conclusions"
 author: "Hans van Leeuwen"
 editor: visual
 ---
