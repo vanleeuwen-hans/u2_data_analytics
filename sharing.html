@@ -326,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre class="mermaid mermaid-js">flowchart TB
     classDef github fill:#f2f2f2,stroke:#333,stroke-width:2px
     classDef website fill:#e6f3ff,stroke:#0366d6,stroke-width:2px
-    classDef shiny fill:#ffebf3,stroke:#ff69b4,stroke-width:2px
+    classDef shiny fill:#ffffff,stroke:#333,stroke-width:2px
     classDef package fill:#e6ffe6,stroke:#28a745,stroke-width:2px
     classDef public fill:#fff7e6,stroke:#f90,stroke-width:2px
 
@@ -334,26 +334,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     MainRepo["u2_data_analytics\n(GitHub Repository)"]:::github
     MainBranch{{"main branch\n(Quarto docs &amp; code)"}}:::github
     GHPages{{"gh-pages branch\n(rendered website)"}}:::github
-    Website[\"Project Website\nvanleeuwen-hans.github.io/\nu2_data_analytics"\]:::website
+    Website&gt;"Project Website\nvanleeuwen-hans.github.io/\nu2_data_analytics"]:::website
 
     %% R Package
     Package["concertData\n(Public R Package)\n📦 Available on GitHub"]:::public
-    PackageWeb[\"Package Documentation\nvanleeuwen-hans.github.io/\nconcertData"\]:::website
+    PackageWeb&gt;"Package Documentation\nvanleeuwen-hans.github.io/\nconcertData"]:::website
 
     %% Private Data Repository
     DataRepo["u2_data_analytics_data\n(Private GitHub Repository)"]:::github
 
     %% Shiny Apps
     ShinyRepo1["u2_tour_map\n(GitHub Repository)"]:::github
-    ShinyApp1("Tour Map\nShiny App"):::shiny
+    ShinyApp1("Tour Map\nShiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_tour_map/"):::shiny
     ShinyRepo2["u2_setlist_alignment\n(GitHub Repository)"]:::github
-    ShinyApp2("Setlist Alignment\nShiny App"):::shiny
+    ShinyApp2("Setlist Alignment\nShiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_setlist_alignment/"):::shiny
 
     subgraph Support ["Support Components"]
         direction TB
         Package --&gt; PackageWeb
         DataRepo
-        PublicNote --- Package
     end
     
     subgraph Main ["Main Project"]
@@ -374,6 +373,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     DataRepo -.-&gt; MainRepo
     Package -.-&gt; ShinyRepo1
     Package -.-&gt; ShinyRepo2
+    Website -.-&gt; PackageWeb
+    Website -.-&gt; ShinyApp1
+    Website -.-&gt; ShinyApp2
 
     %% Layout arrangement
     Main ~~~ Apps
