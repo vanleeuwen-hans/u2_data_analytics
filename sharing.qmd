@@ -6,7 +6,7 @@ editor: visual
 
 ## Introduction
 
-This project evolved over time, and more structure and organization of code, data and reports was needed. With some tips from Claude.AI I eventuallz arrived to the following set up, using a combination of public and private GitHub repositories for code, R-package, Quarto website and data management and versioning, the R Studio local environment connected to GitHub and the shinyapps.io hosting platform for the interactive visualization apps. This Mermaid diagram gives the overall set/up:
+This project evolved over time, and more structure and organization of code, data and reports was needed. With some tips from Claude.AI I eventuallz arrived to the following set up, using a combination of public and private GitHub repositories for code, R-package, Quarto website and data management and versioning, the R Studio local environment connected to GitHub and the shinyapps.io hosting platform for the interactive visualization apps. This Mermaid diagram gives the overall set-up:
 
 ```{mermaid}
 flowchart TB
