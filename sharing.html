@@ -324,30 +324,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TB
-    classDef github fill:#f2f2f2,stroke:#333,stroke-width:2px
-    classDef website fill:#e6f3ff,stroke:#0366d6,stroke-width:2px
-    classDef shiny fill:#ffffff,stroke:#333,stroke-width:2px
-    classDef package fill:#e6ffe6,stroke:#28a745,stroke-width:2px
-    classDef public fill:#fff7e6,stroke:#f90,stroke-width:2px
 
     %% Main Project Repository
-    MainRepo["u2_data_analytics\n(GitHub Repository)"]:::github
-    MainBranch{{"main branch\n(Quarto docs &amp; code)"}}:::github
-    GHPages{{"gh-pages branch\n(rendered website)"}}:::github
-    Website&gt;"📃 Project Website\nvanleeuwen-hans.github.io/\nu2_data_analytics"]:::website
+    MainRepo["u2_data_analytics\n(GitHub Repository)"]
+    MainBranch{{"main branch\n(Quarto docs &amp; code)"}}
+    GHPages{{"gh-pages branch\n(rendered website)"}}
+    Website&gt;"📃 Project Website\nvanleeuwen-hans.github.io/\nu2_data_analytics"]
 
     %% R Package
-    Package["concertData\n(Public R Package)\n📦 Available on GitHub"]:::public
-    PackageWeb&gt;"Package Documentation\nvanleeuwen-hans.github.io/\nconcertData"]:::website
+    Package["concertData\n(Public R Package)\n📦 Available on GitHub"]
+    PackageWeb&gt;"Package Documentation\nvanleeuwen-hans.github.io/\nconcertData"]
 
     %% Private Data Repository
-    DataRepo["u2_data_analytics_data\n(🔐 Private GitHub Repository)"]:::github
+    DataRepo["u2_data_analytics_data\n(🔐 Private GitHub Repository)"]
 
     %% Shiny Apps
-    ShinyRepo1["u2_tour_map\n(GitHub Repository)"]:::github
-    ShinyApp1("🌎 Tour Map Shiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_tour_map/"):::shiny
-    ShinyRepo2["u2_setlist_alignment\n(GitHub Repository)"]:::github
-    ShinyApp2("🎼 Setlist Alignment Shiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_setlist_alignment/"):::shiny
+    ShinyRepo1["u2_tour_map\n(GitHub Repository)"]
+    ShinyApp1("🌎 Tour Map Shiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_tour_map/")
+    ShinyRepo2["u2_setlist_alignment\n(GitHub Repository)"]
+    ShinyApp2("🎼 Setlist Alignment Shiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_setlist_alignment/")
 
     subgraph Support ["Support Components"]
         direction TB
