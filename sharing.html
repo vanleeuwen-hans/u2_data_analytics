@@ -101,9 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -317,66 +314,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This project evolved over time, and more structure and organization of code, data and reports was needed. With some tips from Claude.AI I eventually arrived to the following set up, using a combination of public and private GitHub repositories for code, R-package, Quarto website and data management and version control, the R Studio local environment connected to GitHub and the shinyapps.io hosting platform for the interactive visualization apps. This Mermaid diagram gives the overall set-up:</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-
-    %% Main Project Repository
-    MainRepo["u2_data_analytics\n(GitHub Repository)"]
-    MainBranch{{"main branch\n(Quarto docs &amp; code)"}}
-    GHPages{{"gh-pages branch\n(rendered website)"}}
-    Website&gt;"📃 Project Website\nvanleeuwen-hans.github.io/\nu2_data_analytics"]
-
-    %% R Package
-    Package["concertData\n(Public R Package)\n📦 Available on GitHub"]
-    PackageWeb&gt;"Package Documentation\nvanleeuwen-hans.github.io/\nconcertData"]
-
-    %% Private Data Repository
-    DataRepo["u2_data_analytics_data\n(🔐 Private GitHub Repository)"]
-
-    %% Shiny Apps
-    ShinyRepo1["u2_tour_map\n(GitHub Repository)"]
-    ShinyApp1("🌎 Tour Map Shiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_tour_map/")
-    ShinyRepo2["u2_setlist_alignment\n(GitHub Repository)"]
-    ShinyApp2("🎼 Setlist Alignment Shiny App\nqjxo03-hans-van0leeuwen.\nshinyapps.io/u2_setlist_alignment/")
-
-    subgraph Support ["Support Components"]
-        direction TB
-        Package --&gt; PackageWeb
-        DataRepo
-    end
-    
-    subgraph Main ["Main Project"]
-        direction LR
-        MainRepo --&gt; MainBranch
-        MainRepo --&gt; GHPages
-        GHPages --&gt; Website
-    end
-
-    subgraph Apps ["Shiny Applications"]
-        direction LR
-        ShinyRepo1 --&gt; ShinyApp1
-        ShinyRepo2 --&gt; ShinyApp2
-    end
-
-    %% Connections between subgraphs
-    MainRepo -.-&gt; Package
-    DataRepo -.-&gt; MainRepo
-    Package -.-&gt; ShinyRepo1
-    Package -.-&gt; ShinyRepo2
-    Website -.-&gt; PackageWeb
-    Website -.-&gt; ShinyApp1
-    Website -.-&gt; ShinyApp2
-
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
+<p>This project evolved over time, and more structure and organization of code, data and reports was needed. With some tips from Claude.AI I eventually arrived to the following set up, using a combination of public and private GitHub repositories for code, R-package, Quarto website and data management and version control, the R Studio local environment connected to GitHub and the shinyapps.io hosting platform for the interactive visualization apps. This diagram gives the overall set-up:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="u2hvl/u2_data_analytics_project_setup.jpg" class="img-fluid figure-img"></p>
+<figcaption>U2 Data Analytics Project Set Up</figcaption>
+</figure>
 </div>
 </section>
 <section id="github-code-sharing" class="level2">
