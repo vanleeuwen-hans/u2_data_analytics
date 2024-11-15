@@ -224,4 +224,6 @@ It then proceeded to help me with more detailed instructions on how to set this 
 
     -   Task, Context, References, Evaluate and Iterate.
 
+-   I asked Claude.AI to create a nice visual with the set-up of the project with all its repositories, web sites and the connections between them. I provided all the details and Claude.AI created a Mermaid diagram, but the lay-out and formatting was very basic and did not improve with some iterations. So, **creation of good quality and attractive visuals including text and relations is not a strength of the AI tools**. I decided to create it manually in PowerPoint, you can see the result on the [Sharing page](sharing.qmd) of this report.
+
 -   It happened a few times when I provided a working piece of code and asked it to improve or add a certain functionality that the AI tool decided to change other things in the code that broke it. That costed me some time to figure out why it suddenly stopped working. I told the AI tool about it and it apologized for changing code that worked and didn't really need to be changed. Again, always **important to carefully check if the output from the AI tool makes sense**.
