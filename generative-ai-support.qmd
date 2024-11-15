@@ -6,6 +6,14 @@ editor: visual
 
 ## Introduction
 
+I will not write that I could not have done this project without the help of Generative AI tools like Claude, Gemini and Perplexity. However, without their support:
+
+-   it would have taken me much longer to do all the things that I did for this project - a rough estimate: instead of a month working on it in my spare time it would have taken me at least 6 months.
+
+-   I would have missed out on certain analyses, visualizations or use of tools and hosting platforms.
+
+Below I provide a selection of positive examples of using Generative AI support, and after that some less positive experiences, providing key considerations for effective and proper use of Generative AI.
+
 ## Positive examples
 
 ### Brainstorming ideas for data analytics and visuals
