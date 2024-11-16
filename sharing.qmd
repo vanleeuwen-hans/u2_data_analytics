@@ -8,7 +8,7 @@ editor: visual
 
 This project evolved over time, and more structure and organization of code, data and reports was needed. With some tips from Claude.AI I eventually arrived to the following set up, using a combination of public and private GitHub repositories for code, R-package, Quarto website and data management and version control, the R Studio local environment connected to GitHub and the shinyapps.io hosting platform for the interactive visualization apps. This diagram gives the overall set-up:
 
-![U2 Data Analytics Project Set Up](u2hvl/u2_data_analytics_project_setup.jpg){fig-align="center"}
+![U2 Data Analytics Project Set Up (Background: Joshua Tree Tour 2017, 1 Aug 2017, Brussels, Belgium)](u2hvl/u2_data_analytics_project_setup.jpg){fig-align="center"}
 
 ## GitHub Code Sharing
 

@@ -34,12 +34,12 @@ website:
             text: "8. Interactive Visualizations"
       - section: "Conclusions and Sharing"
         contents:
-          - href: conclusions.qmd
-            text: "9. Conclusions"
           - href: sharing.qmd
-            text: "10. Sharing"
+            text: "9. Sharing"
           - href: generative-ai-support.qmd
-            text: "11. Generative AI Support"
+            text: "10. Generative AI Support"
+          - href: summary.qmd
+            text: "11. Summary"
 
 format:
   html:
