@@ -12,7 +12,7 @@ I will not write that I could not have done this project without the help of Gen
 
 -   I would have missed out on certain analyses, visualizations or use of tools and hosting platforms.
 
-Below I provide a selection of positive examples of using Generative AI support, and after that some less positive experiences, providing key considerations for effective and proper use of Generative AI.
+Below I provide a selection of positive examples of using Generative AI support, and after that I provide some less positive experiences, providing key considerations for effective and proper use of Generative AI.
 
 ## Positive examples
 
