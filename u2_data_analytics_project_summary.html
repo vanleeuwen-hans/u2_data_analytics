@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    <style>
+        .reveal section img {
+            border: none;
+            box-shadow: none;
+            max-height: 65vh;
+            margin: 15px 0;
+        }
+        .reveal h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        .reveal h2 {
+            font-size: 1.8em;
+            color: #34495e;
+        }
+        .reveal ul {
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+        .acknowledgements li {
+            font-size: 0.8em;
+        }
+        .two-column {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+        .stats ul {
+            list-style: none;
+            padding: 0;
+        }
+        .stats li {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .stats strong {
+            color: #3498db;
+        }
+        .reveal .slides {
+            text-align: left;
+        }
+        .reveal .slide-background {
+            background-color: #ffffff;
+        }
+        .reveal a {
+            color: #3498db;
+        }
+        .reveal .controls {
+            color: #2c3e50;
+        }
+        .reveal .progress {
+            color: #3498db;
+        }
+        .image-placeholder {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section>
+                <h1>Decoding U2's Concert Evolution</h1>
+                <h3 style="color: #3498db;">An Analytical Journey Through Tours and Setlists</h3>
+                <div class="image-placeholder">
+                    <p>U2 Concert Image</p>
+                    <img src="/api/placeholder/800/400" alt="U2 concert with vibrant lighting">
+                </div>
+                <p><small style="color: #7f8c8d;">Your Name • November 2024</small></p>
+            </section>
+
+            <!-- Acknowledgements -->
+            <section>
+                <h2>Acknowledgements</h2>
+                <ul class="acknowledgements">
+                    <li><strong>Matt from u2gigs.com</strong> - comprehensive historical concert data</li>
+                    <li><strong>My wife</strong> - valuable feedback and analysis ideas</li>
+                    <li><strong>Generative AI tools</strong> - Claude, Perplexity, Gemini, ChatGPT</li>
+                    <li><strong>Google instructors</strong> - Data Analytics Certification program</li>
+                    <li><strong>R, GitHub, and Quarto community</strong> - tools and resources</li>
+                    <li><strong>U2</strong> - for their inspiring musical journey!</li>
+                </ul>
+            </section>
+
+            <!-- Why Analyze U2? -->
+            <section>
+                <h2>Why Analyze U2?</h2>
+                <div class="two-column">
+                    <div class="column">
+                        <ul>
+                            <li>A long-time U2 fan and data strategy professional</li>
+                            <li>Provide a data-informed view on setlist variability</li>
+                            <li>Highlight global impact across five decades</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <div class="image-placeholder">
+                            <p>Everything You Know Is Wrong</p>
+                            <img src="u2hvl/EverythingYouKnowIsWrong.JPG" width="600" alt="Everything You Know Is Wrong">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Behind the Data -->
+            <section>
+                <h2>Behind the Data</h2>
+                <div class="two-column">
+                    <div class="column">
+                        <ul>
+                            <li>Data Sources:
+                                <ul>
+                                    <li>u2gigs.com: Concert details</li>
+                                    <li>Supplementary geo-data for maps</li>
+                                </ul>
+                            </li>
+                            <li>Preparation & Processing:
+                                <ul>
+                                    <li>Web-scraping and data management</li>
+                                    <li>Standardizing formats</li>
+                                    <li>Fixing inconsistencies</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <div class="image-placeholder">
+                            <p>Data Analytics Setup</p>
+                            <img src="u2hvl/u2_data_analytics_project_setup.jpg" width="600" alt="Data Analytics Setup">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- U2 by the Numbers -->
+            <section>
+                <h2>U2 by the Numbers</h2>
+                <div class="stats">
+                    <ul>
+                        <li><strong>2000+</strong> Concerts</li>
+                        <li><strong>13</strong> Major Tours</li>
+                        <li><strong>900+</strong> Unique Songs Performed</li>
+                        <li>Active since <strong>1976</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Setlist Variability -->
+            <section>
+                <h2>Setlist Dynamics</h2>
+                <div class="image-placeholder">
+                    <p>Setlist Variability Chart</p>
+                    <img src="u2hvl/data analysis - setlist variability - overall set-list variability-1.png" width="800" alt="Setlist Variability">
+                </div>
+            </section>
+
+            <!-- Multiple Setlist Alignment -->
+            <section>
+                <h2>Exploring Patterns in Setlists</h2>
+                <div class="two-column">
+                    <div class="column">
+                        <div class="image-placeholder">
+                            <p>Setlist Alignment</p>
+                            <img src="u2hvl/data analysis - tour setlist alignment MAFFT - plot-1.png" width="400" alt="Setlist Alignment">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="image-placeholder">
+                            <p>Distance Tree</p>
+                            <img src="u2hvl/data analysis - tour setlist distance tree-3.png" width="400" alt="Distance Tree">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Map -->
+            <section>
+                <h2>Experience the Data</h2>
+                <p>Interactive Shiny App: U2 Tour Map</p>
+                <div class="image-placeholder">
+                    <p>Interactive Map Visualization</p>
+                    <img src="u2hvl/u2_tour_map_shiny_app.png" width="800" alt="U2 Tour Map - Shiny App">
+                </div>
+            </section>
+
+            <!-- Lessons Learned -->
+            <section>
+                <h2>Challenges and Insights</h2>
+                <ul>
+                    <li>Data Preparation Challenges:
+                        <ul>
+                            <li>Handling inconsistent data formats</li>
+                            <li>Standardizing song names and setlists</li>
+                        </ul>
+                    </li>
+                    <li>AI Integration:
+                        <ul>
+                            <li>Leveraging AI for data summarization</li>
+                            <li>Enhanced visualization creation</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            width: 1200,
+            height: 700,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 2.0,
+            plugins: []
+        });
+    </script>
+</body>
+</html>
