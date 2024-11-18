@@ -12,7 +12,7 @@ format:
         link: index.html
 ---
 
-# U2 Tour Data
+# U2 Tour Data {.r-fit-text}
 
 An Analytical & Musical Journey
 
@@ -24,7 +24,7 @@ Hans van Leeuwen • November 2024
 [Return to Website](index.html)
 :::
 
-# Why Analyze U2's Tours?
+## Why Analyze U2's Tours?
 
 :::::: columns
 ::: {.column width="50%"}
@@ -44,7 +44,7 @@ It was the questions we had wrong"\
 ::::
 ::::::
 
-# Behind the Data
+## Behind the Data {.smaller}
 
 ::::: columns
 ::: {.column width="50%"}
@@ -64,18 +64,18 @@ Project development, code & data repositories, deployment and publishing
 :::
 :::::
 
-# U2 by the Numbers
+## U2 by the Numbers
 
 -   **2000+** Concerts
 -   **13** Major Tours
 -   **900+** Unique Songs Performed
 -   Active since **1976**
 
-# Setlist Dynamics
+## Setlist Dynamics
 
 ![](u2hvl/setlist_variability_by_tour.png)
 
-# Exploring Patterns in Setlists
+## Exploring Patterns in Setlists
 
 ::::: columns
 ::: {.column width="50%"}
@@ -91,33 +91,25 @@ Setlist Distance Tree
 :::
 :::::
 
-# Experience the Data
+## Experience the Data
 
 Interactive Shiny App: U2 Tour Map
 
 ![](u2hvl/u2_tour_map_shiny_app.png)
 
-# Lessons Learned
-::::: columns
-::: {.column width="33%"}
+## Lessons Learned 
+
 -   Data Preparation:
     -   Knowing the data is key for the ability to judge the outcome of the code
     -   Standardizing data types and fixing inconsistencies and errors
-:::
-
-::: {.column width="33%"}
 -   Analyses and visualization:
     -   Combining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data
-:::
-
-::: {.column width="33%"}
 -   Generative AI Support:
     -   Leveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies
     -   Importance of clear prompts, check for hallucinations and knowing its limits
-:::
-:::::
 
-# Acknowledgements
+
+## Acknowledgements
 
 -   **Matt from u2gigs.com** - comprehensive historical concert data
 -   **My wife** - valuable feedback and analysis ideas
