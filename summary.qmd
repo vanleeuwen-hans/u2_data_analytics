@@ -14,7 +14,7 @@ format:
 an analytical & musical journey
 :::
 
-[](u2hvl/DSCN1518.JPG)
+[ ](u2hvl/DSCN1518.JPG)
 
 ::: {style="text-align: center;"}
 Hans van Leeuwen • November 2024
@@ -26,7 +26,7 @@ Hans van Leeuwen • November 2024
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ## Why Analyze U2's Tours?
 
@@ -43,11 +43,10 @@ Hans van Leeuwen • November 2024
 It was the questions we had wrong"\
 ∼ 11 O'Clock Tick Tock, U2, 1980
 
-[](u2hvl/EverythingYouKnowIsWrong.JPG)
+[ ](u2hvl/EverythingYouKnowIsWrong.JPG)
 :::
 :::
 ::::::
-
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
@@ -55,11 +54,11 @@ It was the questions we had wrong"\
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ## Behind the Data {.smaller}
 
-::::: columns
+:::::: columns
 ::: {.column width="50%"}
 -   Data Sources:
     -   u2gigs.com: concert details
@@ -68,18 +67,16 @@ It was the questions we had wrong"\
     -   Web-scraping and data management
     -   Standardizing formats
     -   Fixing inconsistencies
-
 :::
 
 ::: {.column width="50%" style="font-size: 0.5em;"}
 ::: {style="text-align: center;"}
 Project development, code & data repositories, deployment and publishing
 
-[](u2hvl/u2_data_analytics_project_setup.jpg)
-
+[ ](u2hvl/u2_data_analytics_project_setup.jpg)
 :::
 :::
-:::::
+::::::
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
@@ -87,7 +84,7 @@ Project development, code & data repositories, deployment and publishing
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ## U2 by the Numbers
 
@@ -102,12 +99,11 @@ Project development, code & data repositories, deployment and publishing
 :::
 :::
 
-
----
+------------------------------------------------------------------------
 
 ## Setlist Dynamics
 
-[](u2hvl/setlist_variability_by_tour.png)
+[ ](u2hvl/setlist_variability_by_tour.png)
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
@@ -115,7 +111,7 @@ Project development, code & data repositories, deployment and publishing
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ## Exploring Patterns in Setlists
 
@@ -123,13 +119,13 @@ Project development, code & data repositories, deployment and publishing
 ::: {.column width="50%"}
 Multiple Setlist Alignment
 
-[](u2hvl/setlist_alignment_mafft.png)
+[ ](u2hvl/setlist_alignment_mafft.png)
 :::
 
 ::: {.column width="50%"}
 Setlist Distance Tree
 
-[](u2hvl/distance_tree_legs_colored.png)
+[ ](u2hvl/distance_tree_legs_colored.png)
 :::
 :::::
 
@@ -139,13 +135,13 @@ Setlist Distance Tree
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ## Experience the Data
 
 Interactive Shiny App: U2 Tour Map
 
-[](u2hvl/u2_tour_map_shiny_app.png)
+[ ](u2hvl/u2_tour_map_shiny_app.png)
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
@@ -153,7 +149,7 @@ Interactive Shiny App: U2 Tour Map
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ## Lessons Learned {.smaller}
 
@@ -172,7 +168,7 @@ Interactive Shiny App: U2 Tour Map
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 ## Acknowledgements & Big Thank You!
 
