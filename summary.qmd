@@ -9,19 +9,14 @@ format:
     menu-item-prefix: true        
     menu-items:        
       - name: Exit
-        link: ../index.html
+        link: index.html
 ---
 
 
-# An Analytical & Musical Journey
+# U2 Data Analytics {background-color="black" background-image="u2hvl/DSCN1518.JPG" style="color: white;"}
+An Analytical & Musical Journey
 
 Hans van Leeuwen • November 2024
-
-![U2 concert with vibrant lighting](u2hvl/DSCN1518.JPG)
-
-::: notes
-Welcome to my presentation about U2 concert data analysis!
-:::
 
 # Acknowledgements
 
