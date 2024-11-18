@@ -12,37 +12,34 @@ format:
         link: index.html
 ---
 
+# U2 Tour Data
 
-# U2 Data Analytics {background-color="black" background-image="u2hvl/DSCN1518.JPG" style="color: white;"}
 An Analytical & Musical Journey
+
+![](u2hvl/DSCN1518.JPG)
 
 Hans van Leeuwen • November 2024
 
-# Acknowledgements
+::: {style="font-size: 0.4em;"}
+[Return to Website](index.html)
+:::
 
--   **Matt from u2gigs.com** - comprehensive historical concert data
--   **My wife** - valuable feedback and analysis ideas
--   **Generative AI tools** - Claude, Perplexity, Gemini, ChatGPT
--   **Google instructors** - Data Analytics Certification program
--   **R, GitHub, and Quarto community** - tools and resources
--   **U2** - for their inspiring musical journey!
-
-# Why Analyze U2?
+# Why Analyze U2's Tours?
 
 :::::: columns
 ::: {.column width="50%"}
--   A long-time U2 fan and data strategy professional
+-   A long-time U2 fan and data science & strategy professional
 -   Provide a data-informed view on setlist variability
 -   Highlight global impact across five decades
 :::
 
-:::: {.column width="50%" style="font-size: 0.6em;"}
+:::: {.column width="50%" style="font-size: 0.4em;"}
 ::: center
-> "We thought that we had the answers\
-> It was the questions we had wrong"\
-> ∼ 11 O'Clock Tick Tock, U2, 1980
+"We thought that we had the answers\
+It was the questions we had wrong"\
+∼ 11 O'Clock Tick Tock, U2, 1980
 
-![Everything You Know Is Wrong](u2hvl/EverythingYouKnowIsWrong.JPG)
+![](u2hvl/EverythingYouKnowIsWrong.JPG)
 :::
 ::::
 ::::::
@@ -60,10 +57,10 @@ Hans van Leeuwen • November 2024
     -   Fixing inconsistencies
 :::
 
-::: {.column width="50%" style="font-size: 0.6em;"}
+::: {.column width="50%" style="font-size: 0.4em;"}
 Project development, code & data repositories, deployment and publishing
 
-![Data Analytics Setup](u2hvl/u2_data_analytics_project_setup.jpg)
+![](u2hvl/u2_data_analytics_project_setup.jpg)
 :::
 :::::
 
@@ -76,7 +73,7 @@ Project development, code & data repositories, deployment and publishing
 
 # Setlist Dynamics
 
-![Setlist Variability by Tour](u2hvl/setlist_variability_by_tour.png)
+![](u2hvl/setlist_variability_by_tour.png)
 
 # Exploring Patterns in Setlists
 
@@ -84,13 +81,13 @@ Project development, code & data repositories, deployment and publishing
 ::: {.column width="50%"}
 Multiple Setlist Alignment
 
-![Setlist Alignment](u2hvl/setlist_alignment_mafft.png)
+![](u2hvl/setlist_alignment_mafft.png)
 :::
 
 ::: {.column width="50%"}
 Setlist Distance Tree
 
-![Distance Tree](u2hvl/distance_tree_legs_colored.png)
+![](u2hvl/distance_tree_legs_colored.png)
 :::
 :::::
 
@@ -98,13 +95,24 @@ Setlist Distance Tree
 
 Interactive Shiny App: U2 Tour Map
 
-![U2 Tour Map - Shiny App](u2hvl/u2_tour_map_shiny_app.png)
+![](u2hvl/u2_tour_map_shiny_app.png)
 
-# Challenges and Insights
+# Lessons Learned
 
--   Data Preparation Challenges:
-    -   Handling inconsistent data formats
-    -   Standardizing song names and setlists
--   AI Integration:
-    -   Leveraging AI for data summarization
-    -   Enhanced visualization creation
+-   Data Preparation:
+    -   Knowing the data is key for the ability to judge the outcome of the code
+    -   Standardizing data types and fixing inconsistencies and errors
+-   Analyses and visualization:
+    -   Combining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data
+-   Generative AI Support:
+    -   Leveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies
+    -   Importance of clear prompts, check for hallucinations and knowing its limits
+
+# Acknowledgements
+
+-   **Matt from u2gigs.com** - comprehensive historical concert data
+-   **My wife** - valuable feedback and analysis ideas
+-   **Generative AI tools** - Claude, Perplexity, Gemini, ChatGPT
+-   **Google instructors** - Data Analytics Certification program
+-   **R, GitHub, and Quarto community** - tools and resources
+-   **U2** - for their inspiring musical journey!
