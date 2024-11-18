@@ -8,7 +8,7 @@ format:
     navigation-mode: vertical
 ---
 
-## U2 Data Analytics
+## U2 Data Analytics {style="text-align: center;"}
 
 ::: {style="text-align: center;"}
 an analytical & musical journey
@@ -37,7 +37,7 @@ Hans van Leeuwen • November 2024
 -   Highlight global impact across five decades
 :::
 
-:::: {.column width="50%" style="font-size: 0.5em;"}
+::: {.column width="50%" style="font-size: 0.5em;"}
 ::: {style="text-align: center;"}
 "We thought that we had the answers\
 It was the questions we had wrong"\
@@ -45,7 +45,7 @@ It was the questions we had wrong"\
 
 ![](u2hvl/EverythingYouKnowIsWrong.JPG)
 :::
-::::
+:::
 ::::::
 
 
@@ -68,6 +68,7 @@ It was the questions we had wrong"\
     -   Web-scraping and data management
     -   Standardizing formats
     -   Fixing inconsistencies
+
 :::
 
 ::: {.column width="50%" style="font-size: 0.5em;"}
