@@ -4,7 +4,7 @@ format:
     theme: white
     controls: true
     fullscreen: true
-    navigation-mode: linear
+    navigation-mode: vertical
     menu: true                    
     menu-item-prefix: true        
     menu-items:        
@@ -12,9 +12,8 @@ format:
         link: ../index.html
 ---
 
-# U2's Concert Data {.center}
 
-## An Analytical & Musical Journey
+# An Analytical & Musical Journey
 
 Hans van Leeuwen • November 2024
 
@@ -24,7 +23,7 @@ Hans van Leeuwen • November 2024
 Welcome to my presentation about U2 concert data analysis!
 :::
 
-## Acknowledgements
+# Acknowledgements
 
 -   **Matt from u2gigs.com** - comprehensive historical concert data
 -   **My wife** - valuable feedback and analysis ideas
@@ -33,7 +32,7 @@ Welcome to my presentation about U2 concert data analysis!
 -   **R, GitHub, and Quarto community** - tools and resources
 -   **U2** - for their inspiring musical journey!
 
-## Why Analyze U2?
+# Why Analyze U2?
 
 :::::: columns
 ::: {.column width="50%"}
@@ -42,7 +41,7 @@ Welcome to my presentation about U2 concert data analysis!
 -   Highlight global impact across five decades
 :::
 
-:::: {.column width="50%"}
+:::: {.column width="50%" style="font-size: 0.6em;"}
 ::: center
 > "We thought that we had the answers\
 > It was the questions we had wrong"\
@@ -53,7 +52,7 @@ Welcome to my presentation about U2 concert data analysis!
 ::::
 ::::::
 
-## Behind the Data
+# Behind the Data
 
 ::::: columns
 ::: {.column width="50%"}
@@ -66,25 +65,25 @@ Welcome to my presentation about U2 concert data analysis!
     -   Fixing inconsistencies
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" style="font-size: 0.6em;"}
 Project development, code & data repositories, deployment and publishing
 
 ![Data Analytics Setup](u2hvl/u2_data_analytics_project_setup.jpg)
 :::
 :::::
 
-## U2 by the Numbers
+# U2 by the Numbers
 
 -   **2000+** Concerts
 -   **13** Major Tours
 -   **900+** Unique Songs Performed
 -   Active since **1976**
 
-## Setlist Dynamics
+# Setlist Dynamics
 
 ![Setlist Variability by Tour](u2hvl/setlist_variability_by_tour.png)
 
-## Exploring Patterns in Setlists
+# Exploring Patterns in Setlists
 
 ::::: columns
 ::: {.column width="50%"}
@@ -100,13 +99,13 @@ Setlist Distance Tree
 :::
 :::::
 
-## Experience the Data
+# Experience the Data
 
 Interactive Shiny App: U2 Tour Map
 
 ![U2 Tour Map - Shiny App](u2hvl/u2_tour_map_shiny_app.png)
 
-## Challenges and Insights
+# Challenges and Insights
 
 -   Data Preparation Challenges:
     -   Handling inconsistent data formats
