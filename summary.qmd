@@ -12,7 +12,7 @@ format:
         link: index.html
 ---
 
-# U2 Tour Data {.r-fit-text}
+# U2 Tour Data
 
 An Analytical & Musical Journey
 
@@ -97,7 +97,7 @@ Interactive Shiny App: U2 Tour Map
 
 ![](u2hvl/u2_tour_map_shiny_app.png)
 
-## Lessons Learned 
+## Lessons Learned {.smaller}
 
 -   Data Preparation:
     -   Knowing the data is key for the ability to judge the outcome of the code
