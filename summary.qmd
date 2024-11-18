@@ -30,7 +30,7 @@ Hans van Leeuwen • November 2024
 
 ## Why Analyze U2's Tours?
 
-:::::: columns
+:::: {.columns}
 ::: {.column width="50%"}
 -   A long-time U2 fan and data science & strategy professional
 -   Provide a data-informed view on setlist variability
@@ -46,7 +46,7 @@ It was the questions we had wrong"\
 [ ](u2hvl/EverythingYouKnowIsWrong.JPG)
 :::
 :::
-::::::
+::::
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
@@ -58,7 +58,7 @@ It was the questions we had wrong"\
 
 ## Behind the Data {.smaller}
 
-:::::: columns
+:::: {.columns}
 ::: {.column width="50%"}
 -   Data Sources:
     -   u2gigs.com: concert details
@@ -76,7 +76,7 @@ Project development, code & data repositories, deployment and publishing
 [ ](u2hvl/u2_data_analytics_project_setup.jpg)
 :::
 :::
-::::::
+::::
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
@@ -115,7 +115,7 @@ Project development, code & data repositories, deployment and publishing
 
 ## Exploring Patterns in Setlists
 
-::::: columns
+:::: {.columns}
 ::: {.column width="50%"}
 Multiple Setlist Alignment
 
@@ -127,7 +127,7 @@ Setlist Distance Tree
 
 [ ](u2hvl/distance_tree_legs_colored.png)
 :::
-:::::
+::::
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
