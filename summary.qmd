@@ -7,7 +7,7 @@ format:
     navigation-mode: vertical
 ---
 
-## U2 Data Analytics {.r-fit-text}
+## U2 Data Analytics {.center}
 
 An Analytical & Musical Journey
 
