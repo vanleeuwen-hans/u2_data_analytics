@@ -22,7 +22,7 @@ Hans van Leeuwen • November 2024
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -51,7 +51,7 @@ It was the questions we had wrong"\
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -76,12 +76,13 @@ It was the questions we had wrong"\
 Project development, code & data repositories, deployment and publishing
 
 ![](u2hvl/u2_data_analytics_project_setup.jpg)
+
 :::
 :::::
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -96,7 +97,7 @@ Project development, code & data repositories, deployment and publishing
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -109,7 +110,7 @@ Project development, code & data repositories, deployment and publishing
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -133,7 +134,7 @@ Setlist Distance Tree
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -147,7 +148,7 @@ Interactive Shiny App: U2 Tour Map
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -166,7 +167,7 @@ Interactive Shiny App: U2 Tour Map
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
 
@@ -183,6 +184,6 @@ Interactive Shiny App: U2 Tour Map
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-[Exit to Home](index.html)
+![Exit to Home](index.html)
 :::
 :::
