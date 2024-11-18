@@ -151,6 +151,102 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "summary.html#why-analyze-u2s-tours",
+    "href": "summary.html#why-analyze-u2s-tours",
+    "title": "U2 Data Analytics",
+    "section": "Why Analyze U2’s Tours?",
+    "text": "Why Analyze U2’s Tours?\n\n\n\nA long-time U2 fan and data science & strategy professional\nProvide a data-informed view on setlist variability\nHighlight global impact across five decades\n\n\n\n“We thought that we had the answers\nIt was the questions we had wrong”\n∼ 11 O’Clock Tick Tock, U2, 1980",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
+    "objectID": "summary.html#behind-the-data",
+    "href": "summary.html#behind-the-data",
+    "title": "U2 Data Analytics",
+    "section": "Behind the Data",
+    "text": "Behind the Data\n\n\n\nData Sources:\n\nu2gigs.com: Concert details\nSupplementary geo-data for maps\n\nPreparation & Processing:\n\nWeb-scraping and data management\nStandardizing formats\nFixing inconsistencies\n\n\n\nProject development, code & data repositories, deployment and publishing",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
+    "objectID": "summary.html#u2-by-the-numbers",
+    "href": "summary.html#u2-by-the-numbers",
+    "title": "U2 Data Analytics",
+    "section": "U2 by the Numbers",
+    "text": "U2 by the Numbers\n\n2000+ Concerts\n13 Major Tours\n900+ Unique Songs Performed\nActive since 1976",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
+    "objectID": "summary.html#setlist-dynamics",
+    "href": "summary.html#setlist-dynamics",
+    "title": "U2 Data Analytics",
+    "section": "Setlist Dynamics",
+    "text": "Setlist Dynamics",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
+    "objectID": "summary.html#exploring-patterns-in-setlists",
+    "href": "summary.html#exploring-patterns-in-setlists",
+    "title": "U2 Data Analytics",
+    "section": "Exploring Patterns in Setlists",
+    "text": "Exploring Patterns in Setlists\n\n\nMultiple Setlist Alignment\n\n\nSetlist Distance Tree",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
+    "objectID": "summary.html#experience-the-data",
+    "href": "summary.html#experience-the-data",
+    "title": "U2 Data Analytics",
+    "section": "Experience the Data",
+    "text": "Experience the Data\nInteractive Shiny App: U2 Tour Map",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
+    "objectID": "summary.html#lessons-learned",
+    "href": "summary.html#lessons-learned",
+    "title": "U2 Data Analytics",
+    "section": "Lessons Learned",
+    "text": "Lessons Learned\n\nData Preparation:\n\nKnowing the data is key for the ability to judge the outcome of the code\nStandardizing data types and fixing inconsistencies and errors\n\nAnalyses and visualization:\n\nCombining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data\n\nGenerative AI Support:\n\nLeveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies\nImportance of clear prompts, check for hallucinations and knowing its limits",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
+    "objectID": "summary.html#acknowledgements",
+    "href": "summary.html#acknowledgements",
+    "title": "U2 Data Analytics",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\nMatt from u2gigs.com - comprehensive historical concert data\nMy wife - valuable feedback and analysis ideas\nGenerative AI tools - Claude, Perplexity, Gemini, ChatGPT\nGoogle instructors - Data Analytics Certification program\nR, GitHub, and Quarto community - tools and resources\nU2 - for their inspiring musical journey!",
+    "crumbs": [
+      "Home",
+      "Conclusions and Sharing",
+      "11. Summary"
+    ]
+  },
+  {
     "objectID": "basic-stats-u2-concerts.html",
     "href": "basic-stats-u2-concerts.html",
     "title": "Basic Statistics U2 Concerts",
