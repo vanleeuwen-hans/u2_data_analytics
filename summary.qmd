@@ -12,7 +12,7 @@ format:
         link: index.html
 ---
 
-# U2 Tour Data
+## U2 Tour Data {.r-fit-text}
 
 An Analytical & Musical Journey
 
