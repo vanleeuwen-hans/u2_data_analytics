@@ -14,7 +14,7 @@ format:
 an analytical & musical journey
 :::
 
-![](u2hvl/DSCN1518.JPG)
+[](u2hvl/DSCN1518.JPG)
 
 ::: {style="text-align: center;"}
 Hans van Leeuwen • November 2024
@@ -22,38 +22,10 @@ Hans van Leeuwen • November 2024
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
 
----
-
-## Why Analyze U2's Tours?
-
-:::::: columns
-::: {.column width="50%"}
--   A long-time U2 fan and data science & strategy professional
--   Provide a data-informed view on setlist variability
--   Highlight global impact across five decades
-:::
-
-::: {.column width="50%" style="font-size: 0.5em;"}
-::: {style="text-align: center;"}
-"We thought that we had the answers\
-It was the questions we had wrong"\
-∼ 11 O'Clock Tick Tock, U2, 1980
-
-![](u2hvl/EverythingYouKnowIsWrong.JPG)
-:::
-:::
-::::::
-
-
-::: {style="text-align: right;"}
-::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
-:::
-:::
 
 ---
 
@@ -75,14 +47,14 @@ It was the questions we had wrong"\
 ::: {style="text-align: center;"}
 Project development, code & data repositories, deployment and publishing
 
-![](u2hvl/u2_data_analytics_project_setup.jpg)
+[](u2hvl/u2_data_analytics_project_setup.jpg)
 
 :::
 :::::
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
 
@@ -97,7 +69,7 @@ Project development, code & data repositories, deployment and publishing
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
 
@@ -106,11 +78,11 @@ Project development, code & data repositories, deployment and publishing
 
 ## Setlist Dynamics
 
-![](u2hvl/setlist_variability_by_tour.png)
+[](u2hvl/setlist_variability_by_tour.png)
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
 
@@ -122,19 +94,19 @@ Project development, code & data repositories, deployment and publishing
 ::: {.column width="50%"}
 Multiple Setlist Alignment
 
-![](u2hvl/setlist_alignment_mafft.png)
+[](u2hvl/setlist_alignment_mafft.png)
 :::
 
 ::: {.column width="50%"}
 Setlist Distance Tree
 
-![](u2hvl/distance_tree_legs_colored.png)
+[](u2hvl/distance_tree_legs_colored.png)
 :::
 :::::
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
 
@@ -144,11 +116,11 @@ Setlist Distance Tree
 
 Interactive Shiny App: U2 Tour Map
 
-![](u2hvl/u2_tour_map_shiny_app.png)
+[](u2hvl/u2_tour_map_shiny_app.png)
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
 
@@ -167,7 +139,7 @@ Interactive Shiny App: U2 Tour Map
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
 
@@ -184,6 +156,6 @@ Interactive Shiny App: U2 Tour Map
 
 ::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-![Exit to Home](index.html)
+[Exit to Home](index.html)
 :::
 :::
