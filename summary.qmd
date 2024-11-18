@@ -5,11 +5,14 @@ format:
     controls: true
     fullscreen: true
     navigation-mode: vertical
-    menu: true                    
-    menu-item-prefix: true        
-    menu-items:        
-      - name: Exit
-        link: index.html
+    menu: false
+    customcontrols:
+      controls:
+        - type: button
+          tag: a
+          text: Exit
+          icon: <i class="fa fa-times"></i>
+          href: index.html
 ---
 
 ## U2 Tour Data {.r-fit-text}
