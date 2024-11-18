@@ -5,18 +5,9 @@ format:
     controls: true
     fullscreen: true
     navigation-mode: vertical
-    menu: false
-    customcontrols:
-      controls:
-        - type: button
-          tag: a
-          text: Exit
-          icon: '<i class="fa-solid fa-times"></i>'
-          href: index.html
-    visibility: always
 ---
 
-## U2 Tour Data {.r-fit-text}
+## U2 Data Analytics {.r-fit-text}
 
 An Analytical & Musical Journey
 
@@ -25,7 +16,7 @@ An Analytical & Musical Journey
 Hans van Leeuwen • November 2024
 
 ::: {style="font-size: 0.5em;"  align="right"}
-[Return to Website](index.html)
+[{{< fa fa-circle-xmark >}}](index.html)
 :::
 
 ## Why Analyze U2's Tours?
