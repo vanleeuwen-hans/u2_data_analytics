@@ -11,13 +11,15 @@ format:
 
 ::: {style="text-align: center;"}
 an analytical & musical journey
+:::
 
 ![](u2hvl/DSCN1518.JPG)
 
+::: {style="text-align: center;"}
 Hans van Leeuwen • November 2024
 :::
 
-::: {style="font-size: 0.5em;" align="right"}
+::: {style="font-size: 12px;" align="right"}
 [Exit to Home](index.html)
 :::
 
@@ -30,8 +32,8 @@ Hans van Leeuwen • November 2024
 -   Highlight global impact across five decades
 :::
 
-:::: {.column width="50%" style="font-size: 0.5em;" align="center"}
-::: center
+:::: {.column width="50%" style="font-size: 0.5em;"}
+::: {style="text-align: center;"}
 "We thought that we had the answers\
 It was the questions we had wrong"\
 ∼ 11 O'Clock Tick Tock, U2, 1980
@@ -50,15 +52,16 @@ It was the questions we had wrong"\
 ::::: columns
 ::: {.column width="50%"}
 -   Data Sources:
-    -   u2gigs.com: Concert details
-    -   Supplementary geo-data for maps
+    -   u2gigs.com: concert details
+    -   Supplementary geo-data for world maps
 -   Preparation & Processing:
     -   Web-scraping and data management
     -   Standardizing formats
     -   Fixing inconsistencies
 :::
 
-::: {.column width="50%" style="font-size: 0.5em;" align="center"}
+::: {.column width="50%" style="font-size: 0.5em;"}
+::: {style="text-align: center;"}
 Project development, code & data repositories, deployment and publishing
 
 ![](u2hvl/u2_data_analytics_project_setup.jpg)
@@ -133,7 +136,7 @@ Interactive Shiny App: U2 Tour Map
 [Exit to Home](index.html)
 :::
 
-## Acknowledgements
+## Acknowledgements & Big Thank You!
 
 -   **Matt from u2gigs.com** - comprehensive historical concert data
 -   **My wife** - valuable feedback and analysis ideas
