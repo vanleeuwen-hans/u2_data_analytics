@@ -20,7 +20,7 @@ An Analytical & Musical Journey
 
 Hans van Leeuwen • November 2024
 
-::: {style="font-size: 0.4em;"}
+::: {style="font-size: 0.5em;"  align="right"}
 [Return to Website](index.html)
 :::
 
@@ -33,7 +33,7 @@ Hans van Leeuwen • November 2024
 -   Highlight global impact across five decades
 :::
 
-:::: {.column width="50%" style="font-size: 0.4em;"}
+:::: {.column width="50%" style="font-size: 0.5em;"  align="center"}
 ::: center
 "We thought that we had the answers\
 It was the questions we had wrong"\
@@ -57,7 +57,7 @@ It was the questions we had wrong"\
     -   Fixing inconsistencies
 :::
 
-::: {.column width="50%" style="font-size: 0.4em;"}
+::: {.column width="50%" style="font-size: 0.5em;" align="center"}
 Project development, code & data repositories, deployment and publishing
 
 ![](u2hvl/u2_data_analytics_project_setup.jpg)
@@ -98,15 +98,24 @@ Interactive Shiny App: U2 Tour Map
 ![](u2hvl/u2_tour_map_shiny_app.png)
 
 # Lessons Learned
-
+::::: columns
+::: {.column width="33%"}
 -   Data Preparation:
     -   Knowing the data is key for the ability to judge the outcome of the code
     -   Standardizing data types and fixing inconsistencies and errors
+:::
+
+::: {.column width="33%"}
 -   Analyses and visualization:
     -   Combining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data
+:::
+
+::: {.column width="33%"}
 -   Generative AI Support:
     -   Leveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies
     -   Importance of clear prompts, check for hallucinations and knowing its limits
+:::
+:::::
 
 # Acknowledgements
 
