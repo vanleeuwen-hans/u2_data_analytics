@@ -19,12 +19,8 @@ an analytical & musical journey
 Hans van Leeuwen • November 2024
 :::
 
-::: {style="text-align: center;"}
-<<<<<<< HEAD
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
-=======
-::: {style="font-size: 12px;"}
->>>>>>> f6238c7 (update reveal)
 [Exit to Home](index.html)
 :::
 :::
@@ -50,8 +46,10 @@ It was the questions we had wrong"\
 ::::::
 
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
 
 ## Behind the Data {.smaller}
@@ -75,8 +73,10 @@ Project development, code & data repositories, deployment and publishing
 :::
 :::::
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
 
 ## U2 by the Numbers
@@ -86,16 +86,20 @@ Project development, code & data repositories, deployment and publishing
 -   **900+** Unique Songs Performed
 -   Active since **1976**
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
 
 ## Setlist Dynamics
 
 ![](u2hvl/setlist_variability_by_tour.png)
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
 
 ## Exploring Patterns in Setlists
@@ -114,8 +118,10 @@ Setlist Distance Tree
 :::
 :::::
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
 
 ## Experience the Data
@@ -124,8 +130,10 @@ Interactive Shiny App: U2 Tour Map
 
 ![](u2hvl/u2_tour_map_shiny_app.png)
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
 
 ## Lessons Learned {.smaller}
@@ -139,8 +147,10 @@ Interactive Shiny App: U2 Tour Map
     -   Leveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies
     -   Importance of clear prompts, check for hallucinations and knowing its limits
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
 
 ## Acknowledgements & Big Thank You!
@@ -152,6 +162,8 @@ Interactive Shiny App: U2 Tour Map
 -   **R, GitHub, and Quarto community** - tools and resources
 -   **U2** - for their inspiring musical journey!
 
+::: {style="text-align: right;"}
 ::: {style="font-size: 14px;"}
 [Exit to Home](index.html)
+:::
 :::
