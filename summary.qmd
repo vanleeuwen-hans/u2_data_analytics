@@ -7,7 +7,7 @@ format:
     navigation-mode: vertical
 ---
 
-## U2 Data Analytics {style="text-align: center;"}
+## U2 Data Analytics
 
 ::: {style="text-align: center;"}
 an analytical & musical journey
@@ -20,7 +20,11 @@ Hans van Leeuwen • November 2024
 :::
 
 ::: {style="text-align: center;"}
+<<<<<<< HEAD
 ::: {style="font-size: 14px;"}
+=======
+::: {style="font-size: 12px;"}
+>>>>>>> f6238c7 (update reveal)
 [Exit to Home](index.html)
 :::
 :::
