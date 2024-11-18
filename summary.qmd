@@ -13,6 +13,7 @@ format:
           text: Exit
           icon: <i class="fa fa-times"></i>
           href: index.html
+    visibility: always
 ---
 
 ## U2 Tour Data {.r-fit-text}
