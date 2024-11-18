@@ -11,7 +11,7 @@ format:
         - type: button
           tag: a
           text: Exit
-          icon: <i class="fa fa-times"></i>
+          icon: '<i class="fa-solid fa-times"></i>'
           href: index.html
     visibility: always
 ---
