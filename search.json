@@ -155,19 +155,7 @@
     "href": "summary.html#u2-data-analytics",
     "title": "U2 Data Analytics",
     "section": "U2 Data Analytics",
-    "text": "U2 Data Analytics\n\nan analytical & musical journey\n\n\n\nHans van Leeuwen • November 2024",
-    "crumbs": [
-      "Home",
-      "Conclusions and Sharing",
-      "11. Summary"
-    ]
-  },
-  {
-    "objectID": "summary.html#why-analyze-u2s-tours",
-    "href": "summary.html#why-analyze-u2s-tours",
-    "title": "U2 Data Analytics",
-    "section": "Why Analyze U2’s Tours?",
-    "text": "Why Analyze U2’s Tours?\n\n\n\nA long-time U2 fan and data science & strategy professional\nProvide a data-informed view on setlist variability\nHighlight global impact across five decades\n\n\n\n“We thought that we had the answers\nIt was the questions we had wrong”\n∼ 11 O’Clock Tick Tock, U2, 1980\n\n\n\n\n\n\n\n\nExit to Home",
+    "text": "U2 Data Analytics\n\nan analytical & musical journey\n\n\n\nHans van Leeuwen • November 2024\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -179,7 +167,7 @@
     "href": "summary.html#behind-the-data",
     "title": "U2 Data Analytics",
     "section": "Behind the Data",
-    "text": "Behind the Data\n\n\n\nData Sources:\n\nu2gigs.com: concert details\nSupplementary geo-data for world maps\n\nPreparation & Processing:\n\nWeb-scraping and data management\nStandardizing formats\nFixing inconsistencies\n\n\n\n\nProject development, code & data repositories, deployment and publishing\n\n\n\n\n\n\n\nExit to Home\n\n\n\n\nU2 by the Numbers\n\n2000+ Concerts\n13 Major Tours\n900+ Unique Songs Performed\nActive since 1976\n\n\n\n\n\n\nExit to Home\n\n\n\n\n\n\nSetlist Dynamics\n\n\n\n\nExploring Patterns in Setlists\n\n\nMultiple Setlist Alignment\n\n\nSetlist Distance Tree\n\n\n\n\n\n\n\nExit to Home\n\n\n\n\n\n\nExperience the Data\nInteractive Shiny App: U2 Tour Map\n\n\n\n\nLessons Learned\n\nData Preparation:\n\nKnowing the data is key for the ability to judge the outcome of the code\nStandardizing data types and fixing inconsistencies and errors\n\nAnalyses and visualization:\n\nCombining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data\n\nGenerative AI Support:\n\nLeveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies\nImportance of clear prompts, check for hallucinations and knowing its limits\n\n\n\n\n\n\n\nExit to Home\n\n\n\n\n\n\nAcknowledgements & Big Thank You!\n\nMatt from u2gigs.com - comprehensive historical concert data\nMy wife - valuable feedback and analysis ideas\nGenerative AI tools - Claude, Perplexity, Gemini, ChatGPT\nGoogle instructors - Data Analytics Certification program\nR, GitHub, and Quarto community - tools and resources\nU2 - for their inspiring musical journey!\n\n\n\n\n\n\nExit to Home",
+    "text": "Behind the Data\n\n\n\nData Sources:\n\nu2gigs.com: concert details\nSupplementary geo-data for world maps\n\nPreparation & Processing:\n\nWeb-scraping and data management\nStandardizing formats\nFixing inconsistencies\n\n\n\n\nProject development, code & data repositories, deployment and publishing\n\n\n\n\nExit to Home\n\n\nU2 by the Numbers\n\n2000+ Concerts\n13 Major Tours\n900+ Unique Songs Performed\nActive since 1976\n\n\n\nExit to Home\n\n\n\n\nSetlist Dynamics\n\n\n\nExit to Home\n\n\n\n\nExploring Patterns in Setlists\n\n\nMultiple Setlist Alignment\n\n\nSetlist Distance Tree\n\n\n\n\nExit to Home\n\n\n\n\nExperience the Data\nInteractive Shiny App: U2 Tour Map\n\n\n\nExit to Home\n\n\n\n\nLessons Learned\n\nData Preparation:\n\nKnowing the data is key for the ability to judge the outcome of the code\nStandardizing data types and fixing inconsistencies and errors\n\nAnalyses and visualization:\n\nCombining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data\n\nGenerative AI Support:\n\nLeveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies\nImportance of clear prompts, check for hallucinations and knowing its limits\n\n\n\n\nExit to Home\n\n\n\n\nAcknowledgements & Big Thank You!\n\nMatt from u2gigs.com - comprehensive historical concert data\nMy wife - valuable feedback and analysis ideas\nGenerative AI tools - Claude, Perplexity, Gemini, ChatGPT\nGoogle instructors - Data Analytics Certification program\nR, GitHub, and Quarto community - tools and resources\nU2 - for their inspiring musical journey!\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -191,7 +179,7 @@
     "href": "summary.html#u2-by-the-numbers",
     "title": "U2 Data Analytics",
     "section": "U2 by the Numbers",
-    "text": "U2 by the Numbers\n\n2000+ Concerts\n13 Major Tours\n900+ Unique Songs Performed\nActive since 1976\n\n\n\n\n\n\nExit to Home",
+    "text": "U2 by the Numbers\n\n2000+ Concerts\n13 Major Tours\n900+ Unique Songs Performed\nActive since 1976\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -203,7 +191,7 @@
     "href": "summary.html#setlist-dynamics",
     "title": "U2 Data Analytics",
     "section": "Setlist Dynamics",
-    "text": "Setlist Dynamics",
+    "text": "Setlist Dynamics\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -215,7 +203,7 @@
     "href": "summary.html#exploring-patterns-in-setlists",
     "title": "U2 Data Analytics",
     "section": "Exploring Patterns in Setlists",
-    "text": "Exploring Patterns in Setlists\n\n\nMultiple Setlist Alignment\n\n\nSetlist Distance Tree\n\n\n\n\n\n\n\nExit to Home",
+    "text": "Exploring Patterns in Setlists\n\n\nMultiple Setlist Alignment\n\n\nSetlist Distance Tree\n\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -227,7 +215,7 @@
     "href": "summary.html#experience-the-data",
     "title": "U2 Data Analytics",
     "section": "Experience the Data",
-    "text": "Experience the Data\nInteractive Shiny App: U2 Tour Map",
+    "text": "Experience the Data\nInteractive Shiny App: U2 Tour Map\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -239,7 +227,7 @@
     "href": "summary.html#lessons-learned",
     "title": "U2 Data Analytics",
     "section": "Lessons Learned",
-    "text": "Lessons Learned\n\nData Preparation:\n\nKnowing the data is key for the ability to judge the outcome of the code\nStandardizing data types and fixing inconsistencies and errors\n\nAnalyses and visualization:\n\nCombining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data\n\nGenerative AI Support:\n\nLeveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies\nImportance of clear prompts, check for hallucinations and knowing its limits\n\n\n\n\n\n\n\nExit to Home",
+    "text": "Lessons Learned\n\nData Preparation:\n\nKnowing the data is key for the ability to judge the outcome of the code\nStandardizing data types and fixing inconsistencies and errors\n\nAnalyses and visualization:\n\nCombining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data\n\nGenerative AI Support:\n\nLeveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies\nImportance of clear prompts, check for hallucinations and knowing its limits\n\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -251,7 +239,7 @@
     "href": "summary.html#acknowledgements-big-thank-you",
     "title": "U2 Data Analytics",
     "section": "Acknowledgements & Big Thank You!",
-    "text": "Acknowledgements & Big Thank You!\n\nMatt from u2gigs.com - comprehensive historical concert data\nMy wife - valuable feedback and analysis ideas\nGenerative AI tools - Claude, Perplexity, Gemini, ChatGPT\nGoogle instructors - Data Analytics Certification program\nR, GitHub, and Quarto community - tools and resources\nU2 - for their inspiring musical journey!\n\n\n\n\n\n\nExit to Home",
+    "text": "Acknowledgements & Big Thank You!\n\nMatt from u2gigs.com - comprehensive historical concert data\nMy wife - valuable feedback and analysis ideas\nGenerative AI tools - Claude, Perplexity, Gemini, ChatGPT\nGoogle instructors - Data Analytics Certification program\nR, GitHub, and Quarto community - tools and resources\nU2 - for their inspiring musical journey!\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
