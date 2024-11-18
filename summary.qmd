@@ -7,16 +7,18 @@ format:
     navigation-mode: vertical
 ---
 
-## U2 Data Analytics {.center}
+## U2 Data Analytics {style="text-align: center;"}
 
-An Analytical & Musical Journey
+::: {style="text-align: center;"}
+an analytical & musical journey
 
 ![](u2hvl/DSCN1518.JPG)
 
 Hans van Leeuwen • November 2024
+:::
 
-::: {style="font-size: 0.5em;"  align="right"}
-[{{< fa fa-circle-xmark >}}](index.html)
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
 :::
 
 ## Why Analyze U2's Tours?
@@ -28,7 +30,7 @@ Hans van Leeuwen • November 2024
 -   Highlight global impact across five decades
 :::
 
-:::: {.column width="50%" style="font-size: 0.5em;"  align="center"}
+:::: {.column width="50%" style="font-size: 0.5em;" align="center"}
 ::: center
 "We thought that we had the answers\
 It was the questions we had wrong"\
@@ -38,6 +40,10 @@ It was the questions we had wrong"\
 :::
 ::::
 ::::::
+
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
 
 ## Behind the Data {.smaller}
 
@@ -59,6 +65,10 @@ Project development, code & data repositories, deployment and publishing
 :::
 :::::
 
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
+
 ## U2 by the Numbers
 
 -   **2000+** Concerts
@@ -66,9 +76,17 @@ Project development, code & data repositories, deployment and publishing
 -   **900+** Unique Songs Performed
 -   Active since **1976**
 
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
+
 ## Setlist Dynamics
 
 ![](u2hvl/setlist_variability_by_tour.png)
+
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
 
 ## Exploring Patterns in Setlists
 
@@ -86,11 +104,19 @@ Setlist Distance Tree
 :::
 :::::
 
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
+
 ## Experience the Data
 
 Interactive Shiny App: U2 Tour Map
 
 ![](u2hvl/u2_tour_map_shiny_app.png)
+
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
 
 ## Lessons Learned {.smaller}
 
@@ -103,6 +129,9 @@ Interactive Shiny App: U2 Tour Map
     -   Leveraging GenAI for project ideation, code writing/deugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies
     -   Importance of clear prompts, check for hallucinations and knowing its limits
 
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
 
 ## Acknowledgements
 
@@ -112,3 +141,7 @@ Interactive Shiny App: U2 Tour Map
 -   **Google instructors** - Data Analytics Certification program
 -   **R, GitHub, and Quarto community** - tools and resources
 -   **U2** - for their inspiring musical journey!
+
+::: {style="font-size: 0.5em;" align="right"}
+[Exit to Home](index.html)
+:::
