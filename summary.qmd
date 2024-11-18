@@ -1,7 +1,110 @@
 ---
-title: "Summary"
-author: "Hans van Leeuwen"
-editor: visual
+format:
+  revealjs:
+    theme: white
+    controls: true
+    fullscreen: true
 ---
 
-<iframe src="u2_data_analytics_project_summary.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+# U2's Concert Data {.center}
+
+## An Analytical & Musical Journey
+
+Hans van Leeuwen • November 2024
+
+![U2 concert with vibrant lighting](u2hvl/DSCN1518.JPG)
+
+::: notes
+Welcome to my presentation about U2 concert data analysis!
+:::
+
+## Acknowledgements
+
+-   **Matt from u2gigs.com** - comprehensive historical concert data
+-   **My wife** - valuable feedback and analysis ideas
+-   **Generative AI tools** - Claude, Perplexity, Gemini, ChatGPT
+-   **Google instructors** - Data Analytics Certification program
+-   **R, GitHub, and Quarto community** - tools and resources
+-   **U2** - for their inspiring musical journey!
+
+## Why Analyze U2?
+
+:::::: columns
+::: {.column width="50%"}
+-   A long-time U2 fan and data strategy professional
+-   Provide a data-informed view on setlist variability
+-   Highlight global impact across five decades
+:::
+
+:::: {.column width="50%"}
+::: center
+> "We thought that we had the answers\
+> It was the questions we had wrong"\
+> ∼ 11 O'Clock Tick Tock, U2, 1980
+
+![Everything You Know Is Wrong](u2hvl/EverythingYouKnowIsWrong.JPG)
+:::
+::::
+::::::
+
+## Behind the Data
+
+::::: columns
+::: {.column width="50%"}
+-   Data Sources:
+    -   u2gigs.com: Concert details
+    -   Supplementary geo-data for maps
+-   Preparation & Processing:
+    -   Web-scraping and data management
+    -   Standardizing formats
+    -   Fixing inconsistencies
+:::
+
+::: {.column width="50%"}
+Project development, code & data repositories, deployment and publishing
+
+![Data Analytics Setup](u2hvl/u2_data_analytics_project_setup.jpg)
+:::
+:::::
+
+## U2 by the Numbers
+
+-   **2000+** Concerts
+-   **13** Major Tours
+-   **900+** Unique Songs Performed
+-   Active since **1976**
+
+## Setlist Dynamics
+
+![Setlist Variability by Tour](u2hvl/setlist_variability_by_tour.png)
+
+## Exploring Patterns in Setlists
+
+::::: columns
+::: {.column width="50%"}
+Multiple Setlist Alignment
+
+![Setlist Alignment](u2hvl/setlist_alignment_mafft.png)
+:::
+
+::: {.column width="50%"}
+Setlist Distance Tree
+
+![Distance Tree](u2hvl/distance_tree_legs_colored.png)
+:::
+:::::
+
+## Experience the Data
+
+Interactive Shiny App: U2 Tour Map
+
+![U2 Tour Map - Shiny App](u2hvl/u2_tour_map_shiny_app.png)
+
+## Challenges and Insights
+
+-   Data Preparation Challenges:
+    -   Handling inconsistent data formats
+    -   Standardizing song names and setlists
+-   AI Integration:
+    -   Leveraging AI for data summarization
+    -   Enhanced visualization creation
