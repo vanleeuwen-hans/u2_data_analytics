@@ -4,6 +4,12 @@ format:
     theme: white
     controls: true
     fullscreen: true
+    navigation-mode: linear
+    menu: true                    
+    menu-item-prefix: true        
+    menu-items:        
+      - name: Exit
+        link: ../index.html
 ---
 
 # U2's Concert Data {.center}
