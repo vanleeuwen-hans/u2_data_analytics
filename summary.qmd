@@ -6,6 +6,10 @@ format:
     preview-links: auto
     fullscreen: true
     navigation-mode: vertical
+    controls: true          
+    controls-layout: edges    
+    controls-tutorial: true  
+    menu: false
 ---
 
 ## U2 Data Analytics {style="text-align: center;"}
