@@ -12,7 +12,7 @@ format:
     menu: false
 ---
 
-## U2 Data Analytics {style="text-align: center;"}
+# U2 Data Analytics {style="text-align: center;"}
 
 ::: {style="text-align: center;"}
 an analytical & musical journey
@@ -28,9 +28,9 @@ Hans van Leeuwen • November 2024
 [Exit to Home](link){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## Why Analyze U2's Tours?
+# Why Analyze U2's Tours?
 
 :::::: columns
 ::: {.column width="50%"}
@@ -54,9 +54,9 @@ It was the questions we had wrong"\
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## Behind the Data {.smaller}
+# Behind the Data {.smaller}
 
 :::::: columns
 ::: {.column width="50%"}
@@ -86,9 +86,9 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
---
+---
 
-### Data Structure {.r-fit-text}
+## Data Structure {.r-fit-text}
 
 -   *showID*: the ID for this show as used on u2gigs.com
 -   *tour*: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)
@@ -110,9 +110,9 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## U2 by the Numbers
+# U2 by the Numbers
 
 -   **2000+** Concerts
 -   **13** Major Tours
@@ -126,9 +126,9 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## Setlist Dynamics
+# Setlist Dynamics
 
 ![](u2hvl/setlist_variability_by_tour.png)
 
@@ -136,9 +136,9 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## Exploring Patterns in Setlists
+# Exploring Patterns in Setlists
 
 ::::: columns
 ::: {.column width="50%"}
@@ -158,9 +158,9 @@ Setlist Distance Tree
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## Experience the Data
+# Experience the Data
 
 Interactive Shiny App: U2 Tour Map
 
@@ -170,9 +170,9 @@ Interactive Shiny App: U2 Tour Map
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## Lessons Learned {.smaller}
+# Lessons Learned {.smaller}
 
 -   Data Preparation:
     -   Knowing the data is key for the ability to judge the outcome of the code
@@ -187,9 +187,9 @@ Interactive Shiny App: U2 Tour Map
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-------------------------------------------------------------------------
+---
 
-## Acknowledgements & Big Thank You!
+# Acknowledgements & Big Thank You!
 
 -   **Matt from u2gigs.com** - comprehensive historical concert data
 -   **My wife** - valuable feedback and analysis ideas
