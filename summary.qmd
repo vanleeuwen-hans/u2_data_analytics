@@ -126,6 +126,9 @@ Wipe / arrow down for more detail on the captured data
 
 # Setlist Dynamics
 
+- A topic very often discussed by U2 fans: setlist variability 
+- This view allows for a more data-driven and objective discussion
+
 ![](u2hvl/setlist_variability_by_tour.png)
 
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
@@ -137,13 +140,16 @@ Wipe / arrow down for more detail on the captured data
 
 ::::: columns
 ::: {.column width="50%"}
-Multiple Setlist Alignment
+Here we look at the setlist with one tour: 
+- what are the common, conserved blocks of songs?
+- when in the show do they mix it up more?
 
 ![](u2hvl/setlist_alignment_mafft.png)
 :::
 
 ::: {.column width="50%"}
-Setlist Distance Tree
+- With this distance tree we can see clusters of concerts where the setlist was similar
+- The coloring done here is by tour leg - note the European cluster in red
 
 ![](u2hvl/distance_tree_legs_colored.png)
 :::
@@ -156,7 +162,8 @@ Setlist Distance Tree
 
 # Experience the Data
 
-Interactive Shiny App: U2 Tour Map
+- Interactive Shiny App: U2 Tour Map
+- an interactive version of the world map so that one can filter by tour/song, zoom in/out, see details for each city.
 
 ![](u2hvl/u2_tour_map_shiny_app.png)
 
