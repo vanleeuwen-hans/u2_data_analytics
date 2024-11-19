@@ -56,7 +56,7 @@ It was the questions we had wrong"\
 
 :::::: columns
 :::: {.column width="33%"}
-::: {style="font-size: 0.7em;"}
+::: {style="font-size: 0.8em;"}
 -   Data Sources:
     -   u2gigs.com: concert details
     -   Supplementary geo-data for world maps
@@ -86,7 +86,7 @@ Wipe / arrow down for more detail on the captured data
 
 ## Data Structure {.scrollable}
 
-::: smaller
+::: {style="font-size: 0.5em;"}
 -   **showID**: the ID for this show as used on u2gigs.com
 -   **tour**: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)
 -   **leg**: the name of the tour leg the show was part of (e.g. ZOO TV 1st leg: North America)
@@ -130,7 +130,7 @@ Wipe / arrow down for more detail on the captured data
 :::
 
 :::: {.column width="33%"}
-::: {style="font-size: 0.5em;"}
+::: {style="font-size: 0.8em;"}
 -   A topic very often discussed by U2 fans: setlist variability
 -   *'They really mixed it up last night!'*
 -   This view allows for a more data-driven and objective discussion
@@ -147,9 +147,8 @@ Wipe / arrow down for more detail on the captured data
 :::::: columns
 :::: {.column width="50%"}
 ::: {style="font-size: 0.5em;"}
-Here we look at the setlists in one tour: 
--   what are the common, conserved blocks of songs?
--   when in the show do they mix it up more?
+-   What are the common, conserved blocks of songs in a tour?
+-   When in the show do they mix it up more?
 :::
 
 ![](u2hvl/setlist_alignment_mafft.png)
@@ -238,7 +237,7 @@ print(plot_leg)
 # Experience the Data
 :::::: columns
 :::: {.column width="33%"}
-::: {style="font-size: 0.5em;"}
+::: {style="font-size: 0.8em;"}
 -   Interactive Shiny App: U2 Tour Map
 -   an interactive version of the world map so that one can:
     -   filter by tour and/or song, 
@@ -258,16 +257,19 @@ print(plot_leg)
 
 # Lessons Learned {.smaller}
 
+::: {style="font-size: 0.7em;"}
 -   **Data Preparation**
-    -   Knowing the data is key for the ability to judge the outcome of the code {.smaller}
-    -   Standardizing data types and fixing inconsistencies and errors {.smaller}
+    -   Knowing the data is key for the ability to judge the outcome of the code 
+    -   Standardizing data types and fixing inconsistencies and errors 
 -   **Analyses and visualization**
-    -   Combining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data {.smaller}
+    -   Combining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data 
 -   **Generative AI Support**
-    -   Leveraging GenAI for project ideation, code writing/debugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies {.smaller}
-    -   Importance of clear prompts, check for hallucinations and knowing its limits {.smaller}
+    -   Leveraging GenAI for project ideation, code writing/debugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies 
+    -   Importance of clear prompts, check for hallucinations and knowing its limits 
 -   **Data Analytics is Fun**
-    -   I thoroughly enjoyed this Capstone Project of the Google Data Certification! {.smaller}
+    -   I thoroughly enjoyed this Capstone Project of the Google Data Certification! 
+:::
+
 
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
