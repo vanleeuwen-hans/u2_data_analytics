@@ -163,7 +163,7 @@ Wipe / arrow down for more detail on the captured data
 :::::
 ::::::
 
-::: {style="text-align: center; font-size: 0.4em;"}
+::: {style="text-align: center; font-size: 0.8em;"}
 Wipe / arrow down to see the R code that generated the distance tree
 :::
 
@@ -172,7 +172,7 @@ Wipe / arrow down to see the R code that generated the distance tree
 :::
 
 ## Distance Tree Code {.scrollable}
-::: {style="font-size: 0.5em;"}
+::: {style="font-size: 0.7em;"}
 ``` r
 # required libraries
 library(dplyr)
@@ -297,7 +297,7 @@ print(plot_leg)
 -   Let me know what you think \@ [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com)
 -   Have a Beautiful Day, Don't Let it Get Away!
 
-::: {style="text-align: center; font-size: 0.4em;"}
+::: {style="text-align: center; font-size: 0.8em;"}
 Wipe / arrow down for my project links
 :::
 
