@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -445,6 +510,7 @@ It was the questions we had wrong”<br>
 </div>
 </section>
 
+<section>
 <section id="exploring-patterns-in-setlists" class="title-slide slide level1 center">
 <h1>Exploring Patterns in Setlists</h1>
 <div class="columns">
@@ -458,11 +524,72 @@ It was the questions we had wrong”<br>
 </ul>
 <p><img data-src="u2hvl/distance_tree_legs_colored.png"></p>
 </div></div>
+<div style="text-align: center; font-size: 0.8em;">
+<p>Wipe / arrow down to see the R code that generated the distance tree</p>
+</div>
 <div style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;">
 <p><a href="index.html" style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';">Exit to Home</a></p>
 </div>
 </section>
-
+<section id="distance-tree-code" class="slide level2 scrollable">
+<h2>Distance Tree Code</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># required libraries</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(seqinr)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(ape)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(ggtree)</span>
+<span id="cb1-7"><a></a><span class="co"># load my custom library</span></span>
+<span id="cb1-8"><a></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"vanleeuwen-hans/concertData"</span>)</span>
+<span id="cb1-9"><a></a><span class="fu">library</span>(concertData)</span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a><span class="co"># read the u2 concert data</span></span>
+<span id="cb1-12"><a></a>u2data <span class="ot">&lt;-</span> <span class="fu">read_concertData_csv</span>(<span class="st">'u2data/u2data_all_shows_clean_final.csv'</span>)</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a><span class="co"># Filter for specific tour</span></span>
+<span id="cb1-15"><a></a>tour_data <span class="ot">&lt;-</span> u2data[u2data<span class="sc">$</span>tour <span class="sc">==</span> <span class="st">"U2 Vertigo Tour"</span>, ]</span>
+<span id="cb1-16"><a></a><span class="co"># Remove snippets</span></span>
+<span id="cb1-17"><a></a>no_snippets_data <span class="ot">&lt;-</span> <span class="fu">concertData_remove_snippets</span>(tour_data)</span>
+<span id="cb1-18"><a></a><span class="co"># Remove shows with no setlist </span></span>
+<span id="cb1-19"><a></a>filtered_data <span class="ot">&lt;-</span> <span class="fu">concertData_remove_showsNoSetlist</span>(no_snippets_data)</span>
+<span id="cb1-20"><a></a></span>
+<span id="cb1-21"><a></a><span class="co"># Get a data frame from the mafft clustal output (code to create that is elsewhere)</span></span>
+<span id="cb1-22"><a></a>alignment_data <span class="ot">&lt;-</span> <span class="fu">read_mafft_clustal_alignment</span>(<span class="st">"mafft/u2_setlists_mafft_alignment.ASCII"</span>)</span>
+<span id="cb1-23"><a></a><span class="co"># Convert data frame to list which is needed for downstream distance tree analysis</span></span>
+<span id="cb1-24"><a></a>sequences <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">as.list</span>(alignment_data<span class="sc">$</span>sequence), <span class="fu">paste0</span>(<span class="st">"showID"</span>, alignment_data<span class="sc">$</span>showID))</span>
+<span id="cb1-25"><a></a></span>
+<span id="cb1-26"><a></a><span class="co"># Calculate distance matrix</span></span>
+<span id="cb1-27"><a></a>dist_matrix <span class="ot">&lt;-</span> <span class="fu">calculate_distance_matrix</span>(sequences)</span>
+<span id="cb1-28"><a></a><span class="co"># Convert to dist object</span></span>
+<span id="cb1-29"><a></a>setlist_dist <span class="ot">&lt;-</span> <span class="fu">as.dist</span>(dist_matrix)</span>
+<span id="cb1-30"><a></a><span class="co"># Construct the tree</span></span>
+<span id="cb1-31"><a></a>setlist_tree <span class="ot">&lt;-</span> <span class="fu">nj</span>(setlist_dist)</span>
+<span id="cb1-32"><a></a></span>
+<span id="cb1-33"><a></a><span class="co"># Collect show info</span></span>
+<span id="cb1-34"><a></a>show_info <span class="ot">&lt;-</span> <span class="fu">unique</span>(filtered_data[, <span class="fu">c</span>(<span class="st">"showID"</span>, <span class="st">"city"</span>, <span class="st">"date"</span>, <span class="st">"country"</span>, <span class="st">"leg"</span>)])</span>
+<span id="cb1-35"><a></a>show_info<span class="sc">$</span>city_date <span class="ot">&lt;-</span> <span class="fu">paste</span>(show_info<span class="sc">$</span>city, <span class="fu">format</span>(show_info<span class="sc">$</span>date, <span class="st">"%Y-%m-%d"</span>), <span class="at">sep =</span> <span class="st">" - "</span>)</span>
+<span id="cb1-36"><a></a></span>
+<span id="cb1-37"><a></a><span class="co"># create tree labels in the format 'City YYYY-MM-DD'</span></span>
+<span id="cb1-38"><a></a>new_labels <span class="ot">&lt;-</span> <span class="fu">create_city_date_tree_labels</span>(filtered_data, setlist_tree, show_info)</span>
+<span id="cb1-39"><a></a><span class="co"># Modify tree labels </span></span>
+<span id="cb1-40"><a></a>setlist_tree<span class="sc">$</span>tip.label <span class="ot">&lt;-</span> new_labels</span>
+<span id="cb1-41"><a></a></span>
+<span id="cb1-42"><a></a><span class="co"># create standard tree plot</span></span>
+<span id="cb1-43"><a></a>tree_plot <span class="ot">&lt;-</span> <span class="fu">create_ggtree_plot</span>(setlist_tree)</span>
+<span id="cb1-44"><a></a><span class="co"># Display the plot</span></span>
+<span id="cb1-45"><a></a><span class="fu">print</span>(tree_plot)</span>
+<span id="cb1-46"><a></a></span>
+<span id="cb1-47"><a></a><span class="co"># Create the tree plot with colors based on country</span></span>
+<span id="cb1-48"><a></a>plot_country <span class="ot">&lt;-</span> <span class="fu">create_ggtree_plot_colored</span>(setlist_tree, show_info, <span class="at">color_by =</span> <span class="st">"country"</span>)</span>
+<span id="cb1-49"><a></a><span class="fu">print</span>(plot_country)</span>
+<span id="cb1-50"><a></a></span>
+<span id="cb1-51"><a></a><span class="co"># Create the tree plot with colors based on leg</span></span>
+<span id="cb1-52"><a></a>plot_leg <span class="ot">&lt;-</span> <span class="fu">create_ggtree_plot_colored</span>(setlist_tree, show_info, <span class="at">color_by =</span> <span class="st">"leg"</span>)</span>
+<span id="cb1-53"><a></a><span class="fu">print</span>(plot_leg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;">
+<p><a href="index.html" style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';">Exit to Home</a></p>
+</div>
+</section></section>
 <section id="experience-the-data" class="title-slide slide level1 center">
 <h1>Experience the Data</h1>
 <ul>
