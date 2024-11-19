@@ -179,7 +179,7 @@
     "href": "summary.html#behind-the-data",
     "title": "U2 Data Analytics",
     "section": "Behind the Data",
-    "text": "Behind the Data\n\n\n\nData Sources:\n\nu2gigs.com: concert details\nSupplementary geo-data for world maps\n\nPreparation & Processing:\n\nWeb-scraping and data management\nStandardizing formats\nFixing inconsistencies\n\n\n\n\nProject development, code & data repositories, deployment and publishing\n\n\n\n\nWipe / arrow down for more detail on the captured data\n\n\nExit to Home",
+    "text": "Behind the Data\n\n\n\nData Sources:\n\nu2gigs.com: concert details\nSupplementary geo-data for world maps\n\nPreparation & Processing:\n\nWeb-scraping and data management\nStandardizing formats\nFixing inconsistencies\n\n\n\n\nProject development, code & data repositories, deployment and publishing\n\n\n\n\nWipe / arrow down for more detail on the captured data\n\n\nExit to Home\n\n–\nData Structure\n\nshowID: the ID for this show as used on u2gigs.com\ntour: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)\nleg: the name of the tour leg the show was part of (e.g. ZOO TV 1st leg: North America)\ndate: the date when the show took place\nvenue: the name of the stadium, arena, pub, school or other type of venue where the concert took place (e.g Madison Square Garden)\ncity: the city where the show took place (e.g New York)\nstate: the state where the show took place (e.g New York)\ncountry: the country where the show took place (e.g USA)\nsong_position: the position in the show set list when this song was played (e.g. 1 for the opening song)\nsnippet: a boolean indicating if this was a regular song, or if it was just a song snippet inserted before or after a regular song (e.g. TRUE or FALSE)\nencore: a boolean indicating if this song was played in the main set list or in the encore, after the band took a short break (e.g. TRUE or FALSE)\nsong_title: the title of the song (e.g. Sunday Bloody Sunday)\nshow_url: the URL to the show info on u2gigs.com\nsong_url: the URL to the song info on u2gigs.com\nsong_lyrics: the lyrics of the song (e.g. ‘I can’t believe the news today, I can’t close my eyes and make it go away…..’)\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
@@ -191,7 +191,7 @@
     "href": "summary.html#u2-by-the-numbers",
     "title": "U2 Data Analytics",
     "section": "U2 by the Numbers",
-    "text": "U2 by the Numbers\n\n2000+ Concerts\n13 Major Tours\n900+ Unique Songs Performed\nActive since 1976\n\n\nExit to Home",
+    "text": "U2 by the Numbers\n\n2000+ Concerts\n13 Major Tours\n900+ Unique Songs Performed\n7,300,000 people attended their 110 360° Tour concerts\n22 Grammy Awards\n4 band members\nActive since 1976\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
