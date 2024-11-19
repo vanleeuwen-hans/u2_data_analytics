@@ -151,11 +151,11 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "summary.html#data-structure-.smaller",
-    "href": "summary.html#data-structure-.smaller",
+    "objectID": "summary.html#data-structure",
+    "href": "summary.html#data-structure",
     "title": "U2 Data Analytics",
-    "section": "Data Structure {.smaller}",
-    "text": "Data Structure {.smaller}\n\nshowID: the ID for this show as used on u2gigs.com\ntour: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)\nleg: the name of the tour leg the show was part of (e.g. ZOO TV 1st leg: North America)\ndate: the date when the show took place\nvenue: the name of the stadium, arena, pub, school or other type of venue where the concert took place (e.g Madison Square Garden)\ncity: the city where the show took place (e.g New York)\nstate: the state where the show took place (e.g New York)\ncountry: the country where the show took place (e.g USA)\nsong_position: the position in the show set list when this song was played (e.g. 1 for the opening song)\nsnippet: a boolean indicating if this was a regular song, or if it was just a song snippet inserted before or after a regular song (e.g. TRUE or FALSE)\nencore: a boolean indicating if this song was played in the main set list or in the encore, after the band took a short break (e.g. TRUE or FALSE)\nsong_title: the title of the song (e.g. Sunday Bloody Sunday)\nshow_url: the URL to the show info on u2gigs.com\nsong_url: the URL to the song info on u2gigs.com\nsong_lyrics: the lyrics of the song (e.g. ‘I can’t believe the news today, I can’t close my eyes and make it go away…..’)\n\n\nExit to Home",
+    "section": "Data Structure",
+    "text": "Data Structure\n\n\nshowID: the ID for this show as used on u2gigs.com\ntour: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)\nleg: the name of the tour leg the show was part of (e.g. ZOO TV 1st leg: North America)\ndate: the date when the show took place\nvenue: the name of the stadium, arena, pub, school or other type of venue where the concert took place (e.g Madison Square Garden)\ncity: the city where the show took place (e.g New York)\nstate: the state where the show took place (e.g New York)\ncountry: the country where the show took place (e.g USA)\nsong_position: the position in the show set list when this song was played (e.g. 1 for the opening song)\nsnippet: a boolean indicating if this was a regular song, or if it was just a song snippet inserted before or after a regular song (e.g. TRUE or FALSE)\nencore: a boolean indicating if this song was played in the main set list or in the encore, after the band took a short break (e.g. TRUE or FALSE)\nsong_title: the title of the song (e.g. Sunday Bloody Sunday)\nshow_url: the URL to the show info on u2gigs.com\nsong_url: the URL to the song info on u2gigs.com\nsong_lyrics: the lyrics of the song (e.g. ‘I can’t believe the news today, I can’t close my eyes and make it go away…..’)\n\n\n\nExit to Home",
     "crumbs": [
       "Home",
       "Conclusions and Sharing",
