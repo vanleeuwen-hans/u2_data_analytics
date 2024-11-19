@@ -128,8 +128,9 @@ Wipe / arrow down for more detail on the captured data
 :::
 
 :::: {.column width="50%"}
-::: {style="text-align: center; font-size: 0.8em;"}
+::: {style="text-align: center; font-size: 0.6em;"}
 -   A topic very often discussed by U2 fans: setlist variability
+-   *'They really mixed it up last night!'*
 -   This view allows for a more data-driven and objective discussion
 :::
 ::::
@@ -143,8 +144,8 @@ Wipe / arrow down for more detail on the captured data
 
 :::::: columns
 :::: {.column width="50%"}
-::: {style="text-align: center; font-size: 0.6em;"}
-Here we look at the setlist with one tour: 
+::: {style="text-align: center; font-size: 0.5em;"}
+Here we look at the setlists in one tour: 
 -   what are the common, conserved blocks of songs?
 -   when in the show do they mix it up more?
 :::
@@ -161,7 +162,7 @@ Here we look at the setlist with one tour:
 ::::
 ::::::
 
-::: {style="text-align: center; font-size: 0.8em;"}
+::: {style="text-align: center; font-size: 0.4em;"}
 Wipe / arrow down to see the R code that generated the distance tree
 :::
 
@@ -170,7 +171,7 @@ Wipe / arrow down to see the R code that generated the distance tree
 :::
 
 ## Distance Tree Code {.scrollable}
-
+::: {style="font-size: 0.6em;"}
 ``` r
 # required libraries
 library(dplyr)
@@ -226,6 +227,7 @@ print(plot_country)
 plot_leg <- create_ggtree_plot_colored(setlist_tree, show_info, color_by = "leg")
 print(plot_leg)
 ```
+:::
 
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
@@ -234,9 +236,12 @@ print(plot_leg)
 # Experience the Data
 :::::: columns
 :::: {.column width="50%"}
-::: {style="text-align: center; font-size: 0.8em;"}
+::: {style="text-align: center; font-size: 0.5em;"}
 -   Interactive Shiny App: U2 Tour Map
--   an interactive version of the world map so that one can filter by tour/song, zoom in/out, see details for each city.
+-   an interactive version of the world map so that one can:
+  -   filter by tour and/or song, 
+  -   zoom in/out,
+  -   see details for each city.
 :::
 ::::
 
