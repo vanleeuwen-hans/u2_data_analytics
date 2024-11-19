@@ -52,7 +52,7 @@ It was the questions we had wrong"\
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-# Behind the Data {.smaller}
+# Behind the Data
 
 :::::: columns
 :::: {.column width="33%"}
