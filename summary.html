@@ -504,9 +504,10 @@ It was the questions we had wrong”<br>
 <div class="column" style="width:50%;">
 <p><img data-src="u2hvl/setlist_variability_by_tour.png"></p>
 </div><div class="column" style="width:50%;">
-<div style="text-align: center; font-size: 0.8em;">
+<div style="text-align: center; font-size: 0.6em;">
 <ul>
 <li>A topic very often discussed by U2 fans: setlist variability</li>
+<li><em>‘They really mixed it up last night!’</em></li>
 <li>This view allows for a more data-driven and objective discussion</li>
 </ul>
 </div>
@@ -521,8 +522,8 @@ It was the questions we had wrong”<br>
 <h1>Exploring Patterns in Setlists</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div style="text-align: center; font-size: 0.6em;">
-<p>Here we look at the setlist with one tour: - what are the common, conserved blocks of songs? - when in the show do they mix it up more?</p>
+<div style="text-align: center; font-size: 0.5em;">
+<p>Here we look at the setlists in one tour: - what are the common, conserved blocks of songs? - when in the show do they mix it up more?</p>
 </div>
 <p><img data-src="u2hvl/setlist_alignment_mafft.png"></p>
 </div><div class="column" style="width:50%;">
@@ -534,7 +535,7 @@ It was the questions we had wrong”<br>
 </div>
 <p><img data-src="u2hvl/distance_tree_legs_colored.png"></p>
 </div></div>
-<div style="text-align: center; font-size: 0.8em;">
+<div style="text-align: center; font-size: 0.4em;">
 <p>Wipe / arrow down to see the R code that generated the distance tree</p>
 </div>
 <div style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;">
@@ -543,6 +544,7 @@ It was the questions we had wrong”<br>
 </section>
 <section id="distance-tree-code" class="slide level2 scrollable">
 <h2>Distance Tree Code</h2>
+<div style="font-size: 0.6em;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># required libraries</span></span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a></a><span class="fu">library</span>(seqinr)</span>
@@ -596,6 +598,7 @@ It was the questions we had wrong”<br>
 <span id="cb1-51"><a></a><span class="co"># Create the tree plot with colors based on leg</span></span>
 <span id="cb1-52"><a></a>plot_leg <span class="ot">&lt;-</span> <span class="fu">create_ggtree_plot_colored</span>(setlist_tree, show_info, <span class="at">color_by =</span> <span class="st">"leg"</span>)</span>
 <span id="cb1-53"><a></a><span class="fu">print</span>(plot_leg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;">
 <p><a href="index.html" style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';">Exit to Home</a></p>
 </div>
@@ -604,10 +607,13 @@ It was the questions we had wrong”<br>
 <h1>Experience the Data</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div style="text-align: center; font-size: 0.8em;">
+<div style="text-align: center; font-size: 0.5em;">
 <ul>
 <li>Interactive Shiny App: U2 Tour Map</li>
-<li>an interactive version of the world map so that one can filter by tour/song, zoom in/out, see details for each city.</li>
+<li>an interactive version of the world map so that one can:</li>
+<li>filter by tour and/or song,</li>
+<li>zoom in/out,</li>
+<li>see details for each city.</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
