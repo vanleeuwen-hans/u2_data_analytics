@@ -28,7 +28,6 @@ Hans van Leeuwen • November 2024
 [Exit to Home](link){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # Why Analyze U2's Tours?
 
@@ -54,7 +53,6 @@ It was the questions we had wrong"\
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # Behind the Data {.smaller}
 
@@ -86,7 +84,6 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 ## Data Structure {.r-fit-text}
 
@@ -110,7 +107,6 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # U2 by the Numbers
 
@@ -126,7 +122,6 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # Setlist Dynamics
 
@@ -136,7 +131,6 @@ Wipe / arrow down for more detail on the captured data
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # Exploring Patterns in Setlists
 
@@ -158,7 +152,6 @@ Setlist Distance Tree
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # Experience the Data
 
@@ -170,7 +163,6 @@ Interactive Shiny App: U2 Tour Map
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # Lessons Learned {.smaller}
 
@@ -187,7 +179,6 @@ Interactive Shiny App: U2 Tour Map
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
----
 
 # Acknowledgements & Big Thank You!
 
