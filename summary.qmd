@@ -56,7 +56,7 @@ It was the questions we had wrong"\
 
 :::::: columns
 :::: {.column width="33%"}
-::: {style="font-size: 0.8em;"}
+::: {style="font-size: 0.7em;"}
 -   Data Sources:
     -   u2gigs.com: concert details
     -   Supplementary geo-data for world maps
@@ -257,7 +257,7 @@ print(plot_leg)
 
 # Lessons Learned {.scrollable}
 
-::: {style="font-size: 0.8em;"}
+::: {style="font-size: 0.7em;"}
 -   **Data Preparation**
     -   Knowing the data is key for the ability to judge the outcome of the code 
     -   Standardizing data types and fixing inconsistencies and errors 
