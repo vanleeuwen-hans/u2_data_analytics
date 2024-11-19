@@ -85,7 +85,7 @@ Wipe / arrow down for more detail on the captured data
 :::
 
 
-## Data Structure {.r-fit-text}
+## Data Structure {.smaller} {.scrollable}
 
 -   *showID*: the ID for this show as used on u2gigs.com
 -   *tour*: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)
