@@ -85,23 +85,24 @@ Wipe / arrow down for more detail on the captured data
 :::
 
 
-## Data Structure {.smaller} {.scrollable}
-
--   *showID*: the ID for this show as used on u2gigs.com
--   *tour*: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)
--   *leg*: the name of the tour leg the show was part of (e.g. ZOO TV 1st leg: North America)
--   *date*: the date when the show took place
--   *venue*: the name of the stadium, arena, pub, school or other type of venue where the concert took place (e.g Madison Square Garden)
--   *city*: the city where the show took place (e.g New York)
--   *state*: the state where the show took place (e.g New York)
--   *country*: the country where the show took place (e.g USA)
--   *song_position*: the position in the show set list when this song was played (e.g. 1 for the opening song)
--   *snippet*: a boolean indicating if this was a regular song, or if it was just a song snippet inserted before or after a regular song (e.g. TRUE or FALSE)
--   *encore*: a boolean indicating if this song was played in the main set list or in the encore, after the band took a short break (e.g. TRUE or FALSE)
--   *song_title*: the title of the song (e.g. Sunday Bloody Sunday)
--   *show_url*: the URL to the show info on u2gigs.com
--   *song_url*: the URL to the song info on u2gigs.com
--   *song_lyrics*: the lyrics of the song (e.g. ‘I can’t believe the news today, I can’t close my eyes and make it go away…..’)
+## Data Structure {.scrollable}
+:::{.smaller}
+-   **showID**: the ID for this show as used on u2gigs.com
+-   **tour**: the name of the U2 tour the show was part of (e.g. U2 ZOO TV Tour)
+-   **leg**: the name of the tour leg the show was part of (e.g. ZOO TV 1st leg: North America)
+-   **date**: the date when the show took place
+-   **venue**: the name of the stadium, arena, pub, school or other type of venue where the concert took place (e.g Madison Square Garden)
+-   **city**: the city where the show took place (e.g New York)
+-   **state**: the state where the show took place (e.g New York)
+-   **country**: the country where the show took place (e.g USA)
+-   **song_position**: the position in the show set list when this song was played (e.g. 1 for the opening song)
+-   **snippet**: a boolean indicating if this was a regular song, or if it was just a song snippet inserted before or after a regular song (e.g. TRUE or FALSE)
+-   **encore**: a boolean indicating if this song was played in the main set list or in the encore, after the band took a short break (e.g. TRUE or FALSE)
+-   **song_title**: the title of the song (e.g. Sunday Bloody Sunday)
+-   **show_url**: the URL to the show info on u2gigs.com
+-   **song_url**: the URL to the song info on u2gigs.com
+-   **song_lyrics**: the lyrics of the song (e.g. ‘I can’t believe the news today, I can’t close my eyes and make it go away…..’)
+:::
 
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
