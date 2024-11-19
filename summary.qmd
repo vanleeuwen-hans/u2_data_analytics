@@ -155,10 +155,74 @@ Here we look at the setlist with one tour:
 :::
 :::::
 
+::: {style="text-align: center; font-size: 0.8em;"}
+Wipe / arrow down to see the R code that generated the distance tree
+:::
+
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
+## Distance Tree Code {.scrollable}
+
+```r
+# required libraries
+library(dplyr)
+library(seqinr)
+library(ape)
+library(ggplot2)
+library(ggtree)
+# load my custom library
+devtools::install_github("vanleeuwen-hans/concertData")
+library(concertData)
+
+# read the u2 concert data
+u2data <- read_concertData_csv('u2data/u2data_all_shows_clean_final.csv')
+
+# Filter for specific tour
+tour_data <- u2data[u2data$tour == "U2 Vertigo Tour", ]
+# Remove snippets
+no_snippets_data <- concertData_remove_snippets(tour_data)
+# Remove shows with no setlist 
+filtered_data <- concertData_remove_showsNoSetlist(no_snippets_data)
+
+# Get a data frame from the mafft clustal output (code to create that is elsewhere)
+alignment_data <- read_mafft_clustal_alignment("mafft/u2_setlists_mafft_alignment.ASCII")
+# Convert data frame to list which is needed for downstream distance tree analysis
+sequences <- setNames(as.list(alignment_data$sequence), paste0("showID", alignment_data$showID))
+
+# Calculate distance matrix
+dist_matrix <- calculate_distance_matrix(sequences)
+# Convert to dist object
+setlist_dist <- as.dist(dist_matrix)
+# Construct the tree
+setlist_tree <- nj(setlist_dist)
+
+# Collect show info
+show_info <- unique(filtered_data[, c("showID", "city", "date", "country", "leg")])
+show_info$city_date <- paste(show_info$city, format(show_info$date, "%Y-%m-%d"), sep = " - ")
+
+# create tree labels in the format 'City YYYY-MM-DD'
+new_labels <- create_city_date_tree_labels(filtered_data, setlist_tree, show_info)
+# Modify tree labels 
+setlist_tree$tip.label <- new_labels
+
+# create standard tree plot
+tree_plot <- create_ggtree_plot(setlist_tree)
+# Display the plot
+print(tree_plot)
+
+# Create the tree plot with colors based on country
+plot_country <- create_ggtree_plot_colored(setlist_tree, show_info, color_by = "country")
+print(plot_country)
+
+# Create the tree plot with colors based on leg
+plot_leg <- create_ggtree_plot_colored(setlist_tree, show_info, color_by = "leg")
+print(plot_leg)
+```
+::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
+[Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
+:::
 
 # Experience the Data
 
