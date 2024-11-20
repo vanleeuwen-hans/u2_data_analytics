@@ -774,3 +774,7 @@ leaflet(city_frequency_transformed, width="100%") %>%
     labFormat = labelFormat(digits = 0)
   )
 ```
+
+<div style="text-align:center;">
+{{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
+</div>
