@@ -285,7 +285,7 @@ print(plot_leg)
 -   **Generative AI tools** - Claude, Perplexity, Gemini, ChatGPT
 -   **Google instructors** - Data Analytics Certification program
 -   **R, GitHub, and Quarto community** - tools and resources
--   **U2** - for their inspiring musical journey!
+-   **U2 & crew** - for their inspiring musical journey!
 :::
 
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}

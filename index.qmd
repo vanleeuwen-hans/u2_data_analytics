@@ -24,6 +24,8 @@ The data used in this project was obtained from the excellent online U2 concert 
 
 A big thank you to my wife who has been on this U2 adventure with me and also provided very valuable feedback and input as I analyzed the data.
 
+And of course thanks to U2 and their crew! 
+
 Enjoy and let me know if you have any suggestions or other feedback.
 
 Who knows, perhaps we'll run into each other one day, either at a data science conference or a U2 concert ✌️
