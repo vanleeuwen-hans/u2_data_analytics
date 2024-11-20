@@ -36,8 +36,10 @@ These memories led me to **the following questions or objectives for this data a
 
 ![**Everything You Know is Wrong -** **U2 Innocence + Experience Tour, The O2, London, United Kingdom**](u2hvl/EverythingYouKnowIsWrong.JPG){fig-alt="Everything You Know is Wrong" width="796"}
 
- 
- 
+\
+\
+\
+
 ::: {style="text-align:center; font-size: 10px;"}
 {{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
 :::

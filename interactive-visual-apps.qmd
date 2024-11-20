@@ -18,9 +18,10 @@ I created an interactive version of the setlist alignment so that the user selec
 Note that this Shiny app hosted on the shinyapps.io free plan has a slow performance. The app works fast on my Mac but on shinyapps.io it is much slower, so be patient while it loads - it may take more than a minute. I am still lookig into code optimization to make it slower so a new version may be released in the future. The static plots of some tours can be found in this report: [Multiple Setlist Alignment](multiple-setlist-alignment.qmd#tour-setlist-alignment)
 
 The code of this Shiny app can be found in my GitHub repository at: <https://github.com/vanleeuwen-hans/u2_setlist_alignment>
+\
+\
+\
 
- 
- 
 ::: {style="text-align:center; font-size: 10px;"}
 {{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
 :::
