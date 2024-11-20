@@ -54,7 +54,7 @@ It was the questions we had wrong"\
 
 # Behind the Data
 
-:::::: columns
+::::::: columns
 :::: {.column width="33%"}
 ::: {style="font-size: 0.7em;"}
 -   Data Sources:
@@ -74,7 +74,7 @@ Project development, code & data repositories, deployment and publishing
 ![](u2hvl/u2_data_analytics_project_setup.jpg)
 :::
 ::::
-::::::
+:::::::
 
 ::: {style="text-align: center; font-size: 0.8em;"}
 Wipe / arrow down for more detail on the captured data
@@ -144,7 +144,7 @@ Wipe / arrow down for more detail on the captured data
 
 # Exploring Patterns in Setlists
 
-:::::: columns
+::::::: columns
 :::: {.column width="50%"}
 ::: {style="font-size: 0.5em;"}
 -   What are the common, conserved blocks of songs in a tour?
@@ -154,14 +154,15 @@ Wipe / arrow down for more detail on the captured data
 ![](u2hvl/setlist_alignment_mafft.png)
 ::::
 
-::::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: {style="font-size: 0.5em;"}
 -   Clusters of concerts with similar setlists
 -   Coloring by tour leg
 :::
+
 ![](u2hvl/distance_tree_legs_colored.png)
-:::::
-::::::
+::::
+:::::::
 
 ::: {style="text-align: center; font-size: 0.8em;"}
 Wipe / arrow down to see the R code that generated the distance tree
@@ -172,6 +173,7 @@ Wipe / arrow down to see the R code that generated the distance tree
 :::
 
 ## Distance Tree Code {.scrollable}
+
 ::: {style="font-size: 0.7em;"}
 ``` r
 # required libraries
@@ -235,20 +237,21 @@ print(plot_leg)
 :::
 
 # Experience the Data
+
 :::::: columns
 :::: {.column width="33%"}
 ::: {style="font-size: 0.8em;"}
 -   Interactive Shiny App: U2 Tour Map
 -   an interactive version of the world map so that one can:
-    -   filter by tour and/or song, 
+    -   filter by tour and/or song,
     -   zoom in/out,
     -   see details for each city.
 :::
 ::::
 
-:::: {.column width="67%"}
+::: {.column width="67%"}
 ![](u2hvl/u2_tour_map_shiny_app.png)
-::::
+:::
 ::::::
 
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
@@ -259,17 +262,16 @@ print(plot_leg)
 
 ::: {style="font-size: 0.7em;"}
 -   **Data Preparation**
-    -   Knowing the data is key for the ability to judge the outcome of the code 
-    -   Standardizing data types and fixing inconsistencies and errors 
+    -   Knowing the data is key for the ability to judge the outcome of the code
+    -   Standardizing data types and fixing inconsistencies and errors
 -   **Analyses and visualization**
-    -   Combining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data 
+    -   Combining tools (e.g. R, Shiny, bash command-line, Quarto, GitHub) creates a powerful and inspiring environment to extract knowledge and insights from data
 -   **Generative AI Support**
-    -   Leveraging GenAI for project ideation, code writing/debugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies 
-    -   Importance of clear prompts, check for hallucinations and knowing its limits 
+    -   Leveraging GenAI for project ideation, code writing/debugging, advising on tools, visuals and platforms, co-designing data management set-up and code deployment strategies
+    -   Importance of clear prompts, check for hallucinations and knowing its limits
 -   **Data Analytics is Fun**
-    -   I thoroughly enjoyed this Capstone Project of the Google Data Certification! 
+    -   I thoroughly enjoyed this Capstone Project of the Google Data Certification!
 :::
-
 
 ::: {style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;"}
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
@@ -290,11 +292,11 @@ print(plot_leg)
 [Exit to Home](index.html){style="font-size: 14px; color: #666; text-decoration: none; padding: 5px 10px; border: 1px solid transparent; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#000'; this.style.backgroundColor='#f0f0f0'; this.style.borderColor='#ddd';" onmouseout="this.style.color='#666'; this.style.backgroundColor='transparent'; this.style.borderColor='transparent';"}
 :::
 
-
 # Thank You!
 
 -   I hope it was interesting for you
--   Let me know what you think \@ [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com)
+-   Let me know what you think!
+-   {{< fa solid envelope >}} [E-mail](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [X-Twitter](https://x.com/hans444)
 -   Have a Beautiful Day, Don't Let it Get Away!
 
 ::: {style="text-align: center; font-size: 0.8em;"}
@@ -306,6 +308,7 @@ Wipe / arrow down for my project links
 :::
 
 ## U2 Data Analytics Project Links
+
 -   [Project Website](https://vanleeuwen-hans.github.io/u2_data_analytics/index.html)
 -   [Project GitHub Repository](https://github.com/vanleeuwen-hans/u2_data_analytics)
 -   [Custom concertData R Package Repository](https://github.com/vanleeuwen-hans/concertData)
