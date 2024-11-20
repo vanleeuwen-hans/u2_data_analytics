@@ -30,6 +30,8 @@ Who knows, perhaps we'll run into each other one day, either at a data science c
 
 *Best,*
 
-*Hans van Leeuwen - November 2024*
+*Hans van Leeuwen* ©️ *November 2024*
+
+{{< fa-solid fa-envelope> >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) | {{< <i class="fa-brands fa-x-twitter"></i>> >}} [hans444](https://x.com/hans444)
 
 ![Hans in the Achtung Baby - ZOO TV era in his childhood room](u2hvl/HvL_AchtungBabyEra.JPG){fig-align="left"}
