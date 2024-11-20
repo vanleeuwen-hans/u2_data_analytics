@@ -236,6 +236,8 @@ It then proceeded to help me with more detailed instructions on how to set this 
 
 -   It happened a few times when I provided a working piece of code and asked it to improve or add a certain functionality that the AI tool decided to change other things in the code that broke it. That costed me some time to figure out why it suddenly stopped working. I told the AI tool about it and it apologized for changing code that worked and didn't really need to be changed. Again, always **important to carefully check if the output from the AI tool makes sense**.
 
-::: footer
+ 
+ 
+::: {style="text-align:center; font-size: 10px;"}
 {{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
 :::

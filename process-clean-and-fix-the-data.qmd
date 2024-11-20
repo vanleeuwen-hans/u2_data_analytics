@@ -178,6 +178,8 @@ I stored this fixed data file with a better file name:
 cp u2data_all_shows_fixquotes-semicolons-dates-others-4.csv u2data_all_shows_clean.csv
 ```
 
-::: footer
+ 
+ 
+::: {style="text-align:center; font-size: 10px;"}
 {{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
 :::

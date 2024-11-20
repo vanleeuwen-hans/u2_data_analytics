@@ -314,6 +314,8 @@ u2data <- read_csv('u2data/archive/u2data_all_shows_clean_final_rosemontdup.csv'
 str(u2data)
 ```
 
-::: footer
+ 
+ 
+::: {style="text-align:center; font-size: 10px;"}
 {{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
 :::

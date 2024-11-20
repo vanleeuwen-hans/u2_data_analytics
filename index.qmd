@@ -35,6 +35,8 @@ Who knows, perhaps we'll run into each other one day, either at a data science c
 
 ![Hans in the Achtung Baby - ZOO TV era in his childhood room](u2hvl/HvL_AchtungBabyEra.JPG){fig-align="left"}
 
-::: footer
+ 
+ 
+::: {style="text-align:center; font-size: 10px;"}
 {{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
 :::

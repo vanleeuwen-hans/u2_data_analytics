@@ -82,6 +82,8 @@ On u2gigs.com each show has a web page, and each song ever played has a web page
 -   As described on the [Basic Statistics U2 Concerts](basic-stats-u2-concerts.qmd) page in this report, there were some set lists where u2gigs.com did not count songs as opening songs if these were preceded by an interview (shows during promo tours). My code did count those as opening songs, hence some discrepancies in numbers.
 -   Also described on the [Basic Statistics U2 Concerts](basic-stats-u2-concerts.qmd) page is a rare example of a set list that started with a medley of two regular songs (not snippets). My scraping code did not handle such case(s) properly.
 
-::: footer
+ 
+ 
+::: {style="text-align:center; font-size: 10px;"}
 {{< fa solid copyright >}} Hans van Leeuwen 2024 \| {{< fa solid envelope >}} [hans.data.universe\@gmail.com](mailto:hans.data.universe@gmail.com) \| {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/vanleeuwenhans/) \| {{< fa brands x-twitter >}} [hans444](https://x.com/hans444)
 :::
