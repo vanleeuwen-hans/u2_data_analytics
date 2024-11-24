@@ -23,9 +23,8 @@ First we load my custom concertData package where I organized all the functions 
 
 ```{r load custom concertData package, message = FALSE, warning = FALSE}
 library(devtools)
-#devtools::install_github("vanleeuwen-hans/concertData")
-devtools::load_all("/Volumes/homes/family/Documents/Hans/Bioinformatics/R/packages/concertData")
-#library(concertData)
+devtools::install_github("vanleeuwen-hans/concertData")
+library(concertData)
 ```
 
 ## Load the u2data
