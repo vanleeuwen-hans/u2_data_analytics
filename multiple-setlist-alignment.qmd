@@ -23,8 +23,9 @@ First we load my custom concertData package where I organized all the functions 
 
 ```{r load custom concertData package, message = FALSE, warning = FALSE}
 library(devtools)
-devtools::install_github("vanleeuwen-hans/concertData")
-library(concertData)
+#devtools::install_github("vanleeuwen-hans/concertData")
+devtools::load_all("/Volumes/homes/family/Documents/Hans/Bioinformatics/R/packages/concertData")
+#library(concertData)
 ```
 
 ## Load the u2data
@@ -138,6 +139,26 @@ grid.arrange(main_plot,
 
 I was not satisfied with the resulting alignments shown above, produced with the custom alignment code based on the Needleman-Wunsch algorithm. While exploring alternatives I discovered that the MAFFT[@Katoh2002] algorithm for multiple sequence alignment has an option '--text' mode that can calculate and create multiple sequence alignments for non-biological sequences (see [this page](https://mafft.cbrc.jp/alignment/software/textcomparison.html) from the MAFFT authors). In the R package ips there is a [mafft wrapper function](https://search.r-project.org/CRAN/refmans/ips/html/mafft.html), so I installed and tried it out. However, this R implementation of mafft does not allow for the `--text` mode. Hence, I implemented the solution using both R and the command line version of mafft on my Mac. I could also wrap the command line actions and execute it from R, but I did not spend time on that, mainly because it would still create a challenging dependency in my R-package.
 
+When I first published this project report I had used the function 'find_most_representative_setlists' from my custom R package 'concertData'. The function takes the setlists of all concerts in a tour, and was then supposed to identify the 30 setlists that represent best the overall variety seen in all the concerts of the tour. What it did was:
+
+1.  It used the Levenshtein distance to calculate similarities between setlists.
+
+2.  It computed a distance matrix for all pairs of setlists.
+
+3.  It calculated the average distance for each setlist to all others.
+
+4.  It selects the setlists with the lowest average distances as the most representative.
+
+While this approach did identify setlists that are, on average, most similar to all other setlists, it did not fully achieve the stated goal for the following reasons:
+
+1.  **Rare Changes**: The method prioritizes setlists that are most similar to others, which means it might not capture rare changes or unique variations effectively. Rare changes would likely increase a setlist's average distance, making it less likely to be selected.
+
+2.  **Variety Representation**: By selecting setlists with the lowest average distances, you're essentially choosing the most "typical" setlists rather than those that represent the full variety of the tour.
+
+3.  **Outlier Sensitivity**: This method might be sensitive to outliers or very unique setlists, potentially skewing the results.
+
+To better achieve the goal of representing all variety, including rare changes, I decided to use a clustering approach, with the k-means algorithm to group similar setlists, then select representatives from each cluster. Like this it better captures the full variety of setlists, including rare changes, while still maintaining a representative sample of the tour. This was implemented in the new function 'find_representative_setlists_kmeans' in my custom R package 'concertData' (see page: [Sharing \> concertData R package](sharing.qmd#concertdata-r-package)).
+
 ```{r data analysis - tour setlist alignment MAFFT, warning=FALSE, message=FALSE, error=FALSE}
 
 # Filter for specific tour
@@ -154,7 +175,8 @@ codes_tour_songs <- codify_tour_song_titles(filtered_data)
 all_setlist_sequences <- prepare_setlist_sequences(filtered_data, codes_tour_songs)
 
 # Find the most representative setlists
-representative_setlists <- find_most_representative_setlists(all_setlist_sequences, n_representatives = 30)
+#representative_setlists <- find_most_representative_setlists(all_setlist_sequences, n_representatives = 30)
+representative_setlists <- find_representative_setlists_kmeans(all_setlist_sequences, n_representatives = 30)
 
 # Create fasta-format sequences representing the set-lists of the representative shows
 fasta_mafft_output <- create_setlist_fasta_mafft(representative_setlists)
