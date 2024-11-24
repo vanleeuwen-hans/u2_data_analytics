@@ -440,6 +440,20 @@ div.csl-indent {
 <section id="multiple-setlist-alignment-with-mafft" class="level2">
 <h2 class="anchored" data-anchor-id="multiple-setlist-alignment-with-mafft">Multiple Setlist Alignment with MAFFT</h2>
 <p>I was not satisfied with the resulting alignments shown above, produced with the custom alignment code based on the Needleman-Wunsch algorithm. While exploring alternatives I discovered that the MAFFT<span class="citation" data-cites="Katoh2002">(<a href="#ref-Katoh2002" role="doc-biblioref">Katoh 2002</a>)</span> algorithm for multiple sequence alignment has an option ‘–text’ mode that can calculate and create multiple sequence alignments for non-biological sequences (see <a href="https://mafft.cbrc.jp/alignment/software/textcomparison.html">this page</a> from the MAFFT authors). In the R package ips there is a <a href="https://search.r-project.org/CRAN/refmans/ips/html/mafft.html">mafft wrapper function</a>, so I installed and tried it out. However, this R implementation of mafft does not allow for the <code>--text</code> mode. Hence, I implemented the solution using both R and the command line version of mafft on my Mac. I could also wrap the command line actions and execute it from R, but I did not spend time on that, mainly because it would still create a challenging dependency in my R-package.</p>
+<p>When I first published this project report I had used the function ‘find_most_representative_setlists’ from my custom R package ‘concertData’. The function takes the setlists of all concerts in a tour, and was then supposed to identify the 30 setlists that represent best the overall variety seen in all the concerts of the tour. What it did was:</p>
+<ol type="1">
+<li><p>It used the Levenshtein distance to calculate similarities between setlists.</p></li>
+<li><p>It computed a distance matrix for all pairs of setlists.</p></li>
+<li><p>It calculated the average distance for each setlist to all others.</p></li>
+<li><p>It selects the setlists with the lowest average distances as the most representative.</p></li>
+</ol>
+<p>While this approach did identify setlists that are, on average, most similar to all other setlists, it did not fully achieve the stated goal for the following reasons:</p>
+<ol type="1">
+<li><p><strong>Rare Changes</strong>: The method prioritizes setlists that are most similar to others, which means it might not capture rare changes or unique variations effectively. Rare changes would likely increase a setlist’s average distance, making it less likely to be selected.</p></li>
+<li><p><strong>Variety Representation</strong>: By selecting setlists with the lowest average distances, you’re essentially choosing the most “typical” setlists rather than those that represent the full variety of the tour.</p></li>
+<li><p><strong>Outlier Sensitivity</strong>: This method might be sensitive to outliers or very unique setlists, potentially skewing the results.</p></li>
+</ol>
+<p>To better achieve the goal of representing all variety, including rare changes, I decided to use a clustering approach, with the k-means algorithm to group similar setlists, then select representatives from each cluster. Like this it better captures the full variety of setlists, including rare changes, while still maintaining a representative sample of the tour. This was implemented in the new function ‘find_representative_setlists_kmeans’ in my custom R package ‘concertData’ (see page: <a href="./sharing.html#concertdata-r-package">Sharing &gt; concertData R package</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for specific tour</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tour_data <span class="ot">&lt;-</span> u2data[u2data<span class="sc">$</span>tour <span class="sc">==</span> <span class="st">"U2 Vertigo Tour"</span>, ]</span>
@@ -455,11 +469,12 @@ div.csl-indent {
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>all_setlist_sequences <span class="ot">&lt;-</span> <span class="fu">prepare_setlist_sequences</span>(filtered_data, codes_tour_songs)</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the most representative setlists</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>representative_setlists <span class="ot">&lt;-</span> <span class="fu">find_most_representative_setlists</span>(all_setlist_sequences, <span class="at">n_representatives =</span> <span class="dv">30</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create fasta-format sequences representing the set-lists of the representative shows</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>fasta_mafft_output <span class="ot">&lt;-</span> <span class="fu">create_setlist_fasta_mafft</span>(representative_setlists)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(fasta_mafft_output, <span class="st">"mafft/u2_setlists.hex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#representative_setlists &lt;- find_most_representative_setlists(all_setlist_sequences, n_representatives = 30)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>representative_setlists <span class="ot">&lt;-</span> <span class="fu">find_representative_setlists_kmeans</span>(all_setlist_sequences, <span class="at">n_representatives =</span> <span class="dv">30</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create fasta-format sequences representing the set-lists of the representative shows</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>fasta_mafft_output <span class="ot">&lt;-</span> <span class="fu">create_setlist_fasta_mafft</span>(representative_setlists)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(fasta_mafft_output, <span class="st">"mafft/u2_setlists.hex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we have the FASTA-like file with hex values that we can use as input for the multiple sequence alignment algorithm MAFFT. See explanation for this text mode version (non-biological sequences alignment) at: https://mafft.cbrc.jp/alignment/software/textcomparison.html</p>
 <p>Following the flow explained there, we convert the HEX file to ASCII code using the hex2mafftext command:</p>
