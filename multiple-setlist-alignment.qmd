@@ -290,7 +290,7 @@ showID1284      -,Q9D-8,-HL9M8\KVJRO-N87+-
                    *      **** ***        
 ```
 
-Now we can visualize this multiple set list alignment.
+Now we can visualize this multiple set list alignment. We see that the alignment is of better quality than the NW- based method in the previous paragraph. It is still not perfect and perhaps tweaking the MAFFT algorithm parameters could further improve it. I developed a Shiny App where you can see the alignments for all major U2 tours, see the \[Interactive Visualizations\](interactive-visual-apps.qmd) page.
 
 ```{r data analysis - tour setlist alignment MAFFT - plot, warning=FALSE, message=FALSE, error=FALSE}
 
